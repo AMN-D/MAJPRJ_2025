@@ -86,80 +86,65 @@ header nav .profile i {
   margin: 0;
 }
 
-.landing {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  overflow-x: hidden;
-}
-.landing .insight {
+.banner {
+  background-image: url("../static/bgmap.jpg"); /* Replace with the correct path to your image */
+  background-size: cover; /* Make sure the image covers the entire banner */
+  background-position: center; /* Center the image */
+  height: 65vh; /* Half the screen height */
+  width: 100vw; /* Full width */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  z-index: 1;
+  justify-content: start;
+  align-items: start;
+  font-size: 5rem; /* Adjust as needed */
 }
-.landing .insight h1 {
-  font-family: "Lufga Bold", sans-serif;
-  font-weight: bold;
-  color: #fefefe;
-  font-size: 23vw;
-  pointer-events: none;
-  margin-top: 10vh;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 5px rgba(0, 0, 0, 0.9);
+.banner .flood {
+  padding-top: 18vh;
+  width: 100%;
+  height: 100%;
+  padding-left: 10vw;
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  align-items: flex-start; /* Align items to the left */
+  text-align: left; /* Align text to the left */
+  font-family: "Poppins", sans-serif; /* Apply Poppins font */
+  color: #e2e2e2;
 }
-@media (max-width: 600px) {
-  .landing .insight h1 {
-    font-size: 15vw;
-    margin-top: 20vh;
-  }
-}
-.landing .shapes {
-  width: 80vw;
+.banner .flood h3, .banner .flood h6, .banner .flood p {
+  margin: 0;
   padding: 0;
-  padding-left: 5vw;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  z-index: 3;
-  transform: translateY(-15vh);
-  height: 30vh;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
-.landing .shapes .circle, .landing .shapes .square {
-  flex-basis: 15vw;
-  height: 15vw;
-  margin: 0;
-  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+.banner .flood h3 {
+  font-size: 5rem;
+  font-weight: 600;
 }
-.landing .shapes .circle {
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #010101;
+.banner .flood h6 {
+  font-size: 1.4rem; /* Font size */
+  font-weight: 200; /* Font weight */
+  line-height: 1;
+  margin-bottom: 3.5vh; /* Adjusted line height (reduce to make it more compact) */
 }
-.landing .shapes .circle .icon {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
-}
-.landing .shapes .circle .text h1 {
-  font-size: 1.5rem;
-  margin: 0;
-}
-.landing .shapes .circle .text h2 {
+.banner .flood p {
   font-size: 1rem;
-  margin: 0;
+  font-weight: 100;
 }
-.landing .shapes .square {
-  background-color: #fefefe;
-  border-radius: 15px;
+.banner .flood button {
+  background-color: #0e0e0e; /* Default background color */
+  color: #e2e2e2; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 1rem 2rem; /* Vertical and horizontal padding */
+  font-family: "Poppins", sans-serif; /* Apply Poppins font */
+  font-size: 0.8rem; /* Font size */
+  font-weight: 500; /* Bold font weight */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.banner .flood button:hover {
+  background-color: #a44129; /* Background color on hover */
+  color: #fefefe; /* Text color on hover */
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
 
 /*# sourceMappingURL=home.css.map */
