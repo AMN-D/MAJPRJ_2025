@@ -22,7 +22,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 2.5rem;
     padding: 2% 0;
     border-bottom: 1px solid rgba(33, 33, 33, 1); /* Semi-transparent border */
@@ -32,20 +32,19 @@ header {
     z-index: 1000; /* Keeps header above content */
     nav {
         height: 100%;
-        width: 100%;
+        width: 80vw;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding-left: 10.5%;
         .logo {
             display: flex;
             height: 100%;
-            padding-left: 5%;
-            left: auto;
             justify-content: center;
             align-items: center;
             a {
                 text-decoration: none;
-                color: #e2e2e2;
+                color: #fefefe;
                 font-weight: 700;
                 transition: color 0.3s; 
                 font-size: 1.4rem;
@@ -59,8 +58,6 @@ header {
             }
         }
         .profile {
-            width: 50%;
-            padding-right: 5%;
             display: flex;
             flex-direction: row-reverse;
             gap: 0.5rem; 
@@ -81,17 +78,17 @@ header {
             // Specific hover styles for each icon
             .icon:nth-child(1):hover { // Profile icon hover
                 background-color: #64acc4; // Profile hover color
-                color: #e2e2e2;
+                color: #fefefe;
             }
 
             .icon:nth-child(2):hover { // Notification icon hover
                 background-color: #c49018;
-                color: #e2e2e2; // Notification hover color
+                color: #fefefe; // Notification hover color
             }
 
             .icon:nth-child(3):hover { // Microphone icon hover
                 background-color: #a54127;
-                color: #e2e2e2; // Microphone hover color
+                color: #fefefe; // Microphone hover color
             }
             
             i {
@@ -100,3 +97,107 @@ header {
         }
     }
 }
+
+.landing {
+    position: relative;
+    // background-image: url('../static/bgmap.jpg'); // Ensure the path is correct
+    // background-size: auto; // Keeps the image at its original size
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+
+    // &::after {
+    //     content: ''; // Necessary for a pseudo-element
+    //     position: absolute; // Position the overlay absolutely
+    //     top: 0; // Aligns with the top
+    //     left: 0; // Aligns with the left side
+    //     width: 100vw; // Full width of the container
+    //     height: 100vh; // Full height of the container
+    //     background: rgba(1, 1, 1, 0); // Semi-transparent dark overlay
+    //     backdrop-filter: blur(0px);
+    //     pointer-events: none; // Allows clicks to pass through the overlay
+    // }
+    .insight {
+        display: flex;
+        flex-direction: column; // Stacks children vertically
+        justify-content: center; // Center content vertically
+        align-items: center; // Center content horizontally
+        position: relative; // Set the container to relative positioning
+        z-index: 1; 
+    
+        h1 {
+            font-family: 'Lufga Bold', sans-serif; // Use the Lufga Bold font
+            font-weight: bold; 
+            color: #fefefe; 
+            font-size: 23vw; // Responsive font size based on viewport width
+            pointer-events: none;
+            margin-top: 10vh; 
+            margin-bottom: 0;
+            padding-bottom: 0;
+            
+            text-shadow: 
+                2px 2px 4px rgba(0, 0, 0, 0.7), // Horizontal offset, vertical offset, blur radius, color
+                0 0 5px rgba(0, 0, 0, 0.9); // Deeper shadow for emphasis
+    
+            // Optional: Add responsiveness for smaller screens
+            @media (max-width: 600px) {
+                font-size: 15vw; // Adjust the font size for smaller screens
+                margin-top: 20vh; // Adjust margin for smaller screens
+            }
+        }
+    }
+    .shapes {
+        width: 80vw;  // Limit the width so there’s space on both sides
+        padding: 0;
+        padding-left: 5vw;
+        margin: 0 auto;  // Center horizontally within the page
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start; // Align the shapes without space
+        align-items: center;  // Vertically center the shapes
+        z-index: 3;
+        transform: translateY(-15vh); // Optional for adjusting Y-axis positioning
+        height: 30vh;
+        
+        .circle, .square {
+            flex-basis: 15vw; // Keep the same size but ensure they stick together
+            height: 15vw;
+            margin: 0;  // Remove any margin
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); // Adding subtle shadow
+        }
+        
+        .circle {
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;  
+            justify-content: center;  
+            text-align: center;  
+            color: #010101;
+        
+            .icon {
+                font-size: 3rem;  // Adjust icon size
+                margin-bottom: 0.5rem;  // Add space between the icon and the text
+            }
+        
+            .text {
+                h1 {
+                    font-size: 1.5rem;  // Adjust text size as needed
+                    margin: 0;  // Remove default margin
+                }
+                h2 {
+                    font-size: 1rem;  // Adjust subtitle size
+                    margin: 0;  // Remove default margin
+                }
+            }
+        }        
+        
+        .square {
+            background-color: #fefefe;
+            border-radius: 15px;
+        }
+    }    
+}
+
+
+
