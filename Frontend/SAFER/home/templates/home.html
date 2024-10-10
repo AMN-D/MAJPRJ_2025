@@ -1,11 +1,11 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="{% static 'home.css' %}">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
-        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
@@ -28,59 +28,37 @@
                     </div>
                 </nav>
             </header> 
-            <div class="container">
-                <div class="swiper-container gallery-top">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                            <div class="banner">
-                                <div class="flood">
-                                    <p>Assam</p>
-                                    <h3>90%</h3>
-                                    <h6>Chances of Flood In </br>Your Region</h6>
-                                    <button>See More</button>
-                                </div>
-                            </div>   
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="banner">
-                                <div class="flood">
-                                    <p>Assam</p>
-                                    <h3>90%</h3>
-                                    <h6>Chances of Landslide In </br>Your Region</h6>
-                                    <button>See More</button>
-                                </div>
-                            </div>   
-                        </div>
-                    </div>    
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
-            </div>        
-            
-            <!-- <div class="landing">
-                <div class="insight">
-                    <h1>insight</h1>
-                </div>
-                <div class="shapes">
-                    <div class="circle" style="background-color: #e3c1b8;">
-                        <div class="icon">
-                            <i class="fa-solid fa-house-crack"></i>
-                        </div>
-                        <div class="text">
-                            <h1>SAFE</h1>
-                            <h2>LANDSLIDE</h2>
-                        </div>
-                    </div>                    
-                    <div class="square" style="background: linear-gradient(to bottom, #9f3923, #872f1d);"></div>
-                    <div class="circle" style="background: linear-gradient(to bottom, #53a826, #468e21);"></div>
-                    <div class="square" style="background: linear-gradient(to bottom, #62aac2, #518fa3);"></div>
-                    <div class="circle" style="background: linear-gradient(to bottom, #cea112, #a7890e);"></div>                    
-                </div>
-            </div> -->
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+        <!-- Slider main container -->
+        <div class="swiper-container">
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="banner-flood">
+                        <div class="flood">
+                            <p>Assam</p>
+                            <h3>90% Flood Risk</h3>
+                            <p class="description-flood">Stay informed about flood risks in your area. Flooding can occur unexpectedly, especially during heavy rainfall or rapid snowmelt. It's crucial to know the signs of potential flooding and to be prepared.</p>
+                            <p><strong>Emergency Services:</strong> </p>
+                            <p><strong>Local Flood Helpline:</strong> 12345</p>
+                            <button>See More</button>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="banner-landslide">
+                        <div class="flood">
+                            <p>Assam</p>
+                            <h3>90%</h3>
+                            <h6>Chances of Flood In<br>Your Region</h6>
+                            <button>See More</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+        <script src="{% static 'home.js' %}"></script>
     </body>
 </html>

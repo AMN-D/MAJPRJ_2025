@@ -2,11 +2,10 @@
 html, body {
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #010101;
   font-family: "Poppins", sans-serif;
-  color: wheat;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -16,10 +15,10 @@ header {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 2.5rem;
-  padding: 2% 0;
+  height: 5vh;
+  padding: 4vh 0;
   border-bottom: 1px solid rgb(33, 33, 33); /* Semi-transparent border */
-  background: rgba(1, 1, 1, 0.5); /* Semi-transparent black background */
+  background: rgba(1, 1, 1, 0.6); /* Semi-transparent black background */
   backdrop-filter: blur(10px); /* Adds the frosted glass effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
   z-index: 1000; /* Keeps header above content */
@@ -34,7 +33,7 @@ header nav {
 }
 header nav .logo {
   display: flex;
-  height: 100%;
+  height: 10vh;
   justify-content: center;
   align-items: center;
 }
@@ -43,7 +42,7 @@ header nav .logo a {
   color: #fefefe;
   font-weight: 700;
   transition: color 0.3s;
-  font-size: 1.4rem;
+  font-size: 4vb;
   letter-spacing: 0.05em;
 }
 header nav .logo a span {
@@ -55,19 +54,18 @@ header nav .logo a:hover {
 header nav .profile {
   display: flex;
   flex-direction: row-reverse;
-  gap: 0.5rem;
+  gap: 1vb;
 }
 header nav .profile .icon {
   background-color: #141414;
   color: #9d9d9d;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 6vb;
+  height: 6vb;
   border-radius: 50%;
-  font-size: 1rem;
+  font-size: 3vb;
   transition: background-color 0.3s;
 }
 header nav .profile .icon:nth-child(1):hover {
@@ -86,20 +84,19 @@ header nav .profile i {
   margin: 0;
 }
 
-.banner {
-  background-image: url("../static/bgmap.jpg"); /* Replace with the correct path to your image */
+.banner-flood, .banner-landslide {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 80%), url("../static/flood_banner.png"); /* Fading black effect */
   background-size: cover; /* Make sure the image covers the entire banner */
   background-position: center; /* Center the image */
-  height: 65vh; /* Half the screen height */
+  height: 100vh; /* Half the screen height */
   width: 100vw; /* Full width */
   display: flex;
   justify-content: start;
   align-items: start;
-  font-size: 5rem; /* Adjust as needed */
 }
-.banner .flood {
+.banner-flood .flood, .banner-landslide .flood {
   padding-top: 18vh;
-  width: 100%;
+  width: 40%;
   height: 100%;
   padding-left: 10vw;
   display: flex;
@@ -107,28 +104,33 @@ header nav .profile i {
   align-items: flex-start; /* Align items to the left */
   text-align: left; /* Align text to the left */
   font-family: "Poppins", sans-serif; /* Apply Poppins font */
-  color: #e2e2e2;
+  z-index: 1;
 }
-.banner .flood h3, .banner .flood h6, .banner .flood p {
+.banner-flood .flood h3, .banner-flood .flood h6, .banner-flood .flood p, .banner-landslide .flood h3, .banner-landslide .flood h6, .banner-landslide .flood p {
   margin: 0;
   padding: 0;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  color: #fefefe;
 }
-.banner .flood h3 {
-  font-size: 5rem;
+.banner-flood .flood .description-flood, .banner-landslide .flood .description-flood {
+  font-size: 2.3vb;
+}
+.banner-flood .flood h3, .banner-landslide .flood h3 {
+  font-size: 4vb;
   font-weight: 600;
 }
-.banner .flood h6 {
-  font-size: 1.4rem; /* Font size */
+.banner-flood .flood h6, .banner-landslide .flood h6 {
+  font-size: 1.4vb; /* Font size */
   font-weight: 200; /* Font weight */
   line-height: 1;
   margin-bottom: 3.5vh; /* Adjusted line height (reduce to make it more compact) */
 }
-.banner .flood p {
-  font-size: 1rem;
-  font-weight: 100;
+.banner-flood .flood p, .banner-landslide .flood p {
+  font-size: 2.5vb;
+  font-weight: 300;
+  color: #cccccc;
 }
-.banner .flood button {
+.banner-flood .flood button, .banner-landslide .flood button {
   background-color: #0e0e0e; /* Default background color */
   color: #e2e2e2; /* Text color */
   border: none; /* Remove default border */
@@ -141,10 +143,42 @@ header nav .profile i {
   transition: background-color 0.3s ease; /* Smooth transition for hover effect */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
-.banner .flood button:hover {
+.banner-flood .flood button:hover, .banner-landslide .flood button:hover {
   background-color: #a44129; /* Background color on hover */
   color: #fefefe; /* Text color on hover */
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+}
+
+.banner-landslide {
+  background-image: url("../static/landslide_banner2.jpg"); /* Replace with the correct path to your image */
+}
+
+.swiper-container {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  height: 70vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  border-bottom-left-radius: 8px; /* Adjust this value to control the roundness */
+  border-bottom-right-radius: 8px; /* Same for the right corner */
+  overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+}
+.swiper-container .swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+}
+.swiper-container .swiper-slide {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=home.css.map */
