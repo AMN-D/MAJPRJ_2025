@@ -1,10 +1,13 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="{% static 'home.css' %}">
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+        <link rel="stylesheet" href="{% static 'style.css' %}">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
     <body>
         <div class="bg-home">
             <header>
@@ -24,16 +27,35 @@
                         </a>
                     </div>
                 </nav>
-            </header>
-            <div clss 
-            <div class="banner">
-                <div class="flood">
-                    <p>Assam</p>
-                    <h3>90%</h3>
-                    <h6>Chances of Flood In </br>Your Region</h6>
-                    <button>See More</button>
+            </header> 
+            <div class="container">
+                <div class="swiper-container gallery-top">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="banner">
+                                <div class="flood">
+                                    <p>Assam</p>
+                                    <h3>90%</h3>
+                                    <h6>Chances of Flood In </br>Your Region</h6>
+                                    <button>See More</button>
+                                </div>
+                            </div>   
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="banner">
+                                <div class="flood">
+                                    <p>Assam</p>
+                                    <h3>90%</h3>
+                                    <h6>Chances of Landslide In </br>Your Region</h6>
+                                    <button>See More</button>
+                                </div>
+                            </div>   
+                        </div>
+                    </div>    
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-            </div>            
+            </div>        
             
             <!-- <div class="landing">
                 <div class="insight">
@@ -55,7 +77,10 @@
                     <div class="circle" style="background: linear-gradient(to bottom, #cea112, #a7890e);"></div>                    
                 </div>
             </div> -->
-
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     </body>
 </html>
