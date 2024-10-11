@@ -26,7 +26,7 @@ header {
     background: rgba(1, 1, 1, 0.6); /* Semi-transparent black background */
     backdrop-filter: blur(10px); /* Adds the frosted glass effect */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
-    z-index: 1000; /* Keeps header above content */
+    z-index: 1024; /* Keeps header above content */
     nav {
         height: 100%;
         width: 80vw;
@@ -115,7 +115,7 @@ header {
         text-align: left; /* Align text to the left */
         font-family: 'Poppins', sans-serif; /* Apply Poppins font */
         z-index: 1;
-        @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+        @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 width: 90%; /* Set width to 100% on mobile */
                 padding-left: 5vw; /* Optional: Adjust padding for mobile */
                 padding-top: 16.5vh;
@@ -133,7 +133,7 @@ header {
             i {
                 margin-right: 0.5vw;
             }
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 2vb;
             }   
             @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
@@ -172,7 +172,7 @@ header {
                     color: #3e7f8f; /* Change color on hover */
                 }                
             }
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 1.8vb;
             }     
             @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
@@ -195,7 +195,7 @@ header {
                     color: #5aa1b3; /* Color change on hover */
                 }
             }
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 2vb;
             }   
             @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
@@ -209,7 +209,7 @@ header {
             span {
                 color: #e0e0e0;
             }
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 line-height: 1.2;
                 padding-bottom: 1vh;
             }  
@@ -239,7 +239,7 @@ header {
             transition: background-color 0.3s ease; /* Smooth transition for hover effect */
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
             text-shadow: none; 
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 padding: 2.5vh 5vw; /* Vertical and horizontal padding */
             }  
         }
@@ -274,7 +274,7 @@ header {
         text-align: left; /* Align text to the left */
         font-family: 'Poppins', sans-serif; /* Apply Poppins font */
         z-index: 1;
-        @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+        @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 width: 90%; /* Set width to 100% on mobile */
                 padding-left: 5vw; /* Optional: Adjust padding for mobile */
                 padding-top: 16.5vh;
@@ -292,7 +292,7 @@ header {
             i {
                 margin-right: 0.5vw;
             }
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 2vb;
             }   
             @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
@@ -331,7 +331,7 @@ header {
                     color: #C19A6B; /* Change color on hover */
                 }                
             }
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 1.8vb;
             }     
             @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
@@ -354,7 +354,7 @@ header {
                     color: #C19A6B; /* Color change on hover */
                 }
             }
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 2vb;
             }   
             @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
@@ -368,7 +368,7 @@ header {
             span {
                 color: #e0e0e0;
             }
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 line-height: 1.2;
                 padding-bottom: 1vh;
             }   
@@ -398,7 +398,7 @@ header {
             transition: background-color 0.3s ease; /* Smooth transition for hover effect */
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
             text-shadow: none; 
-            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+            @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 padding: 2.5vh 5vw; /* Vertical and horizontal padding */
             }  
         }
