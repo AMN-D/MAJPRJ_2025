@@ -136,6 +136,9 @@ header {
             @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 2vb;
             }   
+            @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 1.5vb;
+            }   
         }
         .location {
             color: #8ac7da;
@@ -171,6 +174,9 @@ header {
             }
             @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 1.8vb;
+            }     
+            @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 1.5vb;
             }   
         }
         .helpline-numbers-home {
@@ -189,7 +195,12 @@ header {
                     color: #5aa1b3; /* Color change on hover */
                 }
             }
-            
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 2vb;
+            }   
+            @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 1.5vb;
+            }
         }
         h3 {
             font-size: 4vb;
@@ -198,6 +209,10 @@ header {
             span {
                 color: #e0e0e0;
             }
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                line-height: 1.2;
+                padding-bottom: 1vh;
+            }  
         }
         h6 {
             font-size: 1.4vb;
@@ -280,6 +295,9 @@ header {
             @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 2vb;
             }   
+            @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 1.5vb;
+            }   
         }
         .location {
             color: #DEB887;
@@ -315,7 +333,10 @@ header {
             }
             @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
                 font-size: 1.8vb;
-            }   
+            }     
+            @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 1.5vb;
+            }  
         }
         .helpline-numbers-home {
             font-size: 2.2vb;
@@ -333,7 +354,12 @@ header {
                     color: #C19A6B; /* Color change on hover */
                 }
             }
-            
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 2vb;
+            }   
+            @media (max-width: 500px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 1.5vb;
+            }
         }
         h3 {
             font-size: 4vb;
@@ -342,6 +368,10 @@ header {
             span {
                 color: #e0e0e0;
             }
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                line-height: 1.2;
+                padding-bottom: 1vh;
+            }   
         }
         h6 {
             font-size: 1.4vb;

@@ -131,6 +131,11 @@ header nav .profile i {
     font-size: 2vb;
   }
 }
+@media (max-width: 500px) {
+  .banner-flood .flood .description-flood, .banner-flood .landslide .description-flood, .banner-landslide .flood .description-flood, .banner-landslide .landslide .description-flood { /* Adjust the max-width as needed for your mobile breakpoint */
+    font-size: 1.5vb;
+  }
+}
 .banner-flood .flood .location, .banner-flood .landslide .location, .banner-landslide .flood .location, .banner-landslide .landslide .location {
   color: #8ac7da;
   text-decoration: none; /* Remove underline */
@@ -169,6 +174,11 @@ header nav .profile i {
     font-size: 1.8vb;
   }
 }
+@media (max-width: 500px) {
+  .banner-flood .flood .safety-tips, .banner-flood .landslide .safety-tips, .banner-landslide .flood .safety-tips, .banner-landslide .landslide .safety-tips { /* Adjust the max-width as needed for your mobile breakpoint */
+    font-size: 1.5vb;
+  }
+}
 .banner-flood .flood .helpline-numbers-home, .banner-flood .landslide .helpline-numbers-home, .banner-landslide .flood .helpline-numbers-home, .banner-landslide .landslide .helpline-numbers-home {
   font-size: 2.2vb;
   color: #fefefe;
@@ -186,6 +196,16 @@ header nav .profile i {
 .banner-flood .flood .helpline-numbers-home a:hover, .banner-flood .landslide .helpline-numbers-home a:hover, .banner-landslide .flood .helpline-numbers-home a:hover, .banner-landslide .landslide .helpline-numbers-home a:hover {
   color: #5aa1b3; /* Color change on hover */
 }
+@media (max-width: 768px) {
+  .banner-flood .flood .helpline-numbers-home, .banner-flood .landslide .helpline-numbers-home, .banner-landslide .flood .helpline-numbers-home, .banner-landslide .landslide .helpline-numbers-home { /* Adjust the max-width as needed for your mobile breakpoint */
+    font-size: 2vb;
+  }
+}
+@media (max-width: 500px) {
+  .banner-flood .flood .helpline-numbers-home, .banner-flood .landslide .helpline-numbers-home, .banner-landslide .flood .helpline-numbers-home, .banner-landslide .landslide .helpline-numbers-home { /* Adjust the max-width as needed for your mobile breakpoint */
+    font-size: 1.5vb;
+  }
+}
 .banner-flood .flood h3, .banner-flood .landslide h3, .banner-landslide .flood h3, .banner-landslide .landslide h3 {
   font-size: 4vb;
   font-weight: 600;
@@ -193,6 +213,12 @@ header nav .profile i {
 }
 .banner-flood .flood h3 span, .banner-flood .landslide h3 span, .banner-landslide .flood h3 span, .banner-landslide .landslide h3 span {
   color: #e0e0e0;
+}
+@media (max-width: 768px) {
+  .banner-flood .flood h3, .banner-flood .landslide h3, .banner-landslide .flood h3, .banner-landslide .landslide h3 { /* Adjust the max-width as needed for your mobile breakpoint */
+    line-height: 1.2;
+    padding-bottom: 1vh;
+  }
 }
 .banner-flood .flood h6, .banner-flood .landslide h6, .banner-landslide .flood h6, .banner-landslide .landslide h6 {
   font-size: 1.4vb;
@@ -278,6 +304,11 @@ header nav .profile i {
     font-size: 2vb;
   }
 }
+@media (max-width: 500px) {
+  .banner-landslide .landslide .description-flood { /* Adjust the max-width as needed for your mobile breakpoint */
+    font-size: 1.5vb;
+  }
+}
 .banner-landslide .landslide .location {
   color: #DEB887;
   text-decoration: none; /* Remove underline */
@@ -316,6 +347,11 @@ header nav .profile i {
     font-size: 1.8vb;
   }
 }
+@media (max-width: 500px) {
+  .banner-landslide .landslide .safety-tips { /* Adjust the max-width as needed for your mobile breakpoint */
+    font-size: 1.5vb;
+  }
+}
 .banner-landslide .landslide .helpline-numbers-home {
   font-size: 2.2vb;
   color: #fefefe;
@@ -333,6 +369,16 @@ header nav .profile i {
 .banner-landslide .landslide .helpline-numbers-home a:hover {
   color: #C19A6B; /* Color change on hover */
 }
+@media (max-width: 768px) {
+  .banner-landslide .landslide .helpline-numbers-home { /* Adjust the max-width as needed for your mobile breakpoint */
+    font-size: 2vb;
+  }
+}
+@media (max-width: 500px) {
+  .banner-landslide .landslide .helpline-numbers-home { /* Adjust the max-width as needed for your mobile breakpoint */
+    font-size: 1.5vb;
+  }
+}
 .banner-landslide .landslide h3 {
   font-size: 4vb;
   font-weight: 600;
@@ -340,6 +386,12 @@ header nav .profile i {
 }
 .banner-landslide .landslide h3 span {
   color: #e0e0e0;
+}
+@media (max-width: 768px) {
+  .banner-landslide .landslide h3 { /* Adjust the max-width as needed for your mobile breakpoint */
+    line-height: 1.2;
+    padding-bottom: 1vh;
+  }
 }
 .banner-landslide .landslide h6 {
   font-size: 1.4vb;
