@@ -262,6 +262,9 @@ header {
     display: flex;
     justify-content: start;
     align-items: start;
+    @media (max-width: 1024px) { /* Adjust the max-width as needed for your mobile breakpoint */
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 80%), url('../static/landslide_banner2_mobile.jpg');
+    }  
 
     .landslide {
         padding-top: 17.5vh;
