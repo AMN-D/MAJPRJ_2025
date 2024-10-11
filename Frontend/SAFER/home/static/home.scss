@@ -93,7 +93,6 @@ header {
     }
 }
 
-
 .banner-flood, .banner-landslide {
     //background-image: url('../static/flood_banner.png'); /* Replace with the correct path to your image */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 80%), url('../static/flood_banner.png'); /* Fading black effect */
@@ -105,8 +104,8 @@ header {
     justify-content: start;
     align-items: start;
 
-    .flood {
-        padding-top: 18vh;
+    .flood, .landslide {
+        padding-top: 17.5vh;
         width: 40%;
         height: 100%;
         padding-left: 10vw;
@@ -116,6 +115,11 @@ header {
         text-align: left; /* Align text to the left */
         font-family: 'Poppins', sans-serif; /* Apply Poppins font */
         z-index: 1;
+        @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                width: 90%; /* Set width to 100% on mobile */
+                padding-left: 5vw; /* Optional: Adjust padding for mobile */
+                padding-top: 16.5vh;
+        }        
             
         h3, h6, p {
             margin: 0;
@@ -125,13 +129,78 @@ header {
         }
         .description-flood {
             font-size: 2.3vb;
+            padding-bottom: 2vh;
+            i {
+                margin-right: 0.5vw;
+            }
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 2vb;
+            }   
+        }
+        .location {
+            color: #8ac7da;
+            text-decoration: none; /* Remove underline */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+            &:hover {
+                color: #5aa1b3; /* Color change on hover */
+            }
+            span {
+                color: #8ac7da;
+                margin-left: 0.5vw;
+                text-decoration: none; /* Remove underline */
+                cursor: pointer; /* Pointer cursor on hover */
+                transition: color 0.3s ease; /* Smooth transition for hover effect */
+                &:hover {
+                    color: #5aa1b3; /* Color change on hover */
+                }
+            }
+        }
+        .safety-tips {
+            margin-bottom: 2vh;
+            font-size: 2.2vb;
+            i {
+                margin-right: 0.5vw;
+            }
+            .more-tips {
+                color: #8ac7da; /* Same color as other links */
+                text-decoration: none; /* Remove underline */
+                &:hover {
+                    color: #3e7f8f; /* Change color on hover */
+                }                
+            }
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 1.8vb;
+            }   
+        }
+        .helpline-numbers-home {
+            font-size: 2.2vb;
+            color: #fefefe;
+            font-weight: 300;
+            span {
+                margin-left: 0.8vw;
+            }
+            a {
+                color: #8ac7da; /* Default link color */
+                text-decoration: none; /* Remove underline */
+                cursor: pointer; /* Pointer cursor on hover */
+                transition: color 0.3s ease; /* Smooth transition for hover effect */
+                &:hover {
+                    color: #5aa1b3; /* Color change on hover */
+                }
+            }
+            
         }
         h3 {
             font-size: 4vb;
             font-weight: 600;
+            padding-top: 2vh;
+            span {
+                color: #e0e0e0;
+            }
         }
         h6 {
-            font-size: 1.4vb; /* Font size */
+            font-size: 1.4vb;
             font-weight: 200; /* Font weight */
             line-height: 1; 
             margin-bottom: 3.5vh;/* Adjusted line height (reduce to make it more compact) */
@@ -142,28 +211,174 @@ header {
             color: #cccccc;
         }
         button {
-            background-color: #0e0e0e; /* Default background color */
-            color: #e2e2e2; /* Text color */
+            margin-top: 3vh;
+            background-color: #3e7f8f; /* Default background color */
+            color: #fefefe; /* Text color */
             border: none; /* Remove default border */
             border-radius: 10px; /* Rounded corners */
-            padding: 1rem 2rem; /* Vertical and horizontal padding */
+            padding: 2.5vh 2vw; /* Vertical and horizontal padding */
             font-family: 'Poppins', sans-serif; /* Apply Poppins font */
-            font-size: 0.8rem; /* Font size */
-            font-weight: 500; /* Bold font weight */
+            font-size: 2.2vb; /* Font size */
+            font-weight: 400; /* Bold font weight */
             cursor: pointer; /* Change cursor to pointer on hover */
             transition: background-color 0.3s ease; /* Smooth transition for hover effect */
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+            text-shadow: none; 
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                padding: 2.5vh 5vw; /* Vertical and horizontal padding */
+            }  
         }
         
         button:hover {
-            background-color: #a44129; /* Background color on hover */
+            background-color: #2f5961; /* Background color on hover */
             color: #fefefe; /* Text color on hover */
             box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); 
         }   
     }
 }
-.banner-landslide{
-    background-image: url('../static/landslide_banner2.jpg'); /* Replace with the correct path to your image */
+
+.banner-landslide {
+    //background-image: url('../static/flood_banner.png'); /* Replace with the correct path to your image */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 80%), url('../static/landslide_banner2.jpg'); /* Fading black effect */
+    background-size: cover; /* Make sure the image covers the entire banner */
+    background-position: center; /* Center the image */
+    height: 100vh; /* Half the screen height */
+    width: 100vw; /* Full width */
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+    .landslide {
+        padding-top: 17.5vh;
+        width: 40%;
+        height: 100%;
+        padding-left: 10vw;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        text-align: left; /* Align text to the left */
+        font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+        z-index: 1;
+        @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                width: 90%; /* Set width to 100% on mobile */
+                padding-left: 5vw; /* Optional: Adjust padding for mobile */
+                padding-top: 16.5vh;
+        }        
+            
+        h3, h6, p {
+            margin: 0;
+            padding: 0;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            color: #fefefe;
+        }
+        .description-flood {
+            font-size: 2.3vb;
+            padding-bottom: 2vh;
+            i {
+                margin-right: 0.5vw;
+            }
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 2vb;
+            }   
+        }
+        .location {
+            color: #DEB887;
+            text-decoration: none; /* Remove underline */
+            cursor: pointer; /* Pointer cursor on hover */
+            transition: color 0.3s ease; /* Smooth transition for hover effect */
+            &:hover {
+                color: #C19A6B; /* Color change on hover */
+            }
+            span {
+                color: #DEB887;
+                margin-left: 0.5vw;
+                text-decoration: none; /* Remove underline */
+                cursor: pointer; /* Pointer cursor on hover */
+                transition: color 0.3s ease; /* Smooth transition for hover effect */
+                &:hover {
+                    color: #C19A6B; /* Color change on hover */
+                }
+            }
+        }
+        .safety-tips {
+            margin-bottom: 2vh;
+            font-size: 2.2vb;
+            i {
+                margin-right: 0.5vw;
+            }
+            .more-tips {
+                color: #DEB887; /* Same color as other links */
+                text-decoration: none; /* Remove underline */
+                &:hover {
+                    color: #C19A6B; /* Change color on hover */
+                }                
+            }
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                font-size: 1.8vb;
+            }   
+        }
+        .helpline-numbers-home {
+            font-size: 2.2vb;
+            color: #fefefe;
+            font-weight: 300;
+            span {
+                margin-left: 0.8vw;
+            }
+            a {
+                color: #DEB887; /* Default link color */
+                text-decoration: none; /* Remove underline */
+                cursor: pointer; /* Pointer cursor on hover */
+                transition: color 0.3s ease; /* Smooth transition for hover effect */
+                &:hover {
+                    color: #C19A6B; /* Color change on hover */
+                }
+            }
+            
+        }
+        h3 {
+            font-size: 4vb;
+            font-weight: 600;
+            padding-top: 2vh;
+            span {
+                color: #e0e0e0;
+            }
+        }
+        h6 {
+            font-size: 1.4vb;
+            font-weight: 200; /* Font weight */
+            line-height: 1; 
+            margin-bottom: 3.5vh;/* Adjusted line height (reduce to make it more compact) */
+        }        
+        p{
+            font-size: 2.5vb;
+            font-weight: 300;
+            color: #cccccc;
+        }
+        button {
+            margin-top: 3vh;
+            background-color: #A77B4B; /* Default background color */
+            color: #fefefe; /* Text color */
+            border: none; /* Remove default border */
+            border-radius: 10px; /* Rounded corners */
+            padding: 2.5vh 2vw; /* Vertical and horizontal padding */
+            font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+            font-size: 2.2vb; /* Font size */
+            font-weight: 400; /* Bold font weight */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+            text-shadow: none; 
+            @media (max-width: 768px) { /* Adjust the max-width as needed for your mobile breakpoint */
+                padding: 2.5vh 5vw; /* Vertical and horizontal padding */
+            }  
+        }
+        
+        button:hover {
+            background-color: #8F5C3D; /* Background color on hover */
+            color: #fefefe; /* Text color on hover */
+            box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7); 
+        }   
+    }
 }
 
 .swiper-container {
