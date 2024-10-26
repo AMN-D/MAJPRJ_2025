@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -8,6 +9,10 @@ html, body {
   font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 header {
@@ -21,6 +26,7 @@ header {
   background: rgba(1, 1, 1, 0.6); /* Semi-transparent black background */
   backdrop-filter: blur(10px); /* Adds the frosted glass effect */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+  transition: top 0.3s ease;
   z-index: 1024; /* Keeps header above content */
 }
 header nav {
@@ -84,7 +90,8 @@ header nav .profile i {
   margin: 0;
 }
 
-.banner-flood, .banner-landslide {
+.banner-flood,
+.banner-landslide {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 80%), url("../static/flood_banner.png"); /* Fading black effect */
   background-size: cover; /* Make sure the image covers the entire banner */
   background-position: center; /* Center the image */
@@ -94,7 +101,10 @@ header nav .profile i {
   justify-content: start;
   align-items: start;
 }
-.banner-flood .flood, .banner-flood .landslide, .banner-landslide .flood, .banner-landslide .landslide {
+.banner-flood .flood,
+.banner-flood .landslide,
+.banner-landslide .flood,
+.banner-landslide .landslide {
   padding-top: 17.5vh;
   width: 40%;
   height: 100%;
@@ -107,131 +117,231 @@ header nav .profile i {
   z-index: 1;
 }
 @media (max-width: 1024px) {
-  .banner-flood .flood, .banner-flood .landslide, .banner-landslide .flood, .banner-landslide .landslide { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood,
+  .banner-flood .landslide,
+  .banner-landslide .flood,
+  .banner-landslide .landslide {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     width: 90%; /* Set width to 100% on mobile */
     padding-left: 5vw; /* Optional: Adjust padding for mobile */
     padding-top: 16.5vh;
   }
 }
-.banner-flood .flood h3, .banner-flood .flood h6, .banner-flood .flood p, .banner-flood .landslide h3, .banner-flood .landslide h6, .banner-flood .landslide p, .banner-landslide .flood h3, .banner-landslide .flood h6, .banner-landslide .flood p, .banner-landslide .landslide h3, .banner-landslide .landslide h6, .banner-landslide .landslide p {
+.banner-flood .flood h3,
+.banner-flood .flood h6,
+.banner-flood .flood p,
+.banner-flood .landslide h3,
+.banner-flood .landslide h6,
+.banner-flood .landslide p,
+.banner-landslide .flood h3,
+.banner-landslide .flood h6,
+.banner-landslide .flood p,
+.banner-landslide .landslide h3,
+.banner-landslide .landslide h6,
+.banner-landslide .landslide p {
   margin: 0;
   padding: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   color: #fefefe;
 }
-.banner-flood .flood .description-flood, .banner-flood .landslide .description-flood, .banner-landslide .flood .description-flood, .banner-landslide .landslide .description-flood {
+.banner-flood .flood .description-flood,
+.banner-flood .landslide .description-flood,
+.banner-landslide .flood .description-flood,
+.banner-landslide .landslide .description-flood {
   font-size: 2.3vb;
   padding-bottom: 2vh;
 }
-.banner-flood .flood .description-flood i, .banner-flood .landslide .description-flood i, .banner-landslide .flood .description-flood i, .banner-landslide .landslide .description-flood i {
+.banner-flood .flood .description-flood i,
+.banner-flood .landslide .description-flood i,
+.banner-landslide .flood .description-flood i,
+.banner-landslide .landslide .description-flood i {
   margin-right: 0.5vw;
 }
 @media (max-width: 1024px) {
-  .banner-flood .flood .description-flood, .banner-flood .landslide .description-flood, .banner-landslide .flood .description-flood, .banner-landslide .landslide .description-flood { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood .description-flood,
+  .banner-flood .landslide .description-flood,
+  .banner-landslide .flood .description-flood,
+  .banner-landslide .landslide .description-flood {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 2vb;
   }
 }
 @media (max-width: 500px) {
-  .banner-flood .flood .description-flood, .banner-flood .landslide .description-flood, .banner-landslide .flood .description-flood, .banner-landslide .landslide .description-flood { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood .description-flood,
+  .banner-flood .landslide .description-flood,
+  .banner-landslide .flood .description-flood,
+  .banner-landslide .landslide .description-flood {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 1.5vb;
   }
 }
-.banner-flood .flood .location, .banner-flood .landslide .location, .banner-landslide .flood .location, .banner-landslide .landslide .location {
+.banner-flood .flood .location,
+.banner-flood .landslide .location,
+.banner-landslide .flood .location,
+.banner-landslide .landslide .location {
   color: #8ac7da;
   text-decoration: none; /* Remove underline */
   cursor: pointer; /* Pointer cursor on hover */
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
-.banner-flood .flood .location:hover, .banner-flood .landslide .location:hover, .banner-landslide .flood .location:hover, .banner-landslide .landslide .location:hover {
+.banner-flood .flood .location:hover,
+.banner-flood .landslide .location:hover,
+.banner-landslide .flood .location:hover,
+.banner-landslide .landslide .location:hover {
   color: #5aa1b3; /* Color change on hover */
 }
-.banner-flood .flood .location span, .banner-flood .landslide .location span, .banner-landslide .flood .location span, .banner-landslide .landslide .location span {
+.banner-flood .flood .location span,
+.banner-flood .landslide .location span,
+.banner-landslide .flood .location span,
+.banner-landslide .landslide .location span {
   color: #8ac7da;
   margin-left: 0.5vw;
   text-decoration: none; /* Remove underline */
   cursor: pointer; /* Pointer cursor on hover */
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
-.banner-flood .flood .location span:hover, .banner-flood .landslide .location span:hover, .banner-landslide .flood .location span:hover, .banner-landslide .landslide .location span:hover {
+.banner-flood .flood .location span:hover,
+.banner-flood .landslide .location span:hover,
+.banner-landslide .flood .location span:hover,
+.banner-landslide .landslide .location span:hover {
   color: #5aa1b3; /* Color change on hover */
 }
-.banner-flood .flood .safety-tips, .banner-flood .landslide .safety-tips, .banner-landslide .flood .safety-tips, .banner-landslide .landslide .safety-tips {
+.banner-flood .flood .safety-tips,
+.banner-flood .landslide .safety-tips,
+.banner-landslide .flood .safety-tips,
+.banner-landslide .landslide .safety-tips {
   margin-bottom: 2vh;
   font-size: 2.2vb;
 }
-.banner-flood .flood .safety-tips i, .banner-flood .landslide .safety-tips i, .banner-landslide .flood .safety-tips i, .banner-landslide .landslide .safety-tips i {
+.banner-flood .flood .safety-tips i,
+.banner-flood .landslide .safety-tips i,
+.banner-landslide .flood .safety-tips i,
+.banner-landslide .landslide .safety-tips i {
   margin-right: 0.5vw;
 }
-.banner-flood .flood .safety-tips .more-tips, .banner-flood .landslide .safety-tips .more-tips, .banner-landslide .flood .safety-tips .more-tips, .banner-landslide .landslide .safety-tips .more-tips {
+.banner-flood .flood .safety-tips .more-tips,
+.banner-flood .landslide .safety-tips .more-tips,
+.banner-landslide .flood .safety-tips .more-tips,
+.banner-landslide .landslide .safety-tips .more-tips {
   color: #8ac7da; /* Same color as other links */
   text-decoration: none; /* Remove underline */
 }
-.banner-flood .flood .safety-tips .more-tips:hover, .banner-flood .landslide .safety-tips .more-tips:hover, .banner-landslide .flood .safety-tips .more-tips:hover, .banner-landslide .landslide .safety-tips .more-tips:hover {
+.banner-flood .flood .safety-tips .more-tips:hover,
+.banner-flood .landslide .safety-tips .more-tips:hover,
+.banner-landslide .flood .safety-tips .more-tips:hover,
+.banner-landslide .landslide .safety-tips .more-tips:hover {
   color: #3e7f8f; /* Change color on hover */
 }
 @media (max-width: 1024px) {
-  .banner-flood .flood .safety-tips, .banner-flood .landslide .safety-tips, .banner-landslide .flood .safety-tips, .banner-landslide .landslide .safety-tips { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood .safety-tips,
+  .banner-flood .landslide .safety-tips,
+  .banner-landslide .flood .safety-tips,
+  .banner-landslide .landslide .safety-tips {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 1.8vb;
   }
 }
 @media (max-width: 500px) {
-  .banner-flood .flood .safety-tips, .banner-flood .landslide .safety-tips, .banner-landslide .flood .safety-tips, .banner-landslide .landslide .safety-tips { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood .safety-tips,
+  .banner-flood .landslide .safety-tips,
+  .banner-landslide .flood .safety-tips,
+  .banner-landslide .landslide .safety-tips {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 1.5vb;
   }
 }
-.banner-flood .flood .helpline-numbers-home, .banner-flood .landslide .helpline-numbers-home, .banner-landslide .flood .helpline-numbers-home, .banner-landslide .landslide .helpline-numbers-home {
+.banner-flood .flood .helpline-numbers-home,
+.banner-flood .landslide .helpline-numbers-home,
+.banner-landslide .flood .helpline-numbers-home,
+.banner-landslide .landslide .helpline-numbers-home {
   font-size: 2.2vb;
   color: #fefefe;
   font-weight: 300;
 }
-.banner-flood .flood .helpline-numbers-home span, .banner-flood .landslide .helpline-numbers-home span, .banner-landslide .flood .helpline-numbers-home span, .banner-landslide .landslide .helpline-numbers-home span {
+.banner-flood .flood .helpline-numbers-home span,
+.banner-flood .landslide .helpline-numbers-home span,
+.banner-landslide .flood .helpline-numbers-home span,
+.banner-landslide .landslide .helpline-numbers-home span {
   margin-left: 0.8vw;
 }
-.banner-flood .flood .helpline-numbers-home a, .banner-flood .landslide .helpline-numbers-home a, .banner-landslide .flood .helpline-numbers-home a, .banner-landslide .landslide .helpline-numbers-home a {
+.banner-flood .flood .helpline-numbers-home a,
+.banner-flood .landslide .helpline-numbers-home a,
+.banner-landslide .flood .helpline-numbers-home a,
+.banner-landslide .landslide .helpline-numbers-home a {
   color: #8ac7da; /* Default link color */
   text-decoration: none; /* Remove underline */
   cursor: pointer; /* Pointer cursor on hover */
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
-.banner-flood .flood .helpline-numbers-home a:hover, .banner-flood .landslide .helpline-numbers-home a:hover, .banner-landslide .flood .helpline-numbers-home a:hover, .banner-landslide .landslide .helpline-numbers-home a:hover {
+.banner-flood .flood .helpline-numbers-home a:hover,
+.banner-flood .landslide .helpline-numbers-home a:hover,
+.banner-landslide .flood .helpline-numbers-home a:hover,
+.banner-landslide .landslide .helpline-numbers-home a:hover {
   color: #5aa1b3; /* Color change on hover */
 }
 @media (max-width: 1024px) {
-  .banner-flood .flood .helpline-numbers-home, .banner-flood .landslide .helpline-numbers-home, .banner-landslide .flood .helpline-numbers-home, .banner-landslide .landslide .helpline-numbers-home { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood .helpline-numbers-home,
+  .banner-flood .landslide .helpline-numbers-home,
+  .banner-landslide .flood .helpline-numbers-home,
+  .banner-landslide .landslide .helpline-numbers-home {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 2vb;
   }
 }
 @media (max-width: 500px) {
-  .banner-flood .flood .helpline-numbers-home, .banner-flood .landslide .helpline-numbers-home, .banner-landslide .flood .helpline-numbers-home, .banner-landslide .landslide .helpline-numbers-home { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood .helpline-numbers-home,
+  .banner-flood .landslide .helpline-numbers-home,
+  .banner-landslide .flood .helpline-numbers-home,
+  .banner-landslide .landslide .helpline-numbers-home {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 1.5vb;
   }
 }
-.banner-flood .flood h3, .banner-flood .landslide h3, .banner-landslide .flood h3, .banner-landslide .landslide h3 {
+.banner-flood .flood h3,
+.banner-flood .landslide h3,
+.banner-landslide .flood h3,
+.banner-landslide .landslide h3 {
   font-size: 4vb;
   font-weight: 600;
   padding-top: 2vh;
 }
-.banner-flood .flood h3 span, .banner-flood .landslide h3 span, .banner-landslide .flood h3 span, .banner-landslide .landslide h3 span {
+.banner-flood .flood h3 span,
+.banner-flood .landslide h3 span,
+.banner-landslide .flood h3 span,
+.banner-landslide .landslide h3 span {
   color: #e0e0e0;
 }
 @media (max-width: 1024px) {
-  .banner-flood .flood h3, .banner-flood .landslide h3, .banner-landslide .flood h3, .banner-landslide .landslide h3 { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood h3,
+  .banner-flood .landslide h3,
+  .banner-landslide .flood h3,
+  .banner-landslide .landslide h3 {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     line-height: 1.2;
     padding-bottom: 1vh;
   }
 }
-.banner-flood .flood h6, .banner-flood .landslide h6, .banner-landslide .flood h6, .banner-landslide .landslide h6 {
+.banner-flood .flood h6,
+.banner-flood .landslide h6,
+.banner-landslide .flood h6,
+.banner-landslide .landslide h6 {
   font-size: 1.4vb;
   font-weight: 200; /* Font weight */
   line-height: 1;
   margin-bottom: 3.5vh; /* Adjusted line height (reduce to make it more compact) */
 }
-.banner-flood .flood p, .banner-flood .landslide p, .banner-landslide .flood p, .banner-landslide .landslide p {
+.banner-flood .flood p,
+.banner-flood .landslide p,
+.banner-landslide .flood p,
+.banner-landslide .landslide p {
   font-size: 2.5vb;
   font-weight: 300;
   color: #cccccc;
 }
-.banner-flood .flood button, .banner-flood .landslide button, .banner-landslide .flood button, .banner-landslide .landslide button {
+.banner-flood .flood button,
+.banner-flood .landslide button,
+.banner-landslide .flood button,
+.banner-landslide .landslide button {
   margin-top: 3vh;
   background-color: #3e7f8f; /* Default background color */
   color: #fefefe; /* Text color */
@@ -247,11 +357,18 @@ header nav .profile i {
   text-shadow: none;
 }
 @media (max-width: 1024px) {
-  .banner-flood .flood button, .banner-flood .landslide button, .banner-landslide .flood button, .banner-landslide .landslide button { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-flood .flood button,
+  .banner-flood .landslide button,
+  .banner-landslide .flood button,
+  .banner-landslide .landslide button {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     padding: 2.5vh 5vw; /* Vertical and horizontal padding */
   }
 }
-.banner-flood .flood button:hover, .banner-flood .landslide button:hover, .banner-landslide .flood button:hover, .banner-landslide .landslide button:hover {
+.banner-flood .flood button:hover,
+.banner-flood .landslide button:hover,
+.banner-landslide .flood button:hover,
+.banner-landslide .landslide button:hover {
   background-color: #2f5961; /* Background color on hover */
   color: #fefefe; /* Text color on hover */
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
@@ -268,7 +385,8 @@ header nav .profile i {
   align-items: start;
 }
 @media (max-width: 1024px) {
-  .banner-landslide { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 80%), url("../static/landslide_banner2_mobile.jpg");
   }
 }
@@ -285,13 +403,16 @@ header nav .profile i {
   z-index: 1;
 }
 @media (max-width: 1024px) {
-  .banner-landslide .landslide { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     width: 90%; /* Set width to 100% on mobile */
     padding-left: 5vw; /* Optional: Adjust padding for mobile */
     padding-top: 16.5vh;
   }
 }
-.banner-landslide .landslide h3, .banner-landslide .landslide h6, .banner-landslide .landslide p {
+.banner-landslide .landslide h3,
+.banner-landslide .landslide h6,
+.banner-landslide .landslide p {
   margin: 0;
   padding: 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
@@ -305,33 +426,35 @@ header nav .profile i {
   margin-right: 0.5vw;
 }
 @media (max-width: 1024px) {
-  .banner-landslide .landslide .description-flood { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide .description-flood {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 2vb;
   }
 }
 @media (max-width: 500px) {
-  .banner-landslide .landslide .description-flood { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide .description-flood {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 1.5vb;
   }
 }
 .banner-landslide .landslide .location {
-  color: #DEB887;
+  color: #deb887;
   text-decoration: none; /* Remove underline */
   cursor: pointer; /* Pointer cursor on hover */
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 .banner-landslide .landslide .location:hover {
-  color: #C19A6B; /* Color change on hover */
+  color: #c19a6b; /* Color change on hover */
 }
 .banner-landslide .landslide .location span {
-  color: #DEB887;
+  color: #deb887;
   margin-left: 0.5vw;
   text-decoration: none; /* Remove underline */
   cursor: pointer; /* Pointer cursor on hover */
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 .banner-landslide .landslide .location span:hover {
-  color: #C19A6B; /* Color change on hover */
+  color: #c19a6b; /* Color change on hover */
 }
 .banner-landslide .landslide .safety-tips {
   margin-bottom: 2vh;
@@ -341,19 +464,21 @@ header nav .profile i {
   margin-right: 0.5vw;
 }
 .banner-landslide .landslide .safety-tips .more-tips {
-  color: #DEB887; /* Same color as other links */
+  color: #deb887; /* Same color as other links */
   text-decoration: none; /* Remove underline */
 }
 .banner-landslide .landslide .safety-tips .more-tips:hover {
-  color: #C19A6B; /* Change color on hover */
+  color: #c19a6b; /* Change color on hover */
 }
 @media (max-width: 1024px) {
-  .banner-landslide .landslide .safety-tips { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide .safety-tips {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 1.8vb;
   }
 }
 @media (max-width: 500px) {
-  .banner-landslide .landslide .safety-tips { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide .safety-tips {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 1.5vb;
   }
 }
@@ -366,21 +491,23 @@ header nav .profile i {
   margin-left: 0.8vw;
 }
 .banner-landslide .landslide .helpline-numbers-home a {
-  color: #DEB887; /* Default link color */
+  color: #deb887; /* Default link color */
   text-decoration: none; /* Remove underline */
   cursor: pointer; /* Pointer cursor on hover */
   transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 .banner-landslide .landslide .helpline-numbers-home a:hover {
-  color: #C19A6B; /* Color change on hover */
+  color: #c19a6b; /* Color change on hover */
 }
 @media (max-width: 1024px) {
-  .banner-landslide .landslide .helpline-numbers-home { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide .helpline-numbers-home {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 2vb;
   }
 }
 @media (max-width: 500px) {
-  .banner-landslide .landslide .helpline-numbers-home { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide .helpline-numbers-home {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     font-size: 1.5vb;
   }
 }
@@ -393,7 +520,8 @@ header nav .profile i {
   color: #e0e0e0;
 }
 @media (max-width: 1024px) {
-  .banner-landslide .landslide h3 { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide h3 {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     line-height: 1.2;
     padding-bottom: 1vh;
   }
@@ -411,7 +539,7 @@ header nav .profile i {
 }
 .banner-landslide .landslide button {
   margin-top: 3vh;
-  background-color: #A77B4B; /* Default background color */
+  background-color: #a77b4b; /* Default background color */
   color: #fefefe; /* Text color */
   border: none; /* Remove default border */
   border-radius: 10px; /* Rounded corners */
@@ -425,12 +553,13 @@ header nav .profile i {
   text-shadow: none;
 }
 @media (max-width: 1024px) {
-  .banner-landslide .landslide button { /* Adjust the max-width as needed for your mobile breakpoint */
+  .banner-landslide .landslide button {
+    /* Adjust the max-width as needed for your mobile breakpoint */
     padding: 2.5vh 5vw; /* Vertical and horizontal padding */
   }
 }
 .banner-landslide .landslide button:hover {
-  background-color: #8F5C3D; /* Background color on hover */
+  background-color: #8f5c3d; /* Background color on hover */
   color: #fefefe; /* Text color on hover */
   box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
 }
@@ -461,6 +590,118 @@ header nav .profile i {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.main-card-page {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding-inline: 10vw;
+  position: relative;
+  overflow: hidden;
+}
+.main-card-page .background-video {
+  position: absolute; /* Absolutely positioned within the main container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire container while keeping the aspect ratio */
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in and fade-out over 500ms */
+  z-index: -1; /* Place behind all content */
+  filter: brightness(40%) sepia(30%) contrast(85%) hue-rotate(-15deg); /* Optional vintage effect */
+}
+.main-card-page .gradient-background {
+  position: absolute; /* Absolutely positioned within the main container */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the entire container while keeping the aspect ratio */
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Initially hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in and fade-out */
+  z-index: -1; /* Place behind all content */
+}
+.main-card-page .unique-card-swiper-container {
+  width: 94vw;
+  height: 60vh;
+  margin-top: auto;
+  position: relative;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper {
+  width: 100%;
+  height: 100%;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide {
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  height: 60vh;
+  box-sizing: border-box;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card {
+  background-color: #ffffff;
+  border-radius: 2vb;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 20vw;
+  height: 52vh;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card:hover {
+  transform: translateY(-2vh);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-image {
+  width: 20vw;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border-radius: 2vb 2vb 0 0;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-title {
+  padding-left: 1vw;
+  margin: 0;
+  margin-top: 2vb;
+  font-family: "Poppins", sans-serif; /* Apply Poppins font */
+  font-size: 3vb;
+  font-weight: 500;
+  color: #000;
+  text-align: left;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description {
+  font-size: 2vb;
+  color: #666666;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  text-align: left;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .learn-more {
+  color: #d9534f; /* A muted red color for Learn more link/text */
+  cursor: pointer;
+  font-family: "Poppins", sans-serif; /* Apply Poppins font */
+  font-size: 2vb;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .learn-more:hover {
+  color: #a94442; /* Darker muted red for hover effect */
 }
 
 /*# sourceMappingURL=home.css.map */
