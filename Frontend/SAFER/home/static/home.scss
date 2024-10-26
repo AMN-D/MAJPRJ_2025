@@ -121,7 +121,7 @@ header {
 
   .flood,
   .landslide {
-    padding-top: 17.5vh;
+    padding-top: 25vh;
     width: 40%;
     height: 100%;
     padding-left: 10vw;
@@ -228,9 +228,11 @@ header {
       }
     }
     h3 {
-      font-size: 4vb;
+      font-size: 6vb;
+      line-height: 1.2;
       font-weight: 600;
       padding-top: 2vh;
+      margin-bottom: 3vh;
       span {
         color: #e0e0e0;
       }
@@ -305,7 +307,7 @@ header {
   }
 
   .landslide {
-    padding-top: 17.5vh;
+    padding-top: 25vh;
     width: 40%;
     height: 100%;
     padding-left: 10vw;
@@ -412,9 +414,11 @@ header {
       }
     }
     h3 {
-      font-size: 4vb;
+      font-size: 6vb;
+      line-height: 1.2;
       font-weight: 600;
       padding-top: 2vh;
+      margin-bottom: 3vh;
       span {
         color: #e0e0e0;
       }
@@ -467,13 +471,14 @@ header {
   display: flex;
   justify-content: start;
   align-items: start;
-  height: 70vh;
+  height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
   border-bottom-left-radius: 8px; /* Adjust this value to control the roundness */
   border-bottom-right-radius: 8px; /* Same for the right corner */
-  overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+  overflow-x: hidden; /* Ensure content doesn't overflow the rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Dark shadow for depth */
   .swiper {
     width: 100%;
     height: 100%;
@@ -505,7 +510,7 @@ header {
   box-sizing: border-box;
   padding-inline: 10vw;
   position: relative;
-  overflow: hidden; // Ensures the video doesn’t overflow outside the container
+  overflow-x: hidden; // Ensures the video doesn’t overflow outside the container
   //   .background-video {
   //     position: absolute; // Absolutely positions the video inside the parent container
   //     top: 50%; // Centers the video vertically
@@ -529,7 +534,92 @@ header {
     z-index: -1; /* Place behind all content */
     filter: brightness(40%) sepia(30%) contrast(85%) hue-rotate(-15deg); /* Optional vintage effect */
   }
-  
+  .heading-cards {
+    display: flex;
+    flex-direction: column-reverse; /* Stack children vertically */
+    justify-content: end; /* Start content at the top */
+    align-items: flex-start; /* Align items to the left */
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    height: 35vh;
+    width: 81vw;
+    color: #cccccc;
+    h1 {
+      font-size: 4vb;
+      font-weight: 500;
+      padding: 0;
+      margin-bottom: 0;
+    }
+    .line {
+      width: 6vw; /* Adjust the width of the line */
+      height: 1vh; /* Set the thickness of the line */
+      background-color: #d9534f; /* Color of the line */
+    }
+    .for-card-header {
+      display: flex;
+      height: 100%;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      .information-regarding-images {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 15vw;
+        margin-right: 0;
+        margin-left: auto;
+        p {
+          text-align: right; /* Aligns text to the right */
+          font-size: 1.5vb;
+          font-weight: 300;
+          a {
+            text-decoration: none;
+            color: #4f91d9;
+          }
+        }
+      }
+      .cube {
+        margin-top: 4vh;
+        margin-right: 2vw;
+        width: 5vw; // Set the width of the square
+        height: 12vh; // Set the height of the square
+        border: 0.8vb solid peru;
+        border-radius: 1vb; // Set the border to be red and adjust the thickness as needed
+        box-sizing: border-box; // Ensures that padding and border are included in the width and height
+        background-color: transparent; // Make sure the inside is hollow // Optional: Add some margin around the element
+      }
+      h1 {
+        font-size: 6vb;
+        font-weight: 700;
+        padding: 0;
+        line-height: 1;
+        color: #f0f0f0;
+        user-select: none;
+        // Styling each letter in "AREAS"
+        span {
+          transition: color 0.3s ease;
+          letter-spacing: -1vb;
+        }
+
+        .letter-a:hover {
+          color: #a676d9; // Soft purple inspired by the background
+        }
+
+        .letter-r:hover {
+          color: #4f91d9; // Soft blue inspired by the background
+        }
+
+        .letter-e:hover {
+          color: #d96565; // Soft red inspired by the background gradient
+        }
+
+        .letter-s:hover {
+          color: #9d67d9; // Another shade of purple
+        }
+      }
+    }
+  }
 
   .gradient-background {
     position: absolute; /* Absolutely positioned within the main container */
@@ -543,16 +633,21 @@ header {
     transition: opacity 0.5s ease; /* Smooth fade-in and fade-out */
     z-index: -1; /* Place behind all content */
   }
-  
+
   .unique-card-swiper-container {
-    width: 94vw;
-    height: 60vh;
+    display: flex;
+    width: 100vw;
+    height: 65vh;
     margin-top: auto;
     position: relative;
+    padding-right: 5vw;
 
     .myUniqueCardSwiper {
-      width: 100%;
+      width: 81vw;
       height: 100%;
+      border-radius: 1vb;
+      overflow-x: hidden;
+      overflow-y: visible;
 
       .swiper-wrapper {
         display: flex;
@@ -569,57 +664,57 @@ header {
 
         .card-ambulance {
           .unique-card {
-            background-color: #ffffff; // White background for the card
-            border-radius: 2vb; // Rounded corners
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Soft shadow for depth
+            background-color: #121212; /* Dark background for the card */
+            border-radius: 2vb; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Softer shadow for depth */
             text-align: center;
-            width: 20vw; // Restrict the maximum width of the card
+            width: 20vw; /* Restrict the maximum width of the card */
             height: 52vh;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
 
             &:hover {
-              transform: translateY(-2vh); // Lift effect on hover
-              box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Deeper shadow on hover
+              transform: translateY(-2vh); /* Lift effect on hover */
+              box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Deeper shadow on hover */
             }
 
             .card-image {
-              width: 20vw; // Full width image
-              height: auto; // Maintain aspect ratio
+              width: 20vw; /* Full width image */
+              height: auto; /* Maintain aspect ratio */
               margin: 0;
               padding: 0;
-              border-radius: 2vb 2vb 0 0; // Rounded corners at the top
+              border-radius: 2vb 2vb 0 0; /* Rounded corners at the top */
             }
 
             .card-title {
-              padding-left: 1vw;
+              padding-inline: 1.5vw;
               margin: 0;
               margin-top: 2vb;
               font-family: "Poppins", sans-serif; /* Apply Poppins font */
               font-size: 3vb;
-              font-weight: 500; // Adjust font size
-              color: #000; // Dark color for the title
-              text-align: left; // Space between image and title
+              font-weight: 500; /* Adjust font size */
+              color: #ffffff; /* Light color for the title */
+              text-align: left; /* Space between image and title */
             }
 
             .card-description {
-              font-size: 2vb; // Adjusts the text size relative to viewport
-              color: #666666; // Slightly lighter color for paragraph
-              padding-left: 1vw; // Adds 1vw padding to the left
-              padding-right: 1vw; // Adds 1vw padding to the right
+              font-size: 2vb; /* Adjusts the text size relative to viewport */
+              color: #cccccc; /* Light gray color for paragraph */
+              padding-inline: 1.5vw; /* Adds 1vw padding to the left and right */
               text-align: left;
+
               .learn-more {
-                color: #d9534f; /* A muted red color for Learn more link/text */
+                color: #ff6666; /* A soft red color for Learn more link/text */
                 cursor: pointer;
                 font-family: "Poppins", sans-serif; /* Apply Poppins font */
                 font-size: 2vb;
                 font-weight: 500;
                 text-decoration: none;
                 transition: color 0.3s ease;
-              
+
                 &:hover {
-                  color: #a94442; /* Darker muted red for hover effect */
+                  color: #ff4444; /* Brighter red for hover effect */
                 }
-              }              
+              }
             }
           }
         }

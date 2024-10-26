@@ -32,7 +32,7 @@ window.addEventListener("scroll", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   var cardSwiper = new Swiper(".myUniqueCardSwiper", {
-    slidesPerView: 5, // Number of cards visible at once
+    slidesPerView: 3.9, // Number of cards visible at once
     spaceBetween: 10, // Space between cards
     loop: false, // Enables continuous loop mode
     centeredSlides: false,
@@ -40,15 +40,15 @@ document.addEventListener("DOMContentLoaded", function () {
     breakpoints: {
       640: {
         slidesPerView: 1,
-        spaceBetween: 10, 
+        spaceBetween: 10,
       },
       768: {
         slidesPerView: 2,
-        spaceBetween: 15, 
+        spaceBetween: 15,
       },
       1024: {
-        slidesPerView: 4.5,
-        spaceBetween: 15, 
+        slidesPerView: 3.9,
+        spaceBetween: 15,
       },
     },
   });
@@ -58,6 +58,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const gradientBackground = document.querySelector(".gradient-background");
 
   if (gradientBackground) {
+    // Store last known gradient position
+    let lastXPosPercent = 50; // Default to the center initially
+    let lastYPosPercent = 50; // Default to the center initially
+
     // Function to update the gradient position smoothly
     const updateGradientPosition = (event) => {
       // Calculate the position of the cursor relative to the gradient container
@@ -69,25 +73,34 @@ document.addEventListener("DOMContentLoaded", () => {
       const { clientWidth, clientHeight } = gradientBackground;
 
       // Calculate the percentage position of the mouse within the container
-      const xPosPercent = (offsetX / clientWidth) * 100;
-      const yPosPercent = (offsetY / clientHeight) * 100;
+      let xPosPercent = (offsetX / clientWidth) * 100;
+      let yPosPercent = (offsetY / clientHeight) * 100;
+
+      // Ensure values are between 0% and 100% to avoid unexpected behavior
+      xPosPercent = Math.max(0, Math.min(100, xPosPercent));
+      yPosPercent = Math.max(0, Math.min(100, yPosPercent));
 
       // Update the gradient's position dynamically to follow the cursor smoothly
       gradientBackground.style.background = `radial-gradient(circle at ${xPosPercent}% ${yPosPercent}%, #4b2840, #3b1e5c, #0f0f0f)`;
+
+      // Store the last known position to maintain when the cursor leaves
+      lastXPosPercent = xPosPercent;
+      lastYPosPercent = yPosPercent;
     };
 
-    // Add an event listener for mouse movement on the entire document
+    // Add an event listener for mouse movement within the gradient container
     document.addEventListener("pointermove", (event) => {
       updateGradientPosition(event);
     });
 
-    // Prevent click-and-drag from stopping the gradient update
-    gradientBackground.addEventListener("pointerdown", (event) => {
-      event.preventDefault(); // Prevents the default drag behavior
-      updateGradientPosition(event); // Update the gradient position on pointer down
+    // Add an event listener to maintain the last gradient position when leaving the window
+    document.addEventListener("mouseleave", () => {
+      // Maintain the gradient at the last known position
+      gradientBackground.style.background = `radial-gradient(circle at ${lastXPosPercent}% ${lastYPosPercent}%, #4b2840, #3b1e5c, #0f0f0f)`;
     });
   }
 });
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const gradientBackground = document.querySelector(".gradient-background");
@@ -127,21 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Optional: Reset the gradient position when the mouse leaves the container
   gradientBackground?.addEventListener("mouseleave", () => {
-    gradientBackground.style.background = "radial-gradient(circle at center, #4b2840, #3b1e5c, #0f0f0f)";
+    gradientBackground.style.background =
+      "radial-gradient(circle at center, #4b2840, #3b1e5c, #0f0f0f)";
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

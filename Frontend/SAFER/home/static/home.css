@@ -105,7 +105,7 @@ header nav .profile i {
 .banner-flood .landslide,
 .banner-landslide .flood,
 .banner-landslide .landslide {
-  padding-top: 17.5vh;
+  padding-top: 25vh;
   width: 40%;
   height: 100%;
   padding-left: 10vw;
@@ -301,9 +301,11 @@ header nav .profile i {
 .banner-flood .landslide h3,
 .banner-landslide .flood h3,
 .banner-landslide .landslide h3 {
-  font-size: 4vb;
+  font-size: 6vb;
+  line-height: 1.2;
   font-weight: 600;
   padding-top: 2vh;
+  margin-bottom: 3vh;
 }
 .banner-flood .flood h3 span,
 .banner-flood .landslide h3 span,
@@ -391,7 +393,7 @@ header nav .profile i {
   }
 }
 .banner-landslide .landslide {
-  padding-top: 17.5vh;
+  padding-top: 25vh;
   width: 40%;
   height: 100%;
   padding-left: 10vw;
@@ -512,9 +514,11 @@ header nav .profile i {
   }
 }
 .banner-landslide .landslide h3 {
-  font-size: 4vb;
+  font-size: 6vb;
+  line-height: 1.2;
   font-weight: 600;
   padding-top: 2vh;
+  margin-bottom: 3vh;
 }
 .banner-landslide .landslide h3 span {
   color: #e0e0e0;
@@ -568,13 +572,14 @@ header nav .profile i {
   display: flex;
   justify-content: start;
   align-items: start;
-  height: 70vh;
+  height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
   border-bottom-left-radius: 8px; /* Adjust this value to control the roundness */
   border-bottom-right-radius: 8px; /* Same for the right corner */
-  overflow: hidden; /* Ensure content doesn't overflow the rounded corners */
+  overflow-x: hidden; /* Ensure content doesn't overflow the rounded corners */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7); /* Dark shadow for depth */
 }
 .swiper-container .swiper {
   width: 100%;
@@ -606,7 +611,7 @@ header nav .profile i {
   box-sizing: border-box;
   padding-inline: 10vw;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .main-card-page .background-video {
   position: absolute; /* Absolutely positioned within the main container */
@@ -621,6 +626,87 @@ header nav .profile i {
   z-index: -1; /* Place behind all content */
   filter: brightness(40%) sepia(30%) contrast(85%) hue-rotate(-15deg); /* Optional vintage effect */
 }
+.main-card-page .heading-cards {
+  display: flex;
+  flex-direction: column-reverse; /* Stack children vertically */
+  justify-content: end; /* Start content at the top */
+  align-items: flex-start; /* Align items to the left */
+  font-family: "Poppins", sans-serif;
+  text-align: left;
+  height: 35vh;
+  width: 81vw;
+  color: #cccccc;
+}
+.main-card-page .heading-cards h1 {
+  font-size: 4vb;
+  font-weight: 500;
+  padding: 0;
+  margin-bottom: 0;
+}
+.main-card-page .heading-cards .line {
+  width: 6vw; /* Adjust the width of the line */
+  height: 1vh; /* Set the thickness of the line */
+  background-color: #d9534f; /* Color of the line */
+}
+.main-card-page .heading-cards .for-card-header {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.main-card-page .heading-cards .for-card-header .information-regarding-images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 15vw;
+  margin-right: 0;
+  margin-left: auto;
+}
+.main-card-page .heading-cards .for-card-header .information-regarding-images p {
+  text-align: right; /* Aligns text to the right */
+  font-size: 1.5vb;
+  font-weight: 300;
+}
+.main-card-page .heading-cards .for-card-header .information-regarding-images p a {
+  text-decoration: none;
+  color: #4f91d9;
+}
+.main-card-page .heading-cards .for-card-header .cube {
+  margin-top: 4vh;
+  margin-right: 2vw;
+  width: 5vw;
+  height: 12vh;
+  border: 0.8vb solid peru;
+  border-radius: 1vb;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+.main-card-page .heading-cards .for-card-header h1 {
+  font-size: 6vb;
+  font-weight: 700;
+  padding: 0;
+  line-height: 1;
+  color: #f0f0f0;
+  user-select: none;
+}
+.main-card-page .heading-cards .for-card-header h1 span {
+  transition: color 0.3s ease;
+  letter-spacing: -1vb;
+}
+.main-card-page .heading-cards .for-card-header h1 .letter-a:hover {
+  color: #a676d9;
+}
+.main-card-page .heading-cards .for-card-header h1 .letter-r:hover {
+  color: #4f91d9;
+}
+.main-card-page .heading-cards .for-card-header h1 .letter-e:hover {
+  color: #d96565;
+}
+.main-card-page .heading-cards .for-card-header h1 .letter-s:hover {
+  color: #9d67d9;
+}
 .main-card-page .gradient-background {
   position: absolute; /* Absolutely positioned within the main container */
   top: 0;
@@ -634,14 +720,19 @@ header nav .profile i {
   z-index: -1; /* Place behind all content */
 }
 .main-card-page .unique-card-swiper-container {
-  width: 94vw;
-  height: 60vh;
+  display: flex;
+  width: 100vw;
+  height: 65vh;
   margin-top: auto;
   position: relative;
+  padding-right: 5vw;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper {
-  width: 100%;
+  width: 81vw;
   height: 100%;
+  border-radius: 1vb;
+  overflow-x: hidden;
+  overflow-y: visible;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-wrapper {
   display: flex;
@@ -655,44 +746,43 @@ header nav .profile i {
   box-sizing: border-box;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card {
-  background-color: #ffffff;
-  border-radius: 2vb;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #121212; /* Dark background for the card */
+  border-radius: 2vb; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Softer shadow for depth */
   text-align: center;
-  width: 20vw;
+  width: 20vw; /* Restrict the maximum width of the card */
   height: 52vh;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card:hover {
-  transform: translateY(-2vh);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2vh); /* Lift effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Deeper shadow on hover */
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-image {
-  width: 20vw;
-  height: auto;
+  width: 20vw; /* Full width image */
+  height: auto; /* Maintain aspect ratio */
   margin: 0;
   padding: 0;
-  border-radius: 2vb 2vb 0 0;
+  border-radius: 2vb 2vb 0 0; /* Rounded corners at the top */
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-title {
-  padding-left: 1vw;
+  padding-inline: 1.5vw;
   margin: 0;
   margin-top: 2vb;
   font-family: "Poppins", sans-serif; /* Apply Poppins font */
   font-size: 3vb;
-  font-weight: 500;
-  color: #000;
-  text-align: left;
+  font-weight: 500; /* Adjust font size */
+  color: #ffffff; /* Light color for the title */
+  text-align: left; /* Space between image and title */
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description {
-  font-size: 2vb;
-  color: #666666;
-  padding-left: 1vw;
-  padding-right: 1vw;
+  font-size: 2vb; /* Adjusts the text size relative to viewport */
+  color: #cccccc; /* Light gray color for paragraph */
+  padding-inline: 1.5vw; /* Adds 1vw padding to the left and right */
   text-align: left;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .learn-more {
-  color: #d9534f; /* A muted red color for Learn more link/text */
+  color: #ff6666; /* A soft red color for Learn more link/text */
   cursor: pointer;
   font-family: "Poppins", sans-serif; /* Apply Poppins font */
   font-size: 2vb;
@@ -701,7 +791,7 @@ header nav .profile i {
   transition: color 0.3s ease;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .learn-more:hover {
-  color: #a94442; /* Darker muted red for hover effect */
+  color: #ff4444; /* Brighter red for hover effect */
 }
 
 /*# sourceMappingURL=home.css.map */
