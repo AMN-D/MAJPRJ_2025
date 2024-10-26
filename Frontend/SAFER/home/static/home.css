@@ -37,6 +37,11 @@ header nav {
   align-items: center;
   padding-left: 10.5%;
 }
+@media (max-width: 1024px) {
+  header nav {
+    padding-left: 8%;
+  }
+}
 header nav .logo {
   display: flex;
   height: 10vh;
@@ -122,9 +127,9 @@ header nav .profile i {
   .banner-landslide .flood,
   .banner-landslide .landslide {
     /* Adjust the max-width as needed for your mobile breakpoint */
-    width: 90%; /* Set width to 100% on mobile */
-    padding-left: 5vw; /* Optional: Adjust padding for mobile */
-    padding-top: 16.5vh;
+    width: 85%; /* Set width to 100% on mobile */
+    padding-left: 8vw; /* Optional: Adjust padding for mobile */
+    padding-top: 20vh;
   }
 }
 .banner-flood .flood h3,
@@ -320,6 +325,7 @@ header nav .profile i {
   .banner-landslide .landslide h3 {
     /* Adjust the max-width as needed for your mobile breakpoint */
     line-height: 1.2;
+    font-size: 5vb;
     padding-bottom: 1vh;
   }
 }
@@ -407,9 +413,9 @@ header nav .profile i {
 @media (max-width: 1024px) {
   .banner-landslide .landslide {
     /* Adjust the max-width as needed for your mobile breakpoint */
-    width: 90%; /* Set width to 100% on mobile */
-    padding-left: 5vw; /* Optional: Adjust padding for mobile */
-    padding-top: 16.5vh;
+    width: 85%; /* Set width to 100% on mobile */
+    padding-left: 8vw; /* Optional: Adjust padding for mobile */
+    padding-top: 20vh;
   }
 }
 .banner-landslide .landslide h3,
@@ -527,6 +533,7 @@ header nav .profile i {
   .banner-landslide .landslide h3 {
     /* Adjust the max-width as needed for your mobile breakpoint */
     line-height: 1.2;
+    font-size: 5vb;
     padding-bottom: 1vh;
   }
 }
@@ -643,10 +650,21 @@ header nav .profile i {
   padding: 0;
   margin-bottom: 0;
 }
+@media (max-width: 1024px) {
+  .main-card-page .heading-cards h1 {
+    font-size: 3vb;
+  }
+}
 .main-card-page .heading-cards .line {
   width: 6vw; /* Adjust the width of the line */
   height: 1vh; /* Set the thickness of the line */
   background-color: #d9534f; /* Color of the line */
+}
+@media (max-width: 1024px) {
+  .main-card-page .heading-cards .line {
+    width: 25vw;
+    margin-top: 2vh;
+  }
 }
 .main-card-page .heading-cards .for-card-header {
   display: flex;
@@ -663,6 +681,11 @@ header nav .profile i {
   width: 15vw;
   margin-right: 0;
   margin-left: auto;
+}
+@media (max-width: 1024px) {
+  .main-card-page .heading-cards .for-card-header .information-regarding-images {
+    display: none;
+  }
 }
 .main-card-page .heading-cards .for-card-header .information-regarding-images p {
   text-align: right; /* Aligns text to the right */
@@ -682,6 +705,11 @@ header nav .profile i {
   border-radius: 1vb;
   box-sizing: border-box;
   background-color: transparent;
+}
+@media (max-width: 1024px) {
+  .main-card-page .heading-cards .for-card-header .cube {
+    display: none;
+  }
 }
 .main-card-page .heading-cards .for-card-header h1 {
   font-size: 6vb;
@@ -725,14 +753,12 @@ header nav .profile i {
   height: 65vh;
   margin-top: auto;
   position: relative;
-  padding-right: 5vw;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper {
   width: 81vw;
   height: 100%;
   border-radius: 1vb;
   overflow-x: hidden;
-  overflow-y: visible;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-wrapper {
   display: flex;
@@ -744,6 +770,10 @@ header nav .profile i {
   align-items: start;
   height: 60vh;
   box-sizing: border-box;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance {
+  margin-top: auto;
+  margin-bottom: 0;
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card {
   background-color: #121212; /* Dark background for the card */
@@ -758,12 +788,22 @@ header nav .profile i {
   transform: translateY(-2vh); /* Lift effect on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Deeper shadow on hover */
 }
+@media (max-width: 1024px) {
+  .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card {
+    width: 100%;
+  }
+}
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-image {
   width: 20vw; /* Full width image */
   height: auto; /* Maintain aspect ratio */
   margin: 0;
   padding: 0;
   border-radius: 2vb 2vb 0 0; /* Rounded corners at the top */
+}
+@media (max-width: 1024px) {
+  .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-image {
+    width: 100%;
+  }
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-title {
   padding-inline: 1.5vw;
@@ -775,11 +815,21 @@ header nav .profile i {
   color: #ffffff; /* Light color for the title */
   text-align: left; /* Space between image and title */
 }
+@media (max-width: 1024px) {
+  .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-title {
+    padding-inline: 5vw;
+  }
+}
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description {
   font-size: 2vb; /* Adjusts the text size relative to viewport */
   color: #cccccc; /* Light gray color for paragraph */
   padding-inline: 1.5vw; /* Adds 1vw padding to the left and right */
   text-align: left;
+}
+@media (max-width: 1024px) {
+  .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description {
+    padding-inline: 5vw;
+  }
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .learn-more {
   color: #ff6666; /* A soft red color for Learn more link/text */

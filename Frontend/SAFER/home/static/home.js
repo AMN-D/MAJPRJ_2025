@@ -32,27 +32,27 @@ window.addEventListener("scroll", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   var cardSwiper = new Swiper(".myUniqueCardSwiper", {
-    slidesPerView: 3.9, // Number of cards visible at once
+     // Number of cards visible at once for larger screens
     spaceBetween: 10, // Space between cards
     loop: false, // Enables continuous loop mode
     centeredSlides: false,
     grabCursor: true,
     breakpoints: {
-      640: {
-        slidesPerView: 1,
-        spaceBetween: 10,
+      640: { // Up to 640px width
+        slidesPerView: 1, // Show only 1 slide at a time
       },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 15,
+      768: { // Up to 768px width
+        slidesPerView: 1, // Show only 1 slide at a time
       },
-      1024: {
-        slidesPerView: 3.9,
-        spaceBetween: 15,
+      1024: { // Up to 1024px width
+        slidesPerView: 3.9, // Show 2 slides at a time
       },
+      // You can add more breakpoints if needed
     },
   });
 });
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const gradientBackground = document.querySelector(".gradient-background");
