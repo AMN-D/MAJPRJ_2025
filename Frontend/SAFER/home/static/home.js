@@ -32,27 +32,28 @@ window.addEventListener("scroll", () => {
 
 document.addEventListener("DOMContentLoaded", function () {
   var cardSwiper = new Swiper(".myUniqueCardSwiper", {
-     // Number of cards visible at once for larger screens
+    // Number of cards visible at once for larger screens
     spaceBetween: 10, // Space between cards
     loop: false, // Enables continuous loop mode
     centeredSlides: false,
     grabCursor: true,
     breakpoints: {
-      640: { // Up to 640px width
+      640: {
+        // Up to 640px width
         slidesPerView: 1, // Show only 1 slide at a time
       },
-      768: { // Up to 768px width
+      768: {
+        // Up to 768px width
         slidesPerView: 2, // Show only 1 slide at a time
       },
-      1024: { // Up to 1024px width
+      1024: {
+        // Up to 1024px width
         slidesPerView: 3.9, // Show 2 slides at a time
       },
       // You can add more breakpoints if needed
     },
   });
 });
-
-
 
 document.addEventListener("DOMContentLoaded", () => {
   const gradientBackground = document.querySelector(".gradient-background");
@@ -101,7 +102,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const gradientBackground = document.querySelector(".gradient-background");
   const backgroundVideo = document.querySelector(".background-video");
@@ -110,58 +110,78 @@ document.addEventListener("DOMContentLoaded", () => {
   const headingTitle = document.querySelector(".heading-title");
   const lineElement = document.querySelector(".line");
 
-  let hideTimeout; // Timeout reference for delayed hide
+  let hideTimeout = null;
+  let isFadingOut = false;
+
+  // Set initial text content for heading based on screen width
+  if (headingTitle) {
+    headingTitle.textContent = window.innerWidth < 1024
+      ? "Click over a card to explore"
+      : "Hover over a card to explore";
+  }
 
   // Function to show video as background and change the title instantly
   const showVideoBackground = (event) => {
-    const card = event.currentTarget; // Get the card that triggered the event
-    const videoFileName = card.getAttribute("data-video"); // Get the video file name from data attribute
-    const newTitle = card.getAttribute("data-title"); // Get the new title from data attribute
-    const newColor = card.getAttribute("data-color"); // Get the new line color from data attribute
+    const card = event.currentTarget;
+    const videoFileName = card.getAttribute("data-video");
+    const newTitle = card.getAttribute("data-title");
+    const newColor = card.getAttribute("data-color");
 
-    if (backgroundVideo && videoSource) {
+    // Cancel any ongoing fade-out action
+    if (hideTimeout) {
       clearTimeout(hideTimeout);
+      hideTimeout = null;
+    }
+    isFadingOut = false;
 
-      // Update the video source only if it's different
-      if (!videoSource.src.includes(videoFileName)) {
-        videoSource.src = `../static/card/${videoFileName}`;
-        backgroundVideo.load();
-      }
-
-      backgroundVideo.play();
-      backgroundVideo.style.opacity = 1;
-      backgroundVideo.style.visibility = "visible";
+    // Update the video source if it has changed
+    if (backgroundVideo && videoSource && !videoSource.src.includes(videoFileName)) {
+      videoSource.src = `../static/card/${videoFileName}`;
+      backgroundVideo.load();
     }
 
-    // Update the heading title instantly
+    // Play the video and ensure it is visible
+    backgroundVideo.play();
+    backgroundVideo.style.opacity = "1";
+    backgroundVideo.style.visibility = "visible";
+
+    // Update the heading title
     if (headingTitle) {
       headingTitle.textContent = newTitle;
     }
 
     // Update the line color smoothly
     if (lineElement) {
+      lineElement.style.transition = "background-color 0.5s ease";
       lineElement.style.backgroundColor = newColor;
     }
   };
 
   // Function to hide video as background with fade-out effect
   const hideVideoBackground = () => {
+    if (isFadingOut) return;
+    isFadingOut = true;
+
     // Add a delay before hiding to avoid glitchy transitions
     hideTimeout = setTimeout(() => {
       if (backgroundVideo) {
-        backgroundVideo.style.opacity = 0; // Fade out the video
+        backgroundVideo.style.opacity = "0";
         setTimeout(() => {
-          backgroundVideo.style.visibility = "hidden"; // Hide the video after fading out
-        }, 500);
+          backgroundVideo.style.visibility = "hidden";
+          isFadingOut = false;
+        }, 200); // Match the CSS transition duration (500ms)
       }
 
       // Reset the heading title back to default
       if (headingTitle) {
-        headingTitle.textContent = "Hover over a card to explore";
+        headingTitle.textContent = window.innerWidth < 1024
+          ? "Click over a card to explore"
+          : "Hover over a card to explore";
       }
 
       // Reset the line color to default smoothly
       if (lineElement) {
+        lineElement.style.transition = "background-color 0.5s ease";
         lineElement.style.backgroundColor = "#e2e2e2";
       }
     }, 200); // Delay to prevent glitchiness when switching quickly (200ms)
@@ -178,7 +198,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // Do not reset the gradient, maintain its last known position
   });
 });
-
-
 
 

@@ -124,7 +124,7 @@
           Your browser does not support the video tag.
         </video>
         <div class="heading-cards">
-          <h1 class="heading-title">Hover over a card to explore</h1>
+          <h1 class="heading-title"></h1>
           <div class="line"></div>
           <div class="for-card-header">
             <div class="cube"></div>
@@ -133,24 +133,32 @@
               <span class="letter-r">R</span>
               <span class="letter-e">E</span>
               <span class="letter-a">A</span>
-              <span class="letter-s">S</span> <br /> OF SUPPORT
+              <span class="letter-s">S</span> <br />
+              OF SUPPORT
             </h1>
             <div class="information-regarding-images">
-                <p>
-                  Images on this site are sourced from free, public platforms. If any image is used without permission, please contact us at 
-                  <a href="mailto:amandhumal434@apsit.edu.in">amandhumal434@apsit.edu.in</a> for prompt removal.
-                </p>
-              </div>              
-              
-          </div>          
+              <p>
+                Images on this site are sourced from free, public platforms. If
+                any image is used without permission, please contact us at
+                <a href="mailto:amandhumal434@apsit.edu.in"
+                  >amandhumal434@apsit.edu.in</a
+                >
+                for prompt removal.
+              </p>
+            </div>
+          </div>
         </div>
         <div class="unique-card-swiper-container">
           <div class="unique-card-swiper myUniqueCardSwiper">
             <div class="swiper-wrapper">
-
               <div class="swiper-slide">
                 <div class="card-ambulance">
-                  <div class="unique-card" data-video="ambulance.mp4" data-title="AMBULANCE" data-color="#b94200">
+                  <div
+                    class="unique-card"
+                    data-video="ambulance.mp4"
+                    data-title="AMBULANCE"
+                    data-color="#b94200"
+                  >
                     <img
                       src="../static/card/ambulance-card.jpg"
                       alt="AMBULANCE"
@@ -166,10 +174,15 @@
                   </div>
                 </div>
               </div>
-              
+
               <div class="swiper-slide">
                 <div class="card-ambulance">
-                  <div class="unique-card" data-video="map.mp4" data-title="VOICE CONTROLLED MAP" data-color="#ebd574">
+                  <div
+                    class="unique-card"
+                    data-video="map.mp4"
+                    data-title="VOICE CONTROLLED MAP"
+                    data-color="#ebd574"
+                  >
                     <img
                       src="../static/card/map-card.jpg"
                       alt="AMBULANCE"
@@ -177,10 +190,11 @@
                     />
                     <h3 class="card-title">VCMA</h3>
                     <p class="card-description">
-                        VCMA is a voice-controlled map that swiftly finds nearby hospitals and services in emergencies. <br />
-                        <a href="#" class="learn-more">Learn more</a>
-                        <!-- Added a button for the call-to-action -->
-                      </p>                 
+                      VCMA is a voice-controlled map that swiftly finds nearby
+                      hospitals and services in emergencies. <br />
+                      <a href="#" class="learn-more">Learn more</a>
+                      <!-- Added a button for the call-to-action -->
+                    </p>
                   </div>
                 </div>
               </div>
@@ -191,6 +205,33 @@
         </div>
       </div>
     </div>
+
+    <footer>
+      <div class="cover">
+        <div class="qrcode">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fgithub.com%2FAMN-D&amp;qzone=2&amp;margin=0&amp;size=400x400&amp;ecc=L"
+            alt="qr code"
+          />
+        </div>
+        <div class="main">
+          <div class="left">
+            <p>Tool for disaster prediction and assessment .</p>
+            <h6>TEAM SAFER</h6>
+          </div>
+          <div class="right">
+            <a href="https://github.com/AMN-D" target="_blank">@amn-d</a>
+            <a href="https://github.com/JanhaviiSK" target="_blank">@JanhaviiSK</a>
+            <a href="https://github.com/VedantM21" target="_blank">@VedantM21</a>
+            <a href="https://github.com/SonalSonarghare" target="_blank">@SonalSonarghare</a>
+          </div>
+          <div class="extra-info">
+            <h6>© 2024 <br>Team SAFER. All rights reserved. Contact us for further inquiries and permissions. </h6>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script defer src="{% static 'home.js' %}"></script>
   </body>
