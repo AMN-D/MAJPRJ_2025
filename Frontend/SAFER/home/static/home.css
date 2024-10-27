@@ -629,7 +629,7 @@ header nav .profile i {
   object-fit: cover; /* Cover the entire container while keeping the aspect ratio */
   opacity: 0; /* Initially hidden */
   visibility: hidden; /* Initially hidden */
-  transition: opacity 0.5s ease; /* Smooth fade-in and fade-out over 500ms */
+  transition: opacity 0.5s ease-in-out; /* Smooth fade-in and fade-out over 500ms */
   z-index: -1; /* Place behind all content */
   filter: brightness(40%) sepia(30%) contrast(85%) hue-rotate(-15deg); /* Optional vintage effect */
 }
@@ -645,10 +645,11 @@ header nav .profile i {
   color: #cccccc;
 }
 .main-card-page .heading-cards h1 {
-  font-size: 4vb;
-  font-weight: 500;
+  font-size: 4vb; /* Adjusted size */
+  font-weight: 100;
   padding: 0;
   margin-bottom: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle black shadow */
 }
 @media (max-width: 1024px) {
   .main-card-page .heading-cards h1 {
@@ -794,15 +795,19 @@ header nav .profile i {
   }
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-image {
-  width: 20vw; /* Full width image */
-  height: auto; /* Maintain aspect ratio */
+  width: 20vw; /* Set width */
+  height: 27vh; /* Set height */
   margin: 0;
   padding: 0;
   border-radius: 2vb 2vb 0 0; /* Rounded corners at the top */
+  object-fit: cover; /* Crop the image to fill the box */
+  object-position: center; /* Center the image within the box */
+  image-rendering: -webkit-optimize-contrast; /* For WebKit browsers */
+  image-rendering: crisp-edges; /* Reduce jagged edges */ /* Optional: add a slight blur for smoother appearance */
 }
 @media (max-width: 1024px) {
   .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-image {
-    width: 100%;
+    width: 100%; /* Full width on smaller screens */
   }
 }
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-title {

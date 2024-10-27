@@ -41,7 +41,7 @@ header {
     align-items: center;
     padding-left: 10.5%;
     @media (max-width: 1024px) {
-        padding-left: 8%;
+      padding-left: 8%;
     }
     .logo {
       display: flex;
@@ -535,7 +535,7 @@ header {
     object-fit: cover; /* Cover the entire container while keeping the aspect ratio */
     opacity: 0; /* Initially hidden */
     visibility: hidden; /* Initially hidden */
-    transition: opacity 0.5s ease; /* Smooth fade-in and fade-out over 500ms */
+    transition: opacity 0.5s ease-in-out; /* Smooth fade-in and fade-out over 500ms */
     z-index: -1; /* Place behind all content */
     filter: brightness(40%) sepia(30%) contrast(85%) hue-rotate(-15deg); /* Optional vintage effect */
   }
@@ -550,14 +550,17 @@ header {
     width: 81vw;
     color: #cccccc;
     h1 {
-      font-size: 4vb;
-      font-weight: 500;
+      font-size: 4vb; /* Adjusted size */
+      font-weight: 100;
       padding: 0;
       margin-bottom: 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle black shadow */
+      
       @media (max-width: 1024px) {
         font-size: 3vb;
       }
     }
+    
     .line {
       width: 6vw; /* Adjust the width of the line */
       height: 1vh; /* Set the thickness of the line */
@@ -582,8 +585,8 @@ header {
         margin-right: 0;
         margin-left: auto;
         @media (max-width: 1024px) {
-            display: none;
-          }
+          display: none;
+        }
         p {
           text-align: right; /* Aligns text to the right */
           font-size: 1.5vb;
@@ -604,8 +607,8 @@ header {
         box-sizing: border-box; // Ensures that padding and border are included in the width and height
         background-color: transparent; // Make sure the inside is hollow // Optional: Add some margin around the element
         @media (max-width: 1024px) {
-            display: none;
-          }
+          display: none;
+        }
       }
       h1 {
         font-size: 6vb;
@@ -659,28 +662,27 @@ header {
     margin-top: auto;
     position: relative;
 
-    
     .myUniqueCardSwiper {
-        width: 81vw;
-        height: 100%;
-        border-radius: 1vb;
-        overflow-x: hidden;
-        .swiper-wrapper {
-            display: flex;
-            align-items: flex-start;
-        }
-        
-        .swiper-slide {
-            display: flex;
-            justify-content: start;
-            align-items: start;
-            // Can be adjusted depending on the desired card width
-            height: 60vh; // Can be adjusted depending on the desired card height
-            box-sizing: border-box;
-            
-            .card-ambulance {
-                margin-top: auto;
-                margin-bottom: 0;
+      width: 81vw;
+      height: 100%;
+      border-radius: 1vb;
+      overflow-x: hidden;
+      .swiper-wrapper {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      .swiper-slide {
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        // Can be adjusted depending on the desired card width
+        height: 60vh; // Can be adjusted depending on the desired card height
+        box-sizing: border-box;
+
+        .card-ambulance {
+          margin-top: auto;
+          margin-bottom: 0;
           .unique-card {
             background-color: #121212; /* Dark background for the card */
             border-radius: 2vb; /* Rounded corners */
@@ -695,17 +697,24 @@ header {
               box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* Deeper shadow on hover */
             }
             @media (max-width: 1024px) {
-                width: 100%;
-              }
+              width: 100%;
+            }
 
             .card-image {
-              width: 20vw; /* Full width image */
-              height: auto; /* Maintain aspect ratio */
+              width: 20vw; /* Set width */
+              height: 27vh; /* Set height */
               margin: 0;
               padding: 0;
               border-radius: 2vb 2vb 0 0; /* Rounded corners at the top */
-              @media (max-width: 1024px) {
-                width: 100%;
+              object-fit: cover; /* Crop the image to fill the box */
+              object-position: center; /* Center the image within the box */
+              image-rendering: -webkit-optimize-contrast; /* For WebKit browsers */
+              image-rendering: crisp-edges; /* Reduce jagged edges */ /* Optional: add a slight blur for smoother appearance */
+            }
+
+            @media (max-width: 1024px) {
+              .card-image {
+                width: 100%; /* Full width on smaller screens */
               }
             }
 

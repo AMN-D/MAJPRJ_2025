@@ -105,29 +105,66 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const gradientBackground = document.querySelector(".gradient-background");
   const backgroundVideo = document.querySelector(".background-video");
+  const videoSource = backgroundVideo.querySelector("source");
   const cards = document.querySelectorAll(".unique-card");
+  const headingTitle = document.querySelector(".heading-title");
 
   let hideTimeout; // Timeout reference for delayed hide
+  let isHovering = false; // Track if the mouse is currently over a card
 
-  // Function to show video as background
-  const showVideoBackground = () => {
+  // Function to show video as background and change the title instantly
+  const showVideoBackground = (event) => {
+    isHovering = true; // Set hover state to true
+    const card = event.currentTarget; // Get the card that triggered the event
+    const videoFileName = card.getAttribute("data-video"); // Get the video file name from data attribute
+    const newTitle = card.getAttribute("data-title"); // Get the new title from data attribute
+
     // Clear any pending hide actions if the user hovers onto another card
     clearTimeout(hideTimeout);
-    if (backgroundVideo) {
+
+    if (backgroundVideo && videoSource) {
+      // Update the source only if it's different from the current source to avoid reload
+      if (videoSource.src.indexOf(videoFileName) === -1) {
+        videoSource.src = `../static/card/${videoFileName}`;
+        backgroundVideo.load(); // Load the new video source
+      }
+
+      // Only play the video if it is paused
+      if (backgroundVideo.paused) {
+        backgroundVideo.play();
+      }
+
+      // Make sure the video is visible
       backgroundVideo.style.opacity = 1; // Set opacity to 100% for full visibility
-      backgroundVideo.style.visibility = "visible"; // Make sure the video is visible
+      backgroundVideo.style.visibility = "visible";
+    }
+
+    // Update the heading title instantly
+    if (headingTitle) {
+      headingTitle.textContent = newTitle;
     }
   };
 
   // Function to hide video as background with fade-out effect
   const hideVideoBackground = () => {
+    isHovering = false; // Set hover state to false
     // Add a delay before hiding to avoid glitchy transitions
     hideTimeout = setTimeout(() => {
-      if (backgroundVideo) {
-        backgroundVideo.style.opacity = 0; // Fade out the video
-        setTimeout(() => {
-          backgroundVideo.style.visibility = "hidden"; // Hide the video after fading out
-        }, 500); // Match the CSS transition duration (500ms)
+      if (!isHovering) { // Only proceed if the mouse is not hovering over a card
+        if (backgroundVideo) {
+          backgroundVideo.style.opacity = 0; // Fade out the video
+          setTimeout(() => {
+            if (!isHovering) { // Double check hover state before hiding
+              backgroundVideo.style.visibility = "hidden"; // Hide the video after fading out
+              backgroundVideo.pause(); // Pause the video to save resources
+            }
+          }, 500); // Match the CSS transition duration (500ms)
+        }
+
+        // Reset the heading title back to default instantly
+        if (headingTitle && !isHovering) {
+          headingTitle.textContent = "Hover over a card to explore";
+        }
       }
     }, 200); // Delay to prevent glitchiness when switching quickly (200ms)
   };
@@ -138,9 +175,11 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("mouseleave", hideVideoBackground);
   });
 
-  // Optional: Reset the gradient position when the mouse leaves the container
+  // Prevent resetting the gradient position to center when leaving
   gradientBackground?.addEventListener("mouseleave", () => {
-    gradientBackground.style.background =
-      "radial-gradient(circle at center, #4b2840, #3b1e5c, #0f0f0f)";
+    // Do not reset the gradient, maintain its last known position
   });
 });
+
+
+
