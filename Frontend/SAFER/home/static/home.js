@@ -214,64 +214,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const learnMoreLink = document.querySelector(".learn-more.vcm");
-  const overlay = document.getElementById("info-overlay");
-  const closeButton = document.getElementById("close-overlay");
 
-  // Show overlay on link click
-  learnMoreLink.addEventListener("click", function (e) {
-    e.preventDefault(); // Prevent the default link behavior
-    overlay.classList.add("active");
-  });
 
-  // Close overlay on button click
-  closeButton.addEventListener("click", function () {
-    overlay.classList.remove("active");
-  });
 
-  // Optional: Close overlay when clicking outside the content
-  overlay.addEventListener("click", function (e) {
-    if (e.target === overlay) {
-      overlay.classList.remove("active");
-    }
-  });
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  const learnMoreLinks = document.querySelectorAll(".learn-more.vcm");
 
-  learnMoreLinks.forEach(link => {
-    link.addEventListener("click", function (e) {
-      e.preventDefault(); // Prevent default link behavior
-      const targetUrl = this.getAttribute("data-target"); // Get target URL
 
-      // Get the current page and apply slide-out class
-      const currentPage = document.body;
-      currentPage.classList.add("slide-out");
 
-      // Create a new page element for the transition
-      const newPage = document.createElement('div');
-      newPage.className = 'page slide-in'; // Prepare new page to slide in
-      document.body.appendChild(newPage);
 
-      // Load the new page content
-      fetch(targetUrl)
-        .then(response => response.text())
-        .then(data => {
-          newPage.innerHTML = data; // Insert new content
-          currentPage.style.display = 'none'; // Hide current page
-          newPage.classList.remove('slide-in'); // Remove class to slide in
-        });
-
-      // Optional: Add a delay before removing the current page
-      setTimeout(() => {
-        currentPage.style.display = 'none'; // Hide current page
-        newPage.classList.remove('slide-in'); // Trigger the slide-in effect
-      }, 500); // Match this duration with your CSS transition duration
-    });
-  });
-});
 
 
 

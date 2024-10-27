@@ -34,6 +34,7 @@
           </div>
         </nav>
       </header>
+      {% block content %}
       <!-- Slider main container -->
       <div class="swiper-container">
         <div class="swiper mySwiper">
@@ -168,7 +169,7 @@
                     <p class="card-description">
                       Need an ambulance at your current location? Click below
                       for more information.<br />
-                      <a href="#" class="learn-more">Learn more</a>
+                      <a href="{% url 'ambulance' %}" class="learn-more" id="learnMoreLink">Learn more</a>
                       <!-- Added a button for the call-to-action -->
                     </p>
                   </div>
@@ -192,7 +193,7 @@
                     <p class="card-description">
                       VCMA is a voice-controlled map that swiftly finds nearby
                       hospitals and services in emergencies. <br />
-                      <a href="#" class="learn-more vcm" >Learn more</a>
+                      <a href="{% url 'vcm' %}" class="learn-more vcm" id="learnMoreLink">Learn more</a>
                       <!-- Added a button for the call-to-action -->
                     </p>
                   </div>
@@ -229,7 +230,7 @@
         </div>
       </div>
     </div>
-
+    {% endblock %}
     <footer>
       <div class="cover">
         <div class="qrcode">
