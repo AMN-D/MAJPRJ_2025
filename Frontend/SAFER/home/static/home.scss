@@ -564,7 +564,8 @@ header {
     .line {
       width: 6vw; /* Adjust the width of the line */
       height: 1vh; /* Set the thickness of the line */
-      background-color: #d9534f; /* Color of the line */
+      background-color: #e2e2e2; /* Color of the line */
+      transition: background-color 0.5s ease-in-out; 
       @media (max-width: 1024px) {
         width: 25vw;
         margin-top: 2vh;
@@ -576,6 +577,9 @@ header {
       width: 100%;
       justify-content: center;
       align-items: center;
+      @media (max-width: 1024px) {
+        justify-content: start;
+      }
       .information-regarding-images {
         display: flex;
         align-items: center;
