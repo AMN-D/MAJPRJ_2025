@@ -651,7 +651,7 @@ header nav .profile i {
 }
 .main-card-page .heading-cards h1 {
   font-size: 4vb; /* Adjusted size */
-  font-weight: 100;
+  font-weight: 200;
   padding: 0;
   margin-bottom: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle black shadow */
@@ -860,6 +860,18 @@ header nav .profile i {
 .main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .learn-more:hover {
   color: #ff4444; /* Brighter red for hover effect */
 }
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .vcm {
+  color: #ebd574;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .vcm:hover {
+  color: #dfbe2e; /* Brighter red for hover effect */
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .faid {
+  color: #639c93;
+}
+.main-card-page .unique-card-swiper-container .myUniqueCardSwiper .swiper-slide .card-ambulance .unique-card .card-description .faid:hover {
+  color: #3e615b; /* Brighter red for hover effect */
+}
 
 footer {
   display: flex;
@@ -871,16 +883,16 @@ footer {
   color: #f9f6ee;
   border-top: 1px solid #212121;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
   footer {
-    height: 5vh;
+    height: 20vh;
   }
 }
 footer .cover {
   display: flex;
   align-items: center;
   flex-direction: row;
-  width: 80vw;
+  width: 79.8vw;
   margin-left: auto;
   margin-right: 9vw;
   height: 100%;
@@ -889,9 +901,10 @@ footer .cover .qrcode img {
   width: 12vb;
   height: 12vb;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
   footer .cover .qrcode img {
-    width: 2rem;
+    width: 12vb;
+    height: 12vb;
   }
 }
 footer .cover .main {
@@ -899,6 +912,11 @@ footer .cover .main {
   align-items: center;
   width: 100%;
   height: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  footer .cover .main {
+    width: 80%;
+  }
 }
 footer .cover .main .left {
   display: flex;
@@ -909,6 +927,11 @@ footer .cover .main .left {
   width: 50vw;
   height: 12vh;
 }
+@media only screen and (max-width: 1024px) {
+  footer .cover .main .left {
+    padding-left: 2vw;
+  }
+}
 footer .cover .main .left p {
   padding: 0;
   padding-bottom: 1.5vh;
@@ -918,10 +941,11 @@ footer .cover .main .left p {
   font-size: 2.6vb;
   font-weight: 200;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
   footer .cover .main .left p {
-    display: none;
     padding-bottom: 0;
+    font-size: 1.6vb;
+    width: 13vw;
   }
 }
 footer .cover .main .left h6 {
@@ -930,9 +954,9 @@ footer .cover .main .left h6 {
   padding: 0;
   margin: 0;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
   footer .cover .main .left h6 {
-    font-size: 0.6rem;
+    font-size: 1.2vb;
     text-align: left;
   }
 }
@@ -943,6 +967,23 @@ footer .cover .main .right {
   flex-direction: column;
   align-items: end;
   justify-content: right;
+}
+@media only screen and (max-width: 1024px) {
+  footer .cover .main .right {
+    margin-top: auto;
+    margin-bottom: 4vh;
+  }
+}
+footer .cover .main .right h6 {
+  display: none;
+}
+@media only screen and (max-width: 1024px) {
+  footer .cover .main .right h6 {
+    margin-right: 8vw;
+    display: block;
+    padding-bottom: 0;
+    margin-bottom: 1vh;
+  }
 }
 footer .cover .main .right a {
   text-decoration: none;
@@ -956,10 +997,12 @@ footer .cover .main .right a {
 footer .cover .main .right a:hover {
   color: #f9f6ee;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
   footer .cover .main .right a {
-    padding-bottom: 0.1rem;
-    font-size: 0.5rem;
+    padding-bottom: 0.5vh;
+    font-size: 1.2vb;
+    margin-right: 8vw;
+    line-height: 1.2;
   }
 }
 footer .cover .extra-info {
@@ -973,10 +1016,9 @@ footer .cover .extra-info h6 {
   margin: 0;
   width: 7vw;
 }
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1024px) {
   footer .cover .extra-info h6 {
-    font-size: 0.6rem;
-    text-align: left;
+    display: none;
   }
 }
 

@@ -504,6 +504,7 @@ header {
   }
 }
 
+
 .main-card-page {
   display: flex;
   justify-content: flex-start;
@@ -555,7 +556,7 @@ header {
 
     h1 {
       font-size: 4vb; /* Adjusted size */
-      font-weight: 100;
+      font-weight: 200;
       padding: 0;
       margin-bottom: 0;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle black shadow */
@@ -749,7 +750,6 @@ header {
               @media (max-width: 1024px) {
                 padding-inline: 5vw;
               }
-
               .learn-more {
                 color: #ff6666; /* A soft red color for Learn more link/text */
                 cursor: pointer;
@@ -761,6 +761,18 @@ header {
 
                 &:hover {
                   color: #ff4444; /* Brighter red for hover effect */
+                }
+              }
+              .vcm {
+                color: #ebd574;
+                &:hover {
+                  color: #dfbe2e; /* Brighter red for hover effect */
+                }
+              }
+              .faid {
+                color: #639c93;
+                &:hover {
+                  color: #3e615b; /* Brighter red for hover effect */
                 }
               }
             }
@@ -780,14 +792,14 @@ footer {
   overflow: hidden;
   color: #f9f6ee;
   border-top: 1px solid #212121;
-  @media only screen and (max-width: 700px) {
-    height: 5vh;
+  @media only screen and (max-width: 1024px) {
+    height: 20vh;
   }
   .cover {
     display: flex;
     align-items: center;
     flex-direction: row;
-    width: 80vw;
+    width: 79.8vw;
     margin-left: auto;
     margin-right: 9vw;
     height: 100%;
@@ -795,8 +807,9 @@ footer {
       img {
         width: 12vb;
         height: 12vb;
-        @media only screen and (max-width: 700px) {
-          width: 2rem;
+        @media only screen and (max-width: 1024px) {
+          width: 12vb;
+          height: 12vb;
         }
       }
     }
@@ -805,6 +818,9 @@ footer {
       align-items: center;
       width: 100%;
       height: 100%;
+      @media only screen and (max-width: 1024px) {
+        width: 80%;
+      }
       .left {
         display: flex;
         align-items: center;
@@ -813,6 +829,9 @@ footer {
         padding: 1vw;
         width: 50vw;
         height: 12vh;
+        @media only screen and (max-width: 1024px) {
+          padding-left: 2vw;
+        }
         p {
           padding: 0;
           padding-bottom: 1.5vh;
@@ -822,9 +841,10 @@ footer {
           font-size: 2.6vb;
           font-weight: 200;
           // background-color: rebeccapurple;
-          @media only screen and (max-width: 700px) {
-            display: none;
+          @media only screen and (max-width: 1024px) {
             padding-bottom: 0;
+            font-size: 1.6vb;
+            width: 13vw;
           }
         }
         h6 {
@@ -832,8 +852,8 @@ footer {
           font-size: 2vb;
           padding: 0;
           margin: 0;
-          @media only screen and (max-width: 700px) {
-            font-size: 0.6rem;
+          @media only screen and (max-width: 1024px) {
+            font-size: 1.2vb;
             text-align: left;
           }
         }
@@ -845,6 +865,19 @@ footer {
         flex-direction: column;
         align-items: end;
         justify-content: right;
+        @media only screen and (max-width: 1024px) {
+          margin-top: auto;
+          margin-bottom: 4vh;
+        }
+        h6 {
+          display: none;
+          @media only screen and (max-width: 1024px) {
+            margin-right: 8vw;
+            display: block;
+            padding-bottom: 0;
+            margin-bottom: 1vh;
+          }
+        }
         a {
           text-decoration: none;
           color: #f9f6ee;
@@ -856,9 +889,11 @@ footer {
           &:hover {
             color: #f9f6ee;
           }
-          @media only screen and (max-width: 700px) {
-            padding-bottom: 0.1rem;
-            font-size: 0.5rem;
+          @media only screen and (max-width: 1024px) {
+            padding-bottom: 0.5vh;
+            font-size: 1.2vb;
+            margin-right: 8vw;
+            line-height: 1.2;
           }
         }
       }
@@ -872,9 +907,8 @@ footer {
         padding: 0;
         margin: 0;
         width: 7vw;
-        @media only screen and (max-width: 700px) {
-          font-size: 0.6rem;
-          text-align: left;
+        @media only screen and (max-width: 1024px) {
+          display: none;
         }
       }
     }

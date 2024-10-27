@@ -12,23 +12,32 @@ document.addEventListener("DOMContentLoaded", function () {
 let lastScrollTop = 0;
 const header = document.querySelector("header");
 let isScrolling;
+const threshold = 25; // Set the threshold in pixels
+
 // Function to handle the header hiding/showing
 function handleScroll() {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  if (scrollTop > lastScrollTop) {
-    // User scrolled down - hide the header
+
+  if (scrollTop === 0) {
+    // Always show the header when at the top of the page
+    header.style.top = "0";
+  } else if (scrollTop > lastScrollTop + threshold) {
+    // User scrolled down more than the threshold - hide the header
     header.style.top = "-100vh"; // Adjust according to your header's height
-  } else {
-    // User scrolled up - show the header
+  } else if (scrollTop < lastScrollTop - threshold) {
+    // User scrolled up more than the threshold - show the header
     header.style.top = "0";
   }
-  lastScrollTop = scrollTop;
+
+  lastScrollTop = scrollTop; // Update lastScrollTop
 }
+
 // Debounce to limit the rate of scroll event handling
 window.addEventListener("scroll", () => {
   window.clearTimeout(isScrolling);
   isScrolling = setTimeout(handleScroll, 10); // Adjust time for smoother response
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
   var cardSwiper = new Swiper(".myUniqueCardSwiper", {
@@ -115,9 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Set initial text content for heading based on screen width
   if (headingTitle) {
-    headingTitle.textContent = window.innerWidth < 1024
-      ? "Click over a card to explore"
-      : "Hover over a card to explore";
+    headingTitle.textContent =
+      window.innerWidth < 1024
+        ? "Click over a card to explore"
+        : "Hover over a card to explore";
   }
 
   // Function to show video as background and change the title instantly
@@ -135,7 +145,11 @@ document.addEventListener("DOMContentLoaded", () => {
     isFadingOut = false;
 
     // Update the video source if it has changed
-    if (backgroundVideo && videoSource && !videoSource.src.includes(videoFileName)) {
+    if (
+      backgroundVideo &&
+      videoSource &&
+      !videoSource.src.includes(videoFileName)
+    ) {
       videoSource.src = `../static/card/${videoFileName}`;
       backgroundVideo.load();
     }
@@ -174,9 +188,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Reset the heading title back to default
       if (headingTitle) {
-        headingTitle.textContent = window.innerWidth < 1024
-          ? "Click over a card to explore"
-          : "Hover over a card to explore";
+        headingTitle.textContent =
+          window.innerWidth < 1024
+            ? "Click over a card to explore"
+            : "Hover over a card to explore";
       }
 
       // Reset the line color to default smoothly
@@ -198,5 +213,72 @@ document.addEventListener("DOMContentLoaded", () => {
     // Do not reset the gradient, maintain its last known position
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const learnMoreLink = document.querySelector(".learn-more.vcm");
+  const overlay = document.getElementById("info-overlay");
+  const closeButton = document.getElementById("close-overlay");
+
+  // Show overlay on link click
+  learnMoreLink.addEventListener("click", function (e) {
+    e.preventDefault(); // Prevent the default link behavior
+    overlay.classList.add("active");
+  });
+
+  // Close overlay on button click
+  closeButton.addEventListener("click", function () {
+    overlay.classList.remove("active");
+  });
+
+  // Optional: Close overlay when clicking outside the content
+  overlay.addEventListener("click", function (e) {
+    if (e.target === overlay) {
+      overlay.classList.remove("active");
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const learnMoreLinks = document.querySelectorAll(".learn-more.vcm");
+
+  learnMoreLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault(); // Prevent default link behavior
+      const targetUrl = this.getAttribute("data-target"); // Get target URL
+
+      // Get the current page and apply slide-out class
+      const currentPage = document.body;
+      currentPage.classList.add("slide-out");
+
+      // Create a new page element for the transition
+      const newPage = document.createElement('div');
+      newPage.className = 'page slide-in'; // Prepare new page to slide in
+      document.body.appendChild(newPage);
+
+      // Load the new page content
+      fetch(targetUrl)
+        .then(response => response.text())
+        .then(data => {
+          newPage.innerHTML = data; // Insert new content
+          currentPage.style.display = 'none'; // Hide current page
+          newPage.classList.remove('slide-in'); // Remove class to slide in
+        });
+
+      // Optional: Add a delay before removing the current page
+      setTimeout(() => {
+        currentPage.style.display = 'none'; // Hide current page
+        newPage.classList.remove('slide-in'); // Trigger the slide-in effect
+      }, 500); // Match this duration with your CSS transition duration
+    });
+  });
+});
+
+
+
+
+
+
+
+
 
 
