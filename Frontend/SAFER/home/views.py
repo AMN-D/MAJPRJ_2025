@@ -1,14 +1,11 @@
 from django.http import HttpResponse
-from django.template import loader
+from django.shortcuts import render
 
 def home(request):
-    template = loader.get_template('home.html')
-    return HttpResponse(template.render())
+    return render(request, 'home.html')
 
 def vcm(request):
-    template = loader.get_template('vcm.html')
-    return HttpResponse(template.render())
+    return render(request, 'vcm.html')
 
 def ambulance(request):
-    template = loader.get_template('ambulance.html')
-    return HttpResponse(template.render())
+    return render(request, 'ambulance.html')
