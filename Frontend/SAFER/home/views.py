@@ -8,4 +8,6 @@ def vcm(request):
     return render(request, 'vcm.html')
 
 def ambulance(request):
-    return render(request, 'ambulance.html')
+    import geocoder
+    g = geocoder.ip('me')
+    return render(request, 'ambulance.html', {"latitude": g.lat or 0, "longitude": g.lng or 0})
