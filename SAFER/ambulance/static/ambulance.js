@@ -18,7 +18,9 @@ function userLocation() {
       fillOpacity: 0.2,
       radius: 500,
     }).addTo(map);
-    circle.bindPopup("<b>Please allow location</b><br>for improve accuracy").openPopup();
+    circle
+      .bindPopup("<b>Please allow location</b><br>for improve accuracy")
+      .openPopup();
   }
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
@@ -31,24 +33,21 @@ function initializeMap(latitude, longitude) {
   map = L.map("map", {
     center: [latitude, longitude],
     zoom: 18,
+    attributionControl: false,
   });
-  mapLink = '<a href="http://www.esri.com/">Esri</a>';
   wholink = "SAFER";
 
-  L.tileLayer(
-    "http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/3/MapServer/tile/{z}/{y}/{x}",
-    {
-      attribution: "&copy; " + wholink + ", " + mapLink,
-      maxZoom: 18,
-    }
-  ).addTo(map);
+  L.tileLayer("http://{s}.google.com/vt?lyrs=s,h&x={x}&y={y}&z={z}", {
+    maxZoom: 18,
+    subdomains: ["mt0", "mt1", "mt2", "mt3"],
+  }).addTo(map);
 
-  L.tileLayer(
-    "https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png",
-    {
-      opacity: 1,
-    }
-  ).addTo(map);
+  // L.tileLayer(
+  //   "https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png",
+  //   {
+  //     opacity: 1,
+  //   }
+  // ).addTo(map);
 }
 
 window.addEventListener("load", userLocation);
