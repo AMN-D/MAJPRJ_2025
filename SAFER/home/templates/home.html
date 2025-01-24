@@ -5,6 +5,7 @@
   <head>
     <link rel="stylesheet" href="{% static 'home.css' %}" />
     <link rel="stylesheet" href="{% static 'ambulance.css' %}" />
+    <link rel="stylesheet" href="{% static 'quick_first_aid.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -24,10 +25,11 @@
 
   <body>
     <div class="bg-home">
+      {% block header %}
       <header>
         <nav>
           <div class="logo">
-            <a href="#"><span>S</span>AFER</a>
+            <a href="{% url 'home' %}"><span>S</span>AFER</a>
           </div>
           <div class="profile">
             <a href="#" class="icon">
@@ -42,6 +44,7 @@
           </div>
         </nav>
       </header>
+      {% endblock %}
       {% block content %}
       <!-- Slider main container -->
       <div class="swiper-container">
@@ -235,7 +238,7 @@
                     <p class="card-description">
                       Use our voice-activated first aid assistant for immediate
                       help until the ambulance arrives. <br />
-                      <a href="#" class="learn-more faid">Learn more</a>
+                      <a href="{% url 'quick_first_aid' %}" class="learn-more faid">Learn more</a>
                       <!-- Added a button for the call-to-action -->
                     </p>
                   </div>
@@ -293,5 +296,6 @@
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script defer src="{% static 'home.js' %}"></script>
     <script defer src="{% static 'ambulance.js' %}"></script>
+    <script defer src="{% static 'quick_first_aid.js' %}"></script>
   </body>
 </html>

@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('voice-controlled-map/', views.vcm, name='vcm'),
     path('ambulance/', views.ambulance, name='ambulance'),
+    path('quick_first_aid/', views.quick_first_aid, name='quick_first_aid'),
 ]

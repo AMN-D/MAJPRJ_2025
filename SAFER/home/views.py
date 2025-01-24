@@ -7,6 +7,9 @@ def home(request):
 def vcm(request):
     return render(request, 'vcm.html')
 
+def quick_first_aid(request):
+    return render(request, 'quick_first_aid.html')
+
 def ambulance(request):
     import geocoder
     g = geocoder.ip('me')
