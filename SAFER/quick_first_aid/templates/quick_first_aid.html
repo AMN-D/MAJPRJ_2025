@@ -1,8 +1,26 @@
 {% extends 'home.html' %} 
-
-{% block title %}quick_first_aid{% endblock %} 
-{% block header %}
-
+{% block title %}
+  quick_first_aid
+{% endblock %} 
+{%block header %} 
+<header style="position: relative; top: 0; left: 0;  z-index: 0;">
+  <nav>
+    <div class="logo">
+      <a href="{% url 'home' %}"><span>S</span>AFER</a>
+    </div>
+    <div class="profile">
+      <a href="#" class="icon">
+        <i class="fa-solid fa-user"></i>
+      </a>
+      <a href="#" class="icon">
+        <i class="fa-solid fa-bell"></i>
+      </a>
+      <a href="#" class="icon">
+        <i class="fa-solid fa-microphone"></i>
+      </a>
+    </div>
+  </nav>
+</header>
 {% endblock %} 
 {%block content %}
 <div class="home">
@@ -12,15 +30,38 @@
     </div>
     <div class="desc">
       <p>
-        Data structures are the fancy organizers for data on a computer, making
-        sure everything is neatly arranged and easy to handle. They help in
-        swiftly sorting, managing, storing, and fetching information with
-        finesse.
+        By using this, you are agreeing to our terms and services. Team Safer
+        will not be responsible for any damage that may occur. Observe the
+        symptoms of your patient carefully, and proceed by selecting the
+        'Symptoms' button below..
       </p>
     </div>
+
     <div class="main-button">
-      <a href="#">Read More</a>
+      <a href="#" onclick="openForm()">Select Symptoms</a>
     </div>
+
+    <div id="overlay" class="overlay"></div>
+    <div id="symptomForm" class="form-container" style="display: none">
+      <h1>Select 
+        <br/>
+        <span>Symptoms<span>
+      </h1>
+      <a href="#" class="close-button" onclick="closeForm()">
+        <i class="fa-solid fa-xmark"></i>
+      </a>
+      <form method="post">
+        {% csrf_token %} 
+        {% for symptom in symptoms %}
+        <label>
+          <input type="checkbox" name="symptom" value="{{ symptom.id }}" /> {{symptom.name }} 
+        </label>
+        <br/>
+        {% endfor %}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
     <!--Slider-->
     <div class="swiper-container">
       <div class="swiper-wrapper">

@@ -1,0 +1,101 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+  backdrop-filter: blur(2vb);
+}
+
+.form-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-inline: 3vw;
+  padding-top: 0.5vh;
+  background: #060606;
+  color: #f9f6ee;
+  border: 1px solid #262626;
+  border-radius: 6vb;
+  box-shadow: 0 4vb 8vb rgba(0, 0, 0, 0.2);
+  display: none;
+  z-index: 1000;
+  width: 46vw;
+  height: 68vh;
+  h1 {
+    font-size: 7vb;
+    font-weight: 600;
+    letter-spacing: -0.2vb;
+    line-height: 6.5vb;
+    span {
+      color: #b0b0b0;
+    }
+  }
+  .close-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    margin-right: 2.5vw;
+    margin-top: 5vh;
+    position: fixed;
+    border: 1px solid #262626;
+    border-radius: 100%;
+    background-color: #141414;
+    color: #e09191;
+    width: 4vb;
+    height: 4vb;
+    top: 0%;
+    right: 0%;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: #262626;
+      color: #b73838;
+    }
+  }
+  button {
+    text-decoration: none;
+    color: #f9f6ee;
+    text-wrap: nowrap;
+    transition: all 0.2s ease-in-out;
+    border: 1px solid #212121;
+    border-radius: 5vb;
+    font-weight: 400;
+    background-color: #f9f6ee;
+    color: #060606;
+    padding: 2.5vb 4vb;
+    font-weight: 500;
+    position: fixed;
+    cursor: pointer;
+    transform: translateX(-50%);
+    bottom: 4vh;
+    left: 6vw;
+    &:hover {
+      background-color: #060606;
+      color: #f9f6ee;
+    }
+  }
+}
+@media only screen and (max-width: 700px) {
+  .form-container {
+    padding-inline: 4vw;
+    padding-top: 1vh;
+    border-radius: 2rem;
+  }
+
+  .form-container h1 {
+    font-size: 2rem;
+    width: 100%;
+    letter-spacing: -0.05rem;
+    line-height: 1;
+    margin: 1rem 0;
+  }
+}
+
+.form-container button {
+  margin-top: 10px;
+}
