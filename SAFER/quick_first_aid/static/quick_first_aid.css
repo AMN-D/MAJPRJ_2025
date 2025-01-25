@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 100vh;
+  height: auto;
   background-color: #060606;
   font-family: "Poppins", sans-serif;
   color: #f9f6ee;
@@ -16,7 +16,7 @@ body {
   display: flex;
   align-items: center;
   width: 100vw;
-  height: 150vh;
+  height: auto;
   margin-bottom: 8vh;
   margin-top: 5vh;
   overflow: hidden;
@@ -34,7 +34,7 @@ body {
   flex-direction: column;
   margin: auto;
   width: 80vw;
-  height: 150vh;
+  height: auto;
 }
 .home .innerhome .title {
   text-wrap: nowrap;
@@ -118,7 +118,8 @@ body {
   color: #f9f6ee;
 }
 .home .innerhome .swiper-container {
-  margin-top: 12vh;
+  border: 1px solid #121212;
+  margin-top: 6vh;
   width: 100%;
   height: 85vh;
   border-radius: 3rem;

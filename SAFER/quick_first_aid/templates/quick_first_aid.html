@@ -50,30 +50,46 @@
       <a href="#" class="close-button" onclick="closeForm()">
         <i class="fa-solid fa-xmark"></i>
       </a>
-      <form method="post">
+
+      <form method="post" id="mainFormSymptom">
         <div class="symptom-list-cover">
         {% csrf_token %} 
         {% for symptom in symptoms %}
         <label>
-          <input type="checkbox" name="symptom" value="{{ symptom.id }}" /> {{symptom.name }} 
+          <input type="checkbox" name="symptom" value="{{ symptom.id }}"/> {{symptom.name }} 
         </label>
         <br/>
         {% endfor %}
-        <button type="submit">Submit</button>
+        <button type="submit" id="submitButton" onclick="openFormResult()">Submit</button>
       </div>
       </form>
     </div>
 
-    {% if diseases %}
-    <div id="results">
-      <h2>Possible Diseases</h2>
-      <ul>
-        {% for disease in diseases %}
-        <li>{{ disease.disease }}</li>
-        {% endfor %}
-      </ul>
+    <div id="symptomFormResult" class="form-result-container" style="position: relative;">
+      <div class="form-result-container-inner">
+        <h1>Possible 
+          <br/>
+          <span>Diagnoses<span>
+        </h1>
+        <p>
+          Kindly select the symptoms from the options above to receive a diagnosis.
+        </p>
+      </div>
+      {% if diseases %}
+      <div id="diseaseResults">
+        <ul>
+          {% for disease in diseases %}
+          <li>
+          <div class="diagnosisCard">
+            {{ disease.disease }}
+          </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endif %}
     </div>
-    {% endif %}
+
 
     <!--Slider-->
     <div class="swiper-container">

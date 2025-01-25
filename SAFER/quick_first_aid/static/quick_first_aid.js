@@ -38,3 +38,13 @@ function closeForm() {
   document.getElementById("symptomForm").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 }
+
+function openFormResult() {
+  document.getElementById("symptomForm").style.display = "none";
+  document.getElementById("symptomFormResult").style.display = "block";
+}
+
+function closeFormResult() {
+  document.getElementById("symptomFormResult").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+}
