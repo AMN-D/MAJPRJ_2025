@@ -51,6 +51,7 @@
         <i class="fa-solid fa-xmark"></i>
       </a>
       <form method="post">
+        <div class="symptom-list-cover">
         {% csrf_token %} 
         {% for symptom in symptoms %}
         <label>
@@ -59,8 +60,20 @@
         <br/>
         {% endfor %}
         <button type="submit">Submit</button>
+      </div>
       </form>
     </div>
+
+    {% if diseases %}
+    <div id="results">
+      <h2>Possible Diseases</h2>
+      <ul>
+        {% for disease in diseases %}
+        <li>{{ disease.disease }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
 
     <!--Slider-->
     <div class="swiper-container">

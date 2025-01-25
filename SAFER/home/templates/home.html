@@ -45,8 +45,7 @@
           </div>
         </nav>
       </header>
-      {% endblock %}
-      {% block content %}
+      {% endblock %} {% block content %}
       <!-- Slider main container -->
       <div class="swiper-container">
         <div class="swiper mySwiper">
@@ -239,7 +238,11 @@
                     <p class="card-description">
                       Use our voice-activated first aid assistant for immediate
                       help until the ambulance arrives. <br />
-                      <a href="{% url 'quick_first_aid' %}" class="learn-more faid">Learn more</a>
+                      <a
+                        href="{% url 'quick_first_aid' %}"
+                        class="learn-more faid"
+                        >Learn more</a
+                      >
                       <!-- Added a button for the call-to-action -->
                     </p>
                   </div>

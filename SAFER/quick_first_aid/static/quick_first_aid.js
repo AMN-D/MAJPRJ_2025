@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function openForm() {
-    document.getElementById("symptomForm").style.display = "block";
-    document.getElementById("overlay").style.display = "block"; 
-  }
+  document.getElementById("symptomForm").style.display = "block";
+  document.getElementById("overlay").style.display = "block";
+}
 
-  function closeForm() {
-    document.getElementById("symptomForm").style.display = "none";
-    document.getElementById("overlay").style.display = "none"; 
-  }
+function closeForm() {
+  document.getElementById("symptomForm").style.display = "none";
+  document.getElementById("overlay").style.display = "none";
+}
