@@ -117,6 +117,13 @@
   border-radius: 45px;
   padding-inline: 3vw;
   padding-top: 0.5vh;
+  overflow: hidden;
+}
+@media only screen and (max-width: 700px) {
+  .form-result-container {
+    height: auto;
+    flex-direction: column;
+  }
 }
 .form-result-container .form-result-container-inner {
   width: 20vw;
@@ -128,6 +135,15 @@
   text-align: left;
   font-weight: 100;
   font-size: 2.4vb;
+}
+@media only screen and (max-width: 700px) {
+  .form-result-container .form-result-container-inner p {
+    display: flex;
+    align-items: start;
+    width: 83vw;
+    overflow: hidden;
+    height: 50%;
+  }
 }
 .form-result-container h1 {
   font-size: 7vb;
@@ -152,6 +168,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media only screen and (max-width: 700px) {
+  #diseaseResults ul li .diagnosisCard {
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 65vw;
+  }
 }
 
 /*# sourceMappingURL=quick_first_aid_symptoms.css.map */

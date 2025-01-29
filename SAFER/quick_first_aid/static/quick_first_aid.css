@@ -24,6 +24,8 @@ body {
 @media only screen and (max-width: 700px) {
   .home {
     height: auto;
+    margin-bottom: 0;
+    margin-top: 2vh;
   }
 }
 .home .innerhome {
@@ -47,8 +49,8 @@ body {
 }
 @media only screen and (max-width: 700px) {
   .home .innerhome .title {
-    height: 20%;
-    width: 100%;
+    height: 20vh;
+    width: 100vw;
     text-wrap: wrap;
   }
 }
@@ -61,12 +63,12 @@ body {
 }
 @media only screen and (max-width: 700px) {
   .home .innerhome .title h1 {
-    font-size: 4rem;
-    width: 100%;
+    font-size: 9.7vb;
+    width: 100vw;
     text-wrap: pretty;
-    letter-spacing: -0.2rem;
+    letter-spacing: -0.5vb;
     line-height: 1;
-    margin: 1rem 0;
+    /* margin: 1rem 0; */
   }
 }
 .home .innerhome .desc {
@@ -84,9 +86,11 @@ body {
 }
 @media only screen and (max-width: 700px) {
   .home .innerhome .desc p {
-    font-size: 0.8rem;
-    width: 90%;
+    /* background-color: red; */
+    font-size: 1.4vb;
+    width: 80vw;
     text-align: left;
+    height: 10vh;
   }
 }
 .home .innerhome .main-button {
