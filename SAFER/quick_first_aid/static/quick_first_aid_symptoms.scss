@@ -154,15 +154,29 @@
     span {
       color: #b0b0b0;
     }
+    @media only screen and (max-width: 700px) {
+      
+    }
   }
 }
 
 #diseaseResults {
+  @media only screen and (max-width: 700px) {
+    // background-color: red;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 4vh;
+  }
   ul {
     list-style: none;
     display: flex;
     gap: 2vw;
     @media only screen and (max-width: 700px) {
+      // background-color: red;
+      margin: 0;
+      padding: 0;
+      gap: 4vw;
+      flex-direction: column;
     }
     li {
       .diagnosisCard {
