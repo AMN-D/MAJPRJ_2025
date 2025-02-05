@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap");
+
 .overlay {
   position: fixed;
   top: 0;
@@ -123,7 +125,6 @@
   @media only screen and (max-width: 700px) {
     height: auto;
     flex-direction: column;
-
   }
   .form-result-container-inner {
     width: 20vw;
@@ -155,7 +156,6 @@
       color: #b0b0b0;
     }
     @media only screen and (max-width: 700px) {
-      
     }
   }
 }
@@ -180,13 +180,39 @@
     }
     li {
       .diagnosisCard {
-        border: 1px solid #262626;
+        // border: 1px solid #802d58;
         border-radius: 6vb;
         height: 33vh;
         width: 16.3vw;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
+        h1 {
+          font-size: 4.8vb;
+          margin-top: 4vh;
+          padding-left: 1.5vw;
+          word-wrap: break-word; 
+          overflow-wrap: break-word;
+          white-space: normal; 
+          // background-color: red;
+          max-width: 14vw;
+          font-weight: 500;
+          line-height: 1;
+          letter-spacing: -0.1vb;
+          // background-color: yellow;
+          max-height: 12vh;
+          margin-bottom: 1.5vh;
+        }
+        p {
+          margin-top: 0;
+          font-size: 2.5vb;
+          font-weight: 300;
+          width: 13.5vw;
+          // background-color: red;
+          letter-spacing: -0.1vb;
+          word-spacing: 0.5vb;
+          margin-left: 1.5vw;
+          height: 14vh;
+        }
         @media only screen and (max-width: 700px) {
           justify-content: center;
           align-items: center;
@@ -198,4 +224,29 @@
   }
 }
 
+@mixin disease-card($bg-color, $text-color) {
+  border-radius: 6vb;
+  height: 33vh;
+  width: 16.3vw;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  overflow: hidden;
+  background-color: $bg-color;
+  color: $text-color;
+  border: 1px solid darken($bg-color, 5%);
+}
 
+#diseaseResultList {
+  li:nth-child(1) {
+    @include disease-card(#e42f90, #fbbef5);
+  }
+
+  li:nth-child(2) {
+    @include disease-card(#bbc41d, #31711e);
+  }
+
+  li:nth-child(3) {
+    @include disease-card(#ccb4f0, #6e58b6);
+  }
+}

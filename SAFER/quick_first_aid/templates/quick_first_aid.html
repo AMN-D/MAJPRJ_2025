@@ -77,11 +77,16 @@
       </div>
       {% if diseases %}
       <div id="diseaseResults">
-        <ul>
+        <ul id="diseaseResultList">
           {% for disease in diseases %}
           <li>
           <div class="diagnosisCard">
+            <h1>
             {{ disease.disease }}
+            </h1>
+            <p>
+              Hello this is me and click here to learn more!
+            </p>
           </div>
           </li>
           {% endfor %}

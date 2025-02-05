@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@400;600&display=swap");
 .overlay {
   position: fixed;
   top: 0;
@@ -175,13 +176,35 @@
   }
 }
 #diseaseResults ul li .diagnosisCard {
-  border: 1px solid #262626;
   border-radius: 6vb;
   height: 33vh;
   width: 16.3vw;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+}
+#diseaseResults ul li .diagnosisCard h1 {
+  font-size: 4.8vb;
+  margin-top: 4vh;
+  padding-left: 1.5vw;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  max-width: 14vw;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.1vb;
+  max-height: 12vh;
+  margin-bottom: 1.5vh;
+}
+#diseaseResults ul li .diagnosisCard p {
+  margin-top: 0;
+  font-size: 2.5vb;
+  font-weight: 300;
+  width: 13.5vw;
+  letter-spacing: -0.1vb;
+  word-spacing: 0.5vb;
+  margin-left: 1.5vw;
+  height: 14vh;
 }
 @media only screen and (max-width: 700px) {
   #diseaseResults ul li .diagnosisCard {
@@ -190,6 +213,43 @@
     flex-direction: row;
     width: 65vw;
   }
+}
+
+#diseaseResultList li:nth-child(1) {
+  border-radius: 6vb;
+  height: 33vh;
+  width: 16.3vw;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  overflow: hidden;
+  background-color: #e42f90;
+  color: #fbbef5;
+  border: 1px solid rgb(220.8340425532, 28.6659574468, 131.6510638298);
+}
+#diseaseResultList li:nth-child(2) {
+  border-radius: 6vb;
+  height: 33vh;
+  width: 16.3vw;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  overflow: hidden;
+  background-color: #bbc41d;
+  color: #31711e;
+  border: 1px solid rgb(165.8066666667, 173.7866666667, 25.7133333333);
+}
+#diseaseResultList li:nth-child(3) {
+  border-radius: 6vb;
+  height: 33vh;
+  width: 16.3vw;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  overflow: hidden;
+  background-color: #ccb4f0;
+  color: #6e58b6;
+  border: 1px solid rgb(189.55, 158.75, 235.75);
 }
 
 /*# sourceMappingURL=quick_first_aid_symptoms.css.map */
