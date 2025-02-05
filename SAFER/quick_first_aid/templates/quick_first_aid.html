@@ -80,15 +80,13 @@
         <ul id="diseaseResultList">
           {% for disease in diseases %}
           <li>
-          <div class="diagnosisCard">
-            <h1>
-            {{ disease.disease }}
-            </h1>
-            <p>
-              Hello this is me and click here to learn more!
-            </p>
-          </div>
-          </li>
+            <a href="{{ disease.web_links }}" target="_blank" class="diagnosisCard">
+              <div>
+                <h1>{{ disease.disease }}</h1>
+                <p>{{ disease.description }}</p>
+              </div>
+            </a>
+          </li>          
           {% endfor %}
         </ul>
       </div>
