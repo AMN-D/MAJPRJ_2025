@@ -168,7 +168,7 @@
 }
 #diseaseResults ul a {
   text-decoration: none;
-  color: navajowhite;
+  color: inherit;
 }
 @media only screen and (max-width: 700px) {
   #diseaseResults ul {
@@ -228,7 +228,6 @@
   overflow: hidden;
   background-color: #e42f90;
   color: #fbbef5;
-  border: 1px solid rgb(220.8340425532, 28.6659574468, 131.6510638298);
 }
 #diseaseResultList li:nth-child(2) {
   border-radius: 6vb;
@@ -240,7 +239,6 @@
   overflow: hidden;
   background-color: #bbc41d;
   color: #31711e;
-  border: 1px solid rgb(165.8066666667, 173.7866666667, 25.7133333333);
 }
 #diseaseResultList li:nth-child(3) {
   border-radius: 6vb;
@@ -252,7 +250,6 @@
   overflow: hidden;
   background-color: #ccb4f0;
   color: #6e58b6;
-  border: 1px solid rgb(189.55, 158.75, 235.75);
 }
 
 /*# sourceMappingURL=quick_first_aid_symptoms.css.map */
