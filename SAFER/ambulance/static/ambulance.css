@@ -2,4 +2,23 @@
   height: 100vh;
 }
 
+.call-emergency {
+  position: absolute;
+  bottom: 3.5vh;
+  right: 1.2vw;
+  z-index: 999;
+  width: 5vw;
+  height: 10vh;
+  background-color: #a54127;
+  color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.5vb;
+  border: 1px solid #121212;
+  border-radius: 2.9vb;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+
 /*# sourceMappingURL=ambulance.css.map */
