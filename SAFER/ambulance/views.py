@@ -1,7 +1,9 @@
 from django.views.decorators.csrf import csrf_exempt
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
+from django.utils.timezone import now
 from twilio.rest import Client
+import logging
 import os
 
 ACCOUNT_SID = "AC2560b7110edec0ee3eb720a2afbcbfa8"
