@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'home',
     'ambulance',
     'quick_first_aid',
+    'voice_controlled_map',
 ]
 
 MIDDLEWARE = [
