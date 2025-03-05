@@ -1,0 +1,35 @@
+.generate-report {
+    position: absolute; /* Keeps it in place */
+    // margin-top: 10px;
+    top: 10vh; /* Distance from the top */
+    right: 10px; /* Distance from the right */
+    background-color: #ffffff;
+    color: #b9b9b9;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    z-index: 1000; /* Ensures it stays above other elements */
+    transition: all 0.3s ease-in-out;
+}
+
+.generate-report:hover {
+    background-color: #b9b9b9;
+    color: white;
+}
+
+/* Make the icon a little bigger */
+.generate-report i {
+    font-size: 21px;
+    color: #b9b9b9;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: #b9b9b9;
+        color: white;
+    }
+}

@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,29 +9,12 @@
       L_NO_TOUCH = false;
       L_DISABLE_3D = false;
     </script>
-
-    <style>
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
-    <style>
-      #map {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-      }
-    </style>
     <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="{% static 'home.css' %}" />
+    <link rel="stylesheet" href="{% static 'disaster_assessment.css' %}" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"
@@ -60,23 +45,35 @@
       content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
     />
+
     <style>
+      html,
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background-color: black;
+      }
+
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
       #map_07ab48983aca275cc8f8b68c6bc7736a {
         position: relative;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         left: 0%;
         top: 0%;
       }
       .leaflet-container {
-        font-size: 1rem;
+        font-size: 1.5vb;
       }
-    </style>
 
-    <style>
-      /* .foliumtooltip {
-                            
-                        } */
       .foliumtooltip table {
         margin: auto;
       }
@@ -84,13 +81,72 @@
         text-align: left;
       }
       .foliumtooltip th {
-        padding: 2px;
-        padding-right: 8px;
+        padding: 1.5vb;
+        padding-right: 8vb;
       }
+
     </style>
   </head>
   <body>
-    <div class="folium-map" id="map_07ab48983aca275cc8f8b68c6bc7736a"></div>
+      <header style="  width: 100vw; justify-content: center; align-items: center; display: flex; position: relative;">
+        <nav style=" width: 80vw; padding: 0;">
+          <div class="logo">
+            <a href="{% url 'home' %}"><span>S</span>AFER</a>
+          </div>
+          <div class="profile">
+            <a href="#" class="icon">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="#" class="icon">
+              <i class="fa-solid fa-bell"></i>
+            </a>
+            <a href="#" class="icon">
+              <i class="fa-solid fa-microphone"></i>
+            </a>
+        </nav>
+      </header>
+    </div>
+    <div class="folium-map" id="map_07ab48983aca275cc8f8b68c6bc7736a">
+        <a href="{% url 'report_generator' %}" class="generate-report">
+            <i class="fa-solid fa-file-lines"></i>
+        </a>        
+    </div>
+    <footer style="height: 12vw;">
+        <div class="cover">
+          <div class="qrcode">
+            <img
+              src="https://api.qrserver.com/v1/create-qr-code/?color=000000&amp;bgcolor=FFFFFF&amp;data=https%3A%2F%2Fgithub.com%2FAMN-D&amp;qzone=2&amp;margin=0&amp;size=400x400&amp;ecc=L"
+              alt="qr code"
+            />
+          </div>
+          <div class="main">
+            <div class="left" style="padding: 0; padding-left: 1vw;">
+              <p>Tool for disaster prediction and assessment .</p>
+              <h6>TEAM SAFER</h6>
+            </div>
+            <div class="right">
+              <h6>TEAM SAFER</h6>
+              <a href="https://github.com/AMN-D" target="_blank">@amn-d</a>
+              <a href="https://github.com/JanhaviiSK" target="_blank"
+                >@JanhaviiSK</a
+              >
+              <a href="https://github.com/VedantM21" target="_blank"
+                >@VedantM21</a
+              >
+              <a href="https://github.com/SonalSonarghare" target="_blank"
+                >@SonalSonarghare</a
+              >
+            </div>
+            <div class="extra-info">
+              <h6>
+                © 2024 <br />Team SAFER. All rights reserved. Contact us for
+                further inquiries and permissions.
+              </h6>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script defer src="{% static 'disaster_assessment.js' %}"></script>
   </body>
   <script>
     var map_07ab48983aca275cc8f8b68c6bc7736a = L.map(
@@ -101,6 +157,7 @@
         zoom: 7,
         zoomControl: true,
         preferCanvas: false,
+        attributionControl: false,
       }
     );
 
