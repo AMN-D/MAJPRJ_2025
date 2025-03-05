@@ -8,6 +8,9 @@ def home(request):
 def vcm(request):
     return render(request, 'vcm.html')
 
+def disaster_assessment(request):
+    return render(request, 'NorthEast.html')
+
 def quick_first_aid(request):
     symptoms = Symptom.objects.all()
     diseases = None

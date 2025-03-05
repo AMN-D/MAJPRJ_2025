@@ -208,9 +208,9 @@
                       alt="VOICE CONTROLLED MAP"
                       class="card-image"
                     />
-                    <h3 class="card-title">VCMA</h3>
+                    <h3 class="card-title">Voice Controlled Map</h3>
                     <p class="card-description">
-                      VCMA is a voice-controlled map that swiftly finds nearby
+                      A voice-controlled map that swiftly finds nearby
                       hospitals and services in emergencies. <br />
                       <a
                         href="{% url 'vcm' %}"
@@ -237,12 +237,41 @@
                       alt="QUICK FIRST AID"
                       class="card-image"
                     />
-                    <h3 class="card-title">QUICK FIRST AID</h3>
+                    <h3 class="card-title">Quick First Aid</h3>
                     <p class="card-description">
-                      Use our voice-activated first aid assistant for immediate
+                      Use our quick first aid assistant for immediate
                       help until the ambulance arrives. <br />
                       <a
                         href="{% url 'quick_first_aid' %}"
+                        class="learn-more faid"
+                        >Learn more</a
+                      >
+                      <!-- Added a button for the call-to-action -->
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="swiper-slide">
+                <div class="card-ambulance">
+                  <div
+                    class="unique-card"
+                    data-video="assessment.mp4"
+                    data-title="DISASTER ASSESSMENT"
+                    data-color="#d2cec9"
+                  >
+                    <img
+                      src="../static/card/assessment.jpg"
+                      alt="DISASTER ASSESSMENT"
+                      class="card-image"
+                    />
+                    <h3 class="card-title">Disaster Assessment</h3>
+                    <p class="card-description">
+                      Access our disaster assessment tool 
+                      for critical information on post-disaster impacts .
+                      <br />
+                      <a
+                        href="{% url 'disaster_assessment' %}"
                         class="learn-more faid"
                         >Learn more</a
                       >
