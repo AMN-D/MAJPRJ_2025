@@ -21,6 +21,7 @@ body {
   margin-top: 5vh;
   overflow: hidden;
 }
+
 @media only screen and (max-width: 700px) {
   .home {
     height: auto;
@@ -38,6 +39,7 @@ body {
   width: 80vw;
   height: auto;
 }
+
 .home .innerhome .title {
   text-wrap: nowrap;
   overflow: hidden;
@@ -47,6 +49,7 @@ body {
   margin-bottom: 5vh;
   width: 80vw;
 }
+
 @media only screen and (max-width: 700px) {
   .home .innerhome .title {
     height: 20vh;
@@ -63,6 +66,7 @@ body {
   font-weight: 600;
   letter-spacing: -1.1vb;
 }
+
 @media only screen and (max-width: 700px) {
   .home .innerhome .title h1 {
     font-size: 9.7vb;
@@ -78,6 +82,7 @@ body {
   align-items: center;
   overflow: hidden;
 }
+
 .home .innerhome .desc p {
   margin: 0;
   width: 40vw;
@@ -86,6 +91,7 @@ body {
   font-weight: 100;
   font-size: 2.4vb;
 }
+
 @media only screen and (max-width: 700px) {
   .home .innerhome .desc p {
     /* background-color: red; */
@@ -99,6 +105,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .home .innerhome .main-button a {
   text-decoration: none;
   color: #f9f6ee;
@@ -115,14 +122,17 @@ body {
   font-weight: 500;
   font-size: 2.4vb;
 }
+
 .home .innerhome .main-button a:hover {
   background-color: #f9f6ee;
   color: #060606;
 }
+
 .home .innerhome .main-button a:hover {
   background-color: #060606;
   color: #f9f6ee;
 }
+
 .home .innerhome .swiper-container {
   border: 1px solid #121212;
   margin-top: 6vh;
@@ -131,6 +141,7 @@ body {
   border-radius: 3rem;
   overflow: hidden;
 }
+
 @media only screen and (max-width: 700px) {
   .home .innerhome .swiper-container {
     height: auto;
@@ -140,11 +151,13 @@ body {
 .home .innerhome .swiper-container .swiper-wrapper {
   width: 100%;
 }
+
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide {
   transition: all 0.3s ease-in-out;
   flex: 1;
   opacity: 1;
 }
+
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1,
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4,
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3,
@@ -157,34 +170,11 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-title,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-title,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-title,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-title {
+
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-title,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-title,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-title,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-title {
   display: flex;
   justify-content: start;
   align-items: center;
@@ -192,38 +182,11 @@ body {
   height: 18vh;
   padding: 0.5vh 2vw;
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-title
-  a,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-title
-  a,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-title
-  a,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-title
-  a {
+
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-title a,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-title a,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-title a,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-title a {
   text-wrap: nowrap;
   transition: all 0.2s ease-in-out;
   border: 1px solid #212121;
@@ -236,108 +199,27 @@ body {
   color: #060606;
   padding: 2vh 2vw;
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-title
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-title
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-title
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-title
-  a:hover {
+
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-title a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-title a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-title a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-title a:hover {
   background-color: #f9f6ee;
   color: #060606;
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-title
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-title
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-title
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-title
-  a:hover {
+
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-title a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-title a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-title a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-title a:hover {
   background-color: #060606;
   color: #f9f6ee;
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-text
-  h1,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-text
-  h1,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-text
-  h1,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-text
-  h1 {
+
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-text h1,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-text h1,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-text h1,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-text h1 {
   margin: 0 6.5vw;
   color: #060606;
   font-weight: 400;
@@ -345,39 +227,12 @@ body {
   line-height: 1.2;
   text-align: right;
 }
+
 @media only screen and (max-width: 700px) {
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c1
-    .card-text
-    h1,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c4
-    .card-text
-    h1,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c3
-    .card-text
-    h1,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c2
-    .card-text
-    h1 {
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-text h1,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-text h1,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-text h1,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-text h1 {
     text-align: left;
     margin: 0 3rem;
     font-size: 1.5rem;
@@ -387,225 +242,66 @@ body {
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-para,
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-para,
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-para,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-para {
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-para {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   margin-top: 2%;
 }
+
 @media only screen and (max-width: 700px) {
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c1
-    .card-para,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c4
-    .card-para,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c3
-    .card-para,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c2
-    .card-para {
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-para,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-para,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-para,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-para {
     justify-content: start;
   }
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-para
-  p,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-para
-  p,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-para
-  p,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-para
-  p {
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-para p,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-para p,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-para p,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-para p {
   color: #060606;
   text-align: center;
   font-weight: 400;
   font-size: 1.95vb;
 }
+
 @media only screen and (max-width: 700px) {
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c1
-    .card-para
-    p,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c4
-    .card-para
-    p,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c3
-    .card-para
-    p,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c2
-    .card-para
-    p {
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-para p,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-para p,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-para p,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-para p {
     text-align: start;
     margin: 0 3rem;
     font-size: 0.8rem;
     width: 30%;
   }
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-button,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-button,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-button,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-button {
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-button,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-button,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-button,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-button {
   height: 18vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 @media only screen and (max-width: 700px) {
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c1
-    .card-button,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c4
-    .card-button,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c3
-    .card-button,
-  .home
-    .innerhome
-    .swiper-container
-    .swiper-wrapper
-    .swiper-slide
-    .c2
-    .card-button {
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-button,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-button,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-button,
+  .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-button {
     justify-content: start;
     margin: 0 2rem;
   }
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-button
-  a,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-button
-  a,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-button
-  a,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-button
-  a {
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-button a,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-button a,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-button a,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-button a {
   text-decoration: none;
   color: #f9f6ee;
   text-wrap: nowrap;
@@ -618,91 +314,44 @@ body {
   background-color: #060606;
   padding: 2.1vh 2.5vw;
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-button
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-button
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-button
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-button
-  a:hover {
+
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-button a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-button a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-button a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-button a:hover {
   background-color: #f9f6ee;
   color: #060606;
 }
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c1
-  .card-button
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c4
-  .card-button
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c3
-  .card-button
-  a:hover,
-.home
-  .innerhome
-  .swiper-container
-  .swiper-wrapper
-  .swiper-slide
-  .c2
-  .card-button
-  a:hover {
+
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c1 .card-button a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 .card-button a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 .card-button a:hover,
+.home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 .card-button a:hover {
   background-color: transparent;
   color: #060606;
 }
+
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c2 {
   /* border-radius: 5vb;
   width: 50rem;
   height: 35rem; */
   background-color: #fb6f8b;
 }
+
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c3 {
   /* border-radius: 3rem;
   width: 50rem;
   height: 35rem; */
   background-color: #68aaf5;
 }
+
 .home .innerhome .swiper-container .swiper-wrapper .swiper-slide .c4 {
   /* border-radius: 3rem;
   width: 50rem;
   height: 35rem; */
   background-color: #d9cf47;
 }
+
+
+
+/*# sourceMappingURL=quick_first_aid.css.map */
