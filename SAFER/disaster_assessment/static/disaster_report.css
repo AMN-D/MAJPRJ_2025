@@ -1,0 +1,27 @@
+.main-report {
+  background-color: #f3f3f1;
+  height: 100vh;
+  width: 100vw;
+}
+.main-report .report-main-div {
+  height: 90%;
+  display: flex;
+}
+.main-report .report-main-div .main-hastags {
+  background-color: chartreuse;
+  width: 30%;
+  height: 100%;
+}
+.main-report .report-main-div .main-graph {
+  background-color: burlywood;
+  width: 70%;
+  height: 100%;
+}
+.main-report .report-flood-div {
+  height: 30%;
+}
+.main-report .report-landslide-div {
+  height: 30%;
+}
+
+/*# sourceMappingURL=disaster_report.css.map */
