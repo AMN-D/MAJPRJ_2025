@@ -1,18 +1,32 @@
-{% extends 'home.html' %} 
+{% extends 'home.html' %} {% block header %} {% endblock %}
 {% block title %}
-report-generator
-{% endblock %}
+report-generator {% endblock %} 
 {% block content %}
 <div class="main-report">
-	<div class="report-main-div">
-		<div class="main-hastags"></div>
-		<div class="main-graph"></div>
-	</div>
-	<div class="report-flood-div"></div>
-	<div class="report-landslide-div"></div>
-	<button class="generate-report" onclick="downloadPDF()">
-		<i class="fa-solid fa-file-lines"></i> Generate Report
-	</button>
+  <header class="report-header">
+    <div class="header-wrapper">
+      <div class="logo">
+        <a href="{% url 'home' %}"><span>S</span>AFER</a>
+      </div>
+	  <div class="header-content">
+		<h1>Complete Regional Report </h1>
+		<button class="generate-report" onclick="downloadPDF()">
+			<span class="download-icon">
+				<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#262523" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="12" cy="12" r="10.5"/>
+					<polyline points="8 12 12 16 16 12" stroke-width="1.4"/>
+					<line x1="12" y1="8" x2="12" y2="16" stroke-width="1.4"/>
+				</svg>
+			</span> 
+		</button>
+	  </div>
+    </div>
+  </header>
+  <div class="report-main-div"></div>
+  <div class="report-flood-div"></div>
+  <div class="report-landslide-div"></div>
+  <!-- <button class="generate-report" onclick="downloadPDF()">
+    <i class="fa-solid fa-file-lines"></i> Generate Report
+  </button> -->
 </div>
-{% csrf_token %}
-{% endblock %}
+{% csrf_token %} {% endblock %} {% block footer %} {% endblock %}

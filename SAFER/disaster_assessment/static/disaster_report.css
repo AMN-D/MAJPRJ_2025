@@ -1,27 +1,90 @@
 .main-report {
-  background-color: #f3f3f1;
-  height: 100vh;
-  width: 100vw;
-}
-.main-report .report-main-div {
-  height: 90%;
   display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: #f3f3f1;
 }
-.main-report .report-main-div .main-hastags {
-  background-color: chartreuse;
-  width: 30%;
+.main-report .report-header {
+  position: relative;
+  height: 8vh;
+  background-color: #f3f3f1;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.main-report .report-header .header-wrapper {
+  width: 90vw;
+  display: inherit;
+  justify-content: space-between;
+}
+.main-report .report-header .header-wrapper .logo {
   height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
-.main-report .report-main-div .main-graph {
-  background-color: burlywood;
-  width: 70%;
+.main-report .report-header .header-wrapper .logo a {
+  text-decoration: none;
+  color: #262523;
+  font-weight: 600;
+  transition: color 0.3s;
+  font-size: 4vb;
+  letter-spacing: 0.01em;
+}
+.main-report .report-header .header-wrapper .logo a span {
+  color: #e34234;
+}
+.main-report .report-header .header-wrapper .logo a:hover {
+  color: #e34234;
+}
+.main-report .report-header .header-wrapper .header-content {
+  width: 50%;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.main-report .report-header .header-wrapper .header-content h1 {
+  color: #262523;
+  font-weight: 500;
+  font-size: 2.5vb;
+  letter-spacing: -0.05vb;
+  word-spacing: normal;
+  padding: 0%;
+  margin: 0%;
+  padding-right: 0.5vw;
+  font-family: "Ponomar", system-ui;
+  font-style: normal;
+}
+
+.generate-report {
+  display: flex;
+  align-items: center;
+  border: none;
   height: 100%;
+  cursor: pointer;
+  background-color: transparent;
 }
-.main-report .report-flood-div {
-  height: 30%;
+
+svg {
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3s ease-in-out;
 }
-.main-report .report-landslide-div {
-  height: 30%;
+
+.generate-report:hover svg {
+  stroke: #f3f3f1;
+  background-color: #262523;
+  transform: scale(0.9);
+}
+
+.download-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=disaster_report.css.map */

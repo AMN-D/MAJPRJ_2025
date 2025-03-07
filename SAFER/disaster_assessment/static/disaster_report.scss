@@ -1,26 +1,92 @@
 .main-report {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  background-color: #f3f3f1;
+  .report-header {
+    position: relative;
+    height: 8vh;
     background-color: #f3f3f1;
-    height: 100vh;
-    width: 100vw;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
     // background-color: red;
-    .report-main-div {
-        height: 90%;
+    .header-wrapper {
+      width: 90vw;
+      display: inherit;
+      justify-content: space-between;
+      .logo {
+        height: 100%;
+        width: 50%;
         display: flex;
-        .main-hastags {
-            background-color: chartreuse;
-            width: 30%;
-            height: 100%;
+        justify-content: left;
+        align-items: center;
+        // background-color: #e34234;
+        a {
+          text-decoration: none;
+          color: #262523;
+          font-weight: 600;
+          transition: color 0.3s;
+          font-size: 4vb;
+          letter-spacing: 0.01em;
+          span {
+            color: #e34234;
+          }
         }
-        .main-graph {
-            background-color: burlywood;
-            width: 70%;
-            height: 100%;
+        a:hover {
+          color: #e34234;
         }
+      }
+      .header-content {
+        // background-color: #E34234;
+        // background-color: #e34234;
+        width: 50%;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+        h1 {
+          color: #262523;
+          font-weight: 500;
+          font-size: 2.5vb;
+          letter-spacing: -0.05vb;
+          word-spacing: normal;
+          padding: 0%;
+          margin: 0%;
+          padding-right: 0.5vw;
+          font-family: "Ponomar", system-ui;
+          font-style: normal;
+        }
+      }
     }
-    .report-flood-div {
-        height: 30%;
-    }
-    .report-landslide-div {
-        height: 30%;
-    }
+  }
+}
+
+.generate-report {
+  display: flex;
+  align-items: center;
+  border: none;
+  height: 100%;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+svg {
+    border-radius: 50%;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.generate-report:hover svg {
+    stroke: #f3f3f1; 
+    background-color: #262523;
+    transform: scale(0.9); 
+}
+
+.download-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
