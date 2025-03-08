@@ -102,14 +102,16 @@ svg {
   min-height: 100vh;
   width: 95vw;
   display: flex;
+  justify-content: space-between;
   .left-report {
-    background-color: rosybrown;
-    width: 32%;
-    height: 85vh;
+    // background-color: rosybrown;
+    width: 29%;
+    height: 125vh;
     display: flex;
     align-items: end;
     justify-content: end;
     position: relative;
+    flex-direction: column;
   }
   .right-report {
     width: 68%;
@@ -124,15 +126,31 @@ svg {
       align-items: center;
       background-color: #0736fe;
       width: 70vw;
-      height: 120vb;
+      height: 118vh;
       border-radius: 4vb;
     }
   }
   .arrow svg {
     border-radius: 0;
-    background-color: red;
     display: flex;
     justify-content: end;
     align-items: end;
+  }
+  .hashtag {
+    height: 43vh;
+    // background-color: #e34234;
+    margin: 0;
+    div {
+      border-bottom: 1px solid #262523;
+      padding: 0;
+      margin: 0;
+      h1 {
+        padding: 0;
+        margin: 0;
+        // text-decoration: underline;
+        color: #262523;
+        font-weight: 200;
+      }
+    }
   }
 }
