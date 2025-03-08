@@ -1,26 +1,34 @@
 .main-report {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   width: 100vw;
   background-color: #f3f3f1;
 }
 .main-report .report-header {
   position: relative;
-  height: 8vh;
+  height: 12vh;
   background-color: #f3f3f1;
   padding: 0;
   margin: 0;
   display: flex;
   justify-content: center;
+  backdrop-filter: none;
+  box-shadow: none;
+  border-bottom: none;
 }
 .main-report .report-header .header-wrapper {
-  width: 90vw;
+  border-bottom: 1px solid #262523;
+  width: 95vw;
   display: inherit;
   justify-content: space-between;
 }
 .main-report .report-header .header-wrapper .logo {
   height: 100%;
   width: 50%;
+  padding-left: 2.5vw;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -28,9 +36,9 @@
 .main-report .report-header .header-wrapper .logo a {
   text-decoration: none;
   color: #262523;
-  font-weight: 600;
+  font-weight: 700;
   transition: color 0.3s;
-  font-size: 4vb;
+  font-size: 5vb;
   letter-spacing: 0.01em;
 }
 .main-report .report-header .header-wrapper .logo a span {
@@ -44,18 +52,17 @@
   display: flex;
   justify-content: right;
   align-items: center;
+  padding-right: 2.5vw;
 }
 .main-report .report-header .header-wrapper .header-content h1 {
   color: #262523;
   font-weight: 500;
-  font-size: 2.5vb;
+  font-size: 2.3vb;
   letter-spacing: -0.05vb;
   word-spacing: normal;
   padding: 0%;
   margin: 0%;
   padding-right: 0.5vw;
-  font-family: "Ponomar", system-ui;
-  font-style: normal;
 }
 
 .generate-report {
@@ -85,6 +92,44 @@ svg {
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.report-main-div {
+  min-height: 100vh;
+  width: 95vw;
+  display: flex;
+}
+.report-main-div .left-report {
+  background-color: rosybrown;
+  width: 32%;
+  height: 85vh;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  position: relative;
+}
+.report-main-div .right-report {
+  width: 68%;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  padding-block: 6vh;
+}
+.report-main-div .right-report .flood-landslide-graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0736fe;
+  width: 70vw;
+  height: 120vb;
+  border-radius: 4vb;
+}
+.report-main-div .arrow svg {
+  border-radius: 0;
+  background-color: red;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 
 /*# sourceMappingURL=disaster_report.css.map */
