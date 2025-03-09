@@ -1,5 +1,6 @@
 {% extends 'home.html' %} {% block header %} {% endblock %} {% block title %}
 report-generator {% endblock %} {% block content %}
+{% load static %}
 <div class="main-report">
   <header class="report-header">
     <div class="header-wrapper">
@@ -124,6 +125,29 @@ report-generator {% endblock %} {% block content %}
             d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-384c13.3 0 24 10.7 24 24l0 112c0 13.3-10.7 24-24 24s-24-10.7-24-24l0-112c0-13.3 10.7-24 24-24zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"
           />
         </svg>
+      </div>
+    </div>
+    <div class="flood-main-content">
+      <div class="flood-left-div">
+        <div class="flood-main-graph">
+          Flood Related Graph Here
+        </div>
+      </div>
+      <div class="flood-right-div">
+        <div class="upper-flood">
+          <div>
+            <h1>Overview</h1>
+          </div>
+          <div class="description-div">
+            <h1>Flood Personalized Regional Report </h1>
+            <div class="flood-information">
+              <p>The current flood status in your region is negative, meaning there is no ongoing flooding, and thankfully, no people have been affected or harmed. The weather conditions remain clear, with no immediate risks of heavy rainfall or rising water levels. According to AI the next flood will be occuring on 24/2/12. Be Prepared Stay Safe</p>   
+              <img src="{% static 'flood_vector.png' %}" alt="Flood Report Image" />
+              
+            </div>  
+          </div>
+        </div> 
+        <div class="lower-flood"></div>
       </div>
     </div>
   </div>

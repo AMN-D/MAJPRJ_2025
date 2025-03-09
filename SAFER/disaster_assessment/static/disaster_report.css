@@ -3,7 +3,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   width: 100vw;
   background-color: #f3f3f1;
 }
@@ -28,7 +27,7 @@
 .main-report .report-header .header-wrapper .logo {
   height: 100%;
   width: 50%;
-  padding-left: 2.5vw;
+  padding-left: 0;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -52,7 +51,6 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  padding-right: 2.5vw;
 }
 @media (max-width: 1024px) {
   .main-report .report-header .header-wrapper .header-content {
@@ -145,7 +143,8 @@ svg {
   display: flex;
   justify-content: center;
   align-items: end;
-  padding-block: 6vh;
+  padding-bottom: 6vh;
+  padding-top: 6vh;
 }
 @media (max-width: 1024px) {
   .report-main-div .right-report {
@@ -200,7 +199,6 @@ svg {
 }
 
 .report-flood-div {
-  min-height: 100vh;
   color: #262523;
 }
 @media (max-width: 1024px) {
@@ -209,13 +207,12 @@ svg {
   }
 }
 .report-flood-div .see-more {
-  border-bottom: 1px solid #262523;
-  width: 95vw;
   border-top: 1px solid #262523;
   height: 11vh;
   display: flex;
   justify-content: right;
   align-items: center;
+  border-bottom: 1px solid #262523;
 }
 @media (max-width: 1024px) {
   .report-flood-div .see-more {
@@ -249,7 +246,6 @@ svg {
 }
 .report-flood-div .see-more svg {
   margin-left: 1vw;
-  margin-right: 3vw;
 }
 .report-flood-div .flood-title {
   border-bottom: 1px solid #262523;
@@ -276,9 +272,6 @@ svg {
 .report-flood-div .flood-title .flood-logo-title h1 {
   padding-left: 1vw;
 }
-.report-flood-div .flood-title .last-svg-exclamation {
-  margin-right: 3vw;
-}
 .report-flood-div .safer-desc-logo {
   display: flex;
   justify-content: right;
@@ -291,7 +284,6 @@ svg {
 }
 .report-flood-div .safer-desc-logo svg {
   margin-left: 1vw;
-  margin-right: 3vw;
 }
 .report-flood-div .safer-desc-logo .safer-desc-para p {
   padding: 0;
@@ -304,6 +296,136 @@ svg {
   .report-flood-div .safer-desc-logo .safer-desc-para p {
     font-size: 2vb;
   }
+}
+
+.flood-main-content {
+  display: flex;
+}
+@media (max-width: 1024px) {
+  .flood-main-content {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.flood-main-content .flood-left-div {
+  width: 40vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-left-div {
+    width: 100%;
+  }
+}
+.flood-main-content .flood-left-div .flood-main-graph {
+  height: 92%;
+  width: 87%;
+  background-color: #262523;
+  border-radius: 6vb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f3f3f1;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-left-div .flood-main-graph {
+    width: 95%;
+  }
+}
+.flood-main-content .flood-right-div {
+  width: 60%;
+  height: 100vh;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div {
+    width: 100%;
+  }
+}
+.flood-main-content .flood-right-div .upper-flood {
+  height: 48vh;
+  width: 100%;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .upper-flood {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-left: 4.5vw;
+  }
+}
+.flood-main-content .flood-right-div .upper-flood h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 6vb;
+  color: #262523;
+  margin-top: 2vh;
+}
+.flood-main-content .flood-right-div .upper-flood .description-div {
+  width: 49vw;
+  height: 35vh;
+  border: 1px solid #262523;
+  border-radius: 6vb;
+  padding-inline: 3vw;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .upper-flood .description-div {
+    width: 85%;
+  }
+}
+.flood-main-content .flood-right-div .upper-flood .description-div h1 {
+  margin-top: 2vh;
+  padding: 0;
+  font-size: 5vb;
+  color: #262523;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .upper-flood .description-div h1 {
+    font-size: 4vb;
+    width: 70%;
+  }
+}
+.flood-main-content .flood-right-div .upper-flood .description-div .flood-information {
+  width: 100%;
+  display: flex;
+}
+.flood-main-content .flood-right-div .upper-flood .description-div .flood-information p {
+  width: 75%;
+  text-align: justify;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .upper-flood .description-div .flood-information p {
+    width: 70%;
+    font-size: 1.5vb;
+  }
+}
+.flood-main-content .flood-right-div .upper-flood .description-div .flood-information img {
+  height: 20vh;
+  width: auto; /* Ensures the width adjusts automatically */
+  margin-left: 2vw;
+  object-fit: cover; /* Crops the image instead of shrinking it */
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .upper-flood .description-div .flood-information img {
+    position: absolute;
+    height: 30vh; /* Smaller height */
+    width: 20vw; /* Ensures it covers the full width if needed */
+    object-fit: cover; /* Maintains cropping */
+    background-color: #0736fe;
+    right: 10vw;
+    margin-left: 0vw;
+    top: 354vh;
+  }
+}
+.flood-main-content .flood-right-div .lower-flood {
+  height: 50%;
+  width: 100%;
+  background-color: yellowgreen;
 }
 
 /*# sourceMappingURL=disaster_report.css.map */
