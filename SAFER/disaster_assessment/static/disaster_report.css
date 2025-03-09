@@ -57,11 +57,11 @@
 .main-report .report-header .header-wrapper .header-content h1 {
   color: #262523;
   font-weight: 500;
-  font-size: 2.3vb;
-  letter-spacing: -0.05vb;
+  font-size: 4.2vb;
+  letter-spacing: -0.2vb;
   word-spacing: normal;
-  padding: 0%;
-  margin: 0%;
+  padding: 0;
+  margin: 0;
   padding-right: 0.5vw;
 }
 
@@ -132,19 +132,96 @@ svg {
   align-items: end;
 }
 .report-main-div .hashtag {
-  height: 43vh;
+  height: 36vh;
+  width: 100%;
   margin: 0;
+  margin-top: 5vh;
 }
 .report-main-div .hashtag div {
   border-bottom: 1px solid #262523;
   padding: 0;
   margin: 0;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+}
+.report-main-div .hashtag div .first-hashtag {
+  margin-right: 1vw;
 }
 .report-main-div .hashtag div h1 {
   padding: 0;
+  padding-bottom: 0.5vh;
+  padding-top: 1.5vh;
   margin: 0;
+  color: #444342;
+  font-weight: 300;
+  font-size: 4.5vb;
+}
+
+.report-flood-div {
+  min-height: 100vh;
   color: #262523;
+}
+.report-flood-div .see-more {
+  border-bottom: 1px solid #262523;
+  width: 95vw;
+  border-top: 1px solid #262523;
+  height: 11vh;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.report-flood-div .see-more h1 {
+  color: #262523;
+  font-weight: 500;
+  font-size: 4.2vb;
+  letter-spacing: -0.2vb;
+  word-spacing: normal;
+  padding: 0;
+  margin: 0;
+  padding-right: 0.5vw;
+}
+.report-flood-div .see-more svg {
+  margin-left: 1vw;
+  margin-right: 3vw;
+}
+.report-flood-div .flood-title {
+  border-bottom: 1px solid #262523;
+  width: 95vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.report-flood-div .flood-title .flood-logo-title {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+.report-flood-div .flood-title .flood-logo-title i {
+  color: #262523;
+}
+.report-flood-div .flood-title .flood-logo-title h1 {
+  padding-left: 1vw;
+}
+.report-flood-div .flood-title .last-svg-exclamation {
+  margin-right: 3vw;
+}
+.report-flood-div .safer-desc-logo {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+.report-flood-div .safer-desc-logo svg {
+  margin-left: 1vw;
+  margin-right: 3vw;
+}
+.report-flood-div .safer-desc-logo .safer-desc-para p {
+  padding: 0;
+  margin: 0;
+  line-height: 0.8;
   font-weight: 200;
+  text-align: right;
 }
 
 /*# sourceMappingURL=disaster_report.css.map */

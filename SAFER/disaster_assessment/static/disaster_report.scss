@@ -1,3 +1,14 @@
+@mixin header-text-style {
+  color: #262523;
+  font-weight: 500;
+  font-size: 4.2vb;
+  letter-spacing: -0.2vb;
+  word-spacing: normal;
+  padding: 0;
+  margin: 0;
+  padding-right: 0.5vw;
+}
+
 .main-report {
   display: flex;
   flex-direction: column;
@@ -55,14 +66,7 @@
         align-items: center;
         padding-right: 2.5vw;
         h1 {
-          color: #262523;
-          font-weight: 500;
-          font-size: 2.3vb;
-          letter-spacing: -0.05vb;
-          word-spacing: normal;
-          padding: 0%;
-          margin: 0%;
-          padding-right: 0.5vw;
+          @include header-text-style;
         }
       }
     }
@@ -76,26 +80,26 @@
   height: 100%;
   cursor: pointer;
   background-color: transparent;
-}                                                            
+}
 
 svg {
-    border-radius: 50%;
-    border: none;
-    transition: all 0.3s ease-in-out;
+  border-radius: 50%;
+  border: none;
+  transition: all 0.3s ease-in-out;
 }
 
 .generate-report:hover svg {
-    stroke: #f3f3f1; 
-    background-color: #262523;
-    transform: scale(0.9); 
+  stroke: #f3f3f1;
+  background-color: #262523;
+  transform: scale(0.9);
 }
 
 .download-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .report-main-div {
@@ -137,19 +141,94 @@ svg {
     align-items: end;
   }
   .hashtag {
-    height: 43vh;
+    height: 36vh;
     // background-color: #e34234;
+    width: 100%;
     margin: 0;
+    margin-top: 5vh;
     div {
       border-bottom: 1px solid #262523;
       padding: 0;
       margin: 0;
+      display: flex;
+      align-items: end;
+      justify-content: end;
+      .first-hashtag {
+        margin-right: 1vw;
+      }
       h1 {
         padding: 0;
+        padding-bottom: 0.5vh;
+        padding-top: 1.5vh;
         margin: 0;
         // text-decoration: underline;
+        color: #444342;
+        font-weight: 300;
+        font-size: 4.5vb;
+      }
+    }
+  }
+}
+
+.report-flood-div {
+  min-height: 100vh;
+  color: #262523;
+  .see-more {
+    // background-color: rebeccapurple;
+    border-bottom: 1px solid #262523;
+    width: 95vw;
+    border-top: 1px solid #262523;
+    height: 11vh;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    h1 {
+      @include header-text-style;
+    }
+    svg {
+      margin-left: 1vw;
+      margin-right: 3vw;
+    }
+  }
+  
+  .flood-title {
+    border-bottom: 1px solid #262523;
+    width: 95vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .flood-logo-title {
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      i {
         color: #262523;
+      }
+      h1 {
+        padding-left: 1vw;
+      }
+    }
+    .last-svg-exclamation {
+      margin-right: 3vw;
+    }
+  }
+  .safer-desc-logo {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    svg {
+      margin-left: 1vw;
+      margin-right: 3vw;
+    }
+    .safer-desc-para {
+      // background-color: rebeccapurple;
+      p {
+        padding: 0;
+        margin: 0;
+        line-height: 0.8;
         font-weight: 200;
+        text-align: right;
       }
     }
   }
