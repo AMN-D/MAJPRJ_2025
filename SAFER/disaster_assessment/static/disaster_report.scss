@@ -7,6 +7,11 @@
   padding: 0;
   margin: 0;
   padding-right: 0.5vw;
+  @media (max-width: 1024px) {
+    font-size: 3vb;
+    text-align: right;
+    line-height: 1.2;
+  }
 }
 
 .main-report {
@@ -65,8 +70,18 @@
         justify-content: right;
         align-items: center;
         padding-right: 2.5vw;
+        @media (max-width: 1024px) {
+          // background-color: #e34234;
+          height: 80%;
+          align-self: center;
+        }
         h1 {
           @include header-text-style;
+          @media (max-width: 1024px) {
+            font-size: 3vb;
+            text-align: right;
+            line-height: 1.2;
+          }
         }
       }
     }
@@ -107,6 +122,9 @@ svg {
   width: 95vw;
   display: flex;
   justify-content: space-between;
+  @media (max-width: 1024px) {
+    flex-direction: column-reverse;
+  }
   .left-report {
     // background-color: rosybrown;
     width: 29%;
@@ -116,6 +134,10 @@ svg {
     justify-content: end;
     position: relative;
     flex-direction: column;
+    @media (max-width: 1024px) {
+      width: 100%;
+      height: auto;
+    }
   }
   .right-report {
     width: 68%;
@@ -124,6 +146,9 @@ svg {
     align-items: end;
     padding-block: 6vh;
     // background-color: rosybrown;
+    @media (max-width: 1024px) {
+      width: 100%;
+    }
     .flood-landslide-graph {
       display: flex;
       justify-content: center;
@@ -132,6 +157,9 @@ svg {
       width: 70vw;
       height: 118vh;
       border-radius: 4vb;
+      @media (max-width: 1024px) {
+        width: 100%;
+      }
     }
   }
   .arrow svg {
@@ -173,6 +201,9 @@ svg {
 .report-flood-div {
   min-height: 100vh;
   color: #262523;
+  @media (max-width: 1024px) {
+    margin-top: 5vh;
+  }
   .see-more {
     // background-color: rebeccapurple;
     border-bottom: 1px solid #262523;
@@ -182,12 +213,25 @@ svg {
     display: flex;
     justify-content: right;
     align-items: center;
+    @media (max-width: 1024px) {
+      border-top: none;
+      justify-content: left;
+      flex-direction: row-reverse;
+    }
     h1 {
       @include header-text-style;
+      @media (max-width: 1024px) {
+        width: 50%;
+        text-align: left;
+        // margin-top: 5vh;
+      }
     }
     svg {
       margin-left: 1vw;
       margin-right: 3vw;
+      @media (max-width: 1024px) {
+        // margin-top: 5vh;
+      }
     }
   }
   
@@ -199,6 +243,10 @@ svg {
     justify-content: space-between;
     align-items: center;
     .flood-logo-title {
+      @media (max-width: 1024px) {
+        font-size: 1.5vb;
+        line-height: 0.9;
+      }
       display: flex;
       justify-content: left;
       align-items: center;
@@ -214,6 +262,10 @@ svg {
     }
   }
   .safer-desc-logo {
+    @media (max-width: 1024px) {
+      // background-color: #0736fe;
+      width: 50%;
+    }
     display: flex;
     justify-content: right;
     align-items: center;
@@ -229,6 +281,9 @@ svg {
         line-height: 0.8;
         font-weight: 200;
         text-align: right;
+        @media (max-width: 1024px) {
+          font-size: 2vb;
+        }
       }
     }
   }

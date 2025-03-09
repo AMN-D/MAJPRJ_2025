@@ -54,6 +54,12 @@
   align-items: center;
   padding-right: 2.5vw;
 }
+@media (max-width: 1024px) {
+  .main-report .report-header .header-wrapper .header-content {
+    height: 80%;
+    align-self: center;
+  }
+}
 .main-report .report-header .header-wrapper .header-content h1 {
   color: #262523;
   font-weight: 500;
@@ -63,6 +69,20 @@
   padding: 0;
   margin: 0;
   padding-right: 0.5vw;
+}
+@media (max-width: 1024px) {
+  .main-report .report-header .header-wrapper .header-content h1 {
+    font-size: 3vb;
+    text-align: right;
+    line-height: 1.2;
+  }
+}
+@media (max-width: 1024px) {
+  .main-report .report-header .header-wrapper .header-content h1 {
+    font-size: 3vb;
+    text-align: right;
+    line-height: 1.2;
+  }
 }
 
 .generate-report {
@@ -100,6 +120,11 @@ svg {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 1024px) {
+  .report-main-div {
+    flex-direction: column-reverse;
+  }
+}
 .report-main-div .left-report {
   width: 29%;
   height: 125vh;
@@ -109,12 +134,23 @@ svg {
   position: relative;
   flex-direction: column;
 }
+@media (max-width: 1024px) {
+  .report-main-div .left-report {
+    width: 100%;
+    height: auto;
+  }
+}
 .report-main-div .right-report {
   width: 68%;
   display: flex;
   justify-content: center;
   align-items: end;
   padding-block: 6vh;
+}
+@media (max-width: 1024px) {
+  .report-main-div .right-report {
+    width: 100%;
+  }
 }
 .report-main-div .right-report .flood-landslide-graph {
   display: flex;
@@ -124,6 +160,11 @@ svg {
   width: 70vw;
   height: 118vh;
   border-radius: 4vb;
+}
+@media (max-width: 1024px) {
+  .report-main-div .right-report .flood-landslide-graph {
+    width: 100%;
+  }
 }
 .report-main-div .arrow svg {
   border-radius: 0;
@@ -162,6 +203,11 @@ svg {
   min-height: 100vh;
   color: #262523;
 }
+@media (max-width: 1024px) {
+  .report-flood-div {
+    margin-top: 5vh;
+  }
+}
 .report-flood-div .see-more {
   border-bottom: 1px solid #262523;
   width: 95vw;
@@ -170,6 +216,13 @@ svg {
   display: flex;
   justify-content: right;
   align-items: center;
+}
+@media (max-width: 1024px) {
+  .report-flood-div .see-more {
+    border-top: none;
+    justify-content: left;
+    flex-direction: row-reverse;
+  }
 }
 .report-flood-div .see-more h1 {
   color: #262523;
@@ -180,6 +233,19 @@ svg {
   padding: 0;
   margin: 0;
   padding-right: 0.5vw;
+}
+@media (max-width: 1024px) {
+  .report-flood-div .see-more h1 {
+    font-size: 3vb;
+    text-align: right;
+    line-height: 1.2;
+  }
+}
+@media (max-width: 1024px) {
+  .report-flood-div .see-more h1 {
+    width: 50%;
+    text-align: left;
+  }
 }
 .report-flood-div .see-more svg {
   margin-left: 1vw;
@@ -198,6 +264,12 @@ svg {
   justify-content: left;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  .report-flood-div .flood-title .flood-logo-title {
+    font-size: 1.5vb;
+    line-height: 0.9;
+  }
+}
 .report-flood-div .flood-title .flood-logo-title i {
   color: #262523;
 }
@@ -212,6 +284,11 @@ svg {
   justify-content: right;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  .report-flood-div .safer-desc-logo {
+    width: 50%;
+  }
+}
 .report-flood-div .safer-desc-logo svg {
   margin-left: 1vw;
   margin-right: 3vw;
@@ -222,6 +299,11 @@ svg {
   line-height: 0.8;
   font-weight: 200;
   text-align: right;
+}
+@media (max-width: 1024px) {
+  .report-flood-div .safer-desc-logo .safer-desc-para p {
+    font-size: 2vb;
+  }
 }
 
 /*# sourceMappingURL=disaster_report.css.map */
