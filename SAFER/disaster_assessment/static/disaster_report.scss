@@ -235,6 +235,15 @@ svg {
     }
   }
 
+  .landslide-title {
+    border-bottom: 1px solid #262523;
+    border-top: 1px solid #262523;
+    width: 95vw;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .flood-title {
     border-bottom: 1px solid #262523;
     width: 95vw;
@@ -507,7 +516,7 @@ svg {
 }
 
 .landslide-main-content {
-  height: 75vh;
+  height: 84vh;
   margin-bottom: 4vh;
   // width: 100vw;
   // background-color: bisque;
@@ -540,6 +549,70 @@ svg {
         padding: 0;
         font-size: 6vb;
         color: #262523;
+      }
+    }
+    .card-div {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      // background-color: #0736fe;
+      padding-left: 2vw;
+      height: 85%;
+      .card {
+        height: 30vh;
+        width: 27vw;
+        border: 1px solid #262523;
+        // background-color: khaki;
+        border-radius: 4vb;
+        // box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: box-shadow 0.3s ease-in-out;
+        &:hover {
+          box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
+        }
+        .capsule-div {
+          height: 20%;
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          align-items: start;
+          // background-color: #0736fe;
+          p {
+            font-size: 2vb;
+            background-color: #2f42c3;
+            color: #99abff;
+            border-radius: 3vb;
+            padding-inline: 1vw;
+            padding-top: 0.1vw;
+            padding-bottom: 0.1vw;
+          }
+          i {
+            margin-top: 2vh;
+            font-size: 4vb;
+          }
+        }
+        .bottom-div {
+          // background-color: red;
+          width: 85%;
+          height: 5vh;
+          border-top: 1px solid #b5b3b4;
+          color: #b5b3b4;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          p {
+            width: 95%;
+            text-align: left;
+            // padding: 0.5vh;
+            padding: 0;
+            // margin: 0;
+            // text-align: right;
+            font-size: 2vb;
+            font-weight: 400;
+          }
+        }
       }
     }
   }
