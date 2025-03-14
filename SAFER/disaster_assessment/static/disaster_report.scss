@@ -549,36 +549,70 @@ svg {
         padding: 0;
         font-size: 6vb;
         color: #262523;
+        // padding-bottom: 5vh;
       }
     }
     .card-div {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
       flex-direction: column;
       // background-color: #0736fe;
       padding-left: 2vw;
-      height: 85%;
+      // padding-top: 5vh;
+      height: 42%;
+      // background-color: rebeccapurple;
       .card {
         height: 30vh;
         width: 27vw;
         border: 1px solid #262523;
-        // background-color: khaki;
         border-radius: 4vb;
         // box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
         display: flex;
         flex-direction: column;
         align-items: center;
         transition: box-shadow 0.3s ease-in-out;
+        // background-color: khaki;
         &:hover {
           box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
         }
+        .people-affected {
+          // background-color: lawngreen;
+          width: 90%;
+          height: 60%;
+          display: flex;
+          justify-content: left;
+          align-items: start;
+          flex-direction: column;
+          .people-affected-title {
+            font-size: 2.3vb;
+            font-weight: 300;
+            padding: 0;
+            margin: 0;
+            letter-spacing: -0.1vb;
+          }
+          .people-affected-description {
+            font-size: 3.5vb;
+            padding: 0;
+            margin: 0;
+            letter-spacing: -0.1vb;
+            margin-top: 1vh;
+            font-weight: 400;
+          }
+
+        }
         .capsule-div {
-          height: 20%;
+          height: 25%;
           width: 90%;
           display: flex;
+          flex-direction: column;
           justify-content: space-between;
           align-items: start;
-          // background-color: #0736fe;
+          // background-color: rebeccapurple;
+          .vertical-capsule-inside {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+          }
           p {
             font-size: 2vb;
             background-color: #2f42c3;
@@ -594,11 +628,13 @@ svg {
           }
         }
         .bottom-div {
+          // background-color: #0736fe;
           // background-color: red;
           width: 85%;
-          height: 5vh;
+          height: 15%;
           border-top: 1px solid #b5b3b4;
           color: #b5b3b4;
+          // background-color: firebrick;
           display: flex;
           justify-content: center;
           align-items: center;
@@ -617,4 +653,5 @@ svg {
     }
   }
 }
+
 
