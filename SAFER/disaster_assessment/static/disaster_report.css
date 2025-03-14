@@ -256,6 +256,12 @@ svg {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  .report-flood-div .landslide-title {
+    margin-top: 5vh;
+    padding: 2vh;
+  }
+}
 .report-flood-div .flood-title {
   border-bottom: 1px solid #262523;
   width: 95vw;
@@ -437,6 +443,12 @@ svg {
   height: 50%;
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .lower-flood {
+    height: 100%;
+    position: relative;
+  }
+}
 .flood-main-content .flood-right-div .lower-flood h1 {
   margin: 0;
   padding: 0;
@@ -445,9 +457,21 @@ svg {
   margin-top: 2vh;
   margin-bottom: 3vh;
 }
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .lower-flood h1 {
+    margin-left: 4.5vw;
+  }
+}
 .flood-main-content .flood-right-div .lower-flood .card-div {
   display: flex;
   justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .lower-flood .card-div {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .flood-main-content .flood-right-div .lower-flood .card-div .card {
   height: 25vh;
@@ -462,6 +486,12 @@ svg {
 }
 .flood-main-content .flood-right-div .lower-flood .card-div .card:hover {
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 1024px) {
+  .flood-main-content .flood-right-div .lower-flood .card-div .card {
+    width: 90%;
+    margin-top: 2vh;
+  }
 }
 .flood-main-content .flood-right-div .lower-flood .card-div .card .icon-div {
   height: 60%;
@@ -534,6 +564,13 @@ svg {
   align-items: center;
   /* Ensuring equal width for inner divs */
 }
+@media (max-width: 1024px) {
+  .landslide-main-content {
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+  }
+}
 .landslide-main-content .left-div-landslide,
 .landslide-main-content .center-div-landslide,
 .landslide-main-content .right-div-landslide {
@@ -541,6 +578,15 @@ svg {
   height: 100%;
   width: 100%; /* Let flex control the sizing */
   flex: 1; /* Makes them take equal space */
+}
+@media (max-width: 1024px) {
+  .landslide-main-content .left-div-landslide,
+  .landslide-main-content .center-div-landslide,
+  .landslide-main-content .right-div-landslide {
+    justify-content: center;
+    align-items: center;
+    background-color: #f3f3f1;
+  }
 }
 .landslide-main-content .left-div-landslide {
   display: flex;
@@ -568,6 +614,11 @@ svg {
   padding-left: 2vw;
   height: 42%;
 }
+@media (max-width: 1024px) {
+  .landslide-main-content .left-div-landslide .card-div {
+    width: 90%;
+  }
+}
 .landslide-main-content .left-div-landslide .card-div .card {
   height: 30vh;
   width: 27vw;
@@ -577,6 +628,12 @@ svg {
   flex-direction: column;
   align-items: center;
   transition: box-shadow 0.3s ease-in-out;
+}
+@media (max-width: 1024px) {
+  .landslide-main-content .left-div-landslide .card-div .card {
+    width: 100%;
+    margin-block: 2vh;
+  }
 }
 .landslide-main-content .left-div-landslide .card-div .card:hover {
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
@@ -655,16 +712,32 @@ svg {
   height: 100%;
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .center-div-landslide {
+    background-color: #f3f3f1;
+  }
+}
 .center-div-landslide .center-inforamtion-landslide {
   height: 25%;
   width: 90%;
   border-bottom: 1px solid #211f20;
   padding-bottom: 5%;
 }
+@media (max-width: 1024px) {
+  .center-div-landslide .center-inforamtion-landslide {
+    padding-bottom: 15%;
+  }
+}
 .center-div-landslide .center-inforamtion-landslide .header-div {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 1024px) {
+  .center-div-landslide .center-inforamtion-landslide .header-div {
+    padding: 0;
+    margin-top: 5vh;
+  }
 }
 .center-div-landslide .center-inforamtion-landslide h1 {
   margin: 0;
@@ -685,6 +758,12 @@ svg {
   height: 65%;
   width: 90%;
   padding-top: 5%;
+}
+@media (max-width: 1024px) {
+  .center-div-landslide .center-graph-landslide {
+    margin-top: 2vh;
+    margin-bottom: 5vh;
+  }
 }
 .center-div-landslide .center-graph-landslide .header-div {
   display: flex;
@@ -721,6 +800,11 @@ svg {
   align-items: center;
   border-radius: 5vb;
   background-color: whitesmoke;
+}
+@media (max-width: 1024px) {
+  .center-div-landslide .center-graph-landslide .main-graph-landslide div {
+    height: 30vh;
+  }
 }
 .center-div-landslide .center-graph-landslide .main-graph-landslide h1 {
   padding: 5%;
@@ -761,11 +845,23 @@ svg {
   display: flex;
   align-items: center;
 }
+@media (max-width: 1024px) {
+  .right-landslide-div {
+    background-color: #f3f3f1;
+    height: 200vh !important;
+  }
+}
 
 .header-landslide-right-div {
   align-self: flex-start;
   margin-top: 2vh;
   margin-bottom: 0;
+}
+@media (max-width: 1024px) {
+  .header-landslide-right-div {
+    margin-top: 2vh;
+    align-self: center;
+  }
 }
 
 .card-div-right-small {
@@ -775,9 +871,34 @@ svg {
   width: 90%;
   padding-bottom: 1vh;
 }
+@media (max-width: 1024px) {
+  .card-div-right-small {
+    padding: 0;
+    border-bottom: none !important;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+  }
+}
 
 .card-div-small-special {
   border-bottom: none !important;
+}
+@media (max-width: 1024px) {
+  .card-div-small-special {
+    background-color: #f3f3f1;
+    margin-bottom: 4vh;
+  }
+}
+
+@media (max-width: 1024px) {
+  .report-landslide-div {
+    margin-top: 50vh !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=disaster_report.css.map */
