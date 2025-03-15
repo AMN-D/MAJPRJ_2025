@@ -61,7 +61,7 @@ function callAmbulance() {
   let longitude = document.getElementById("longitude").value;
   let csrfToken = getCSRFToken();
 
-  fetch("/send_sms/", {
+  fetch("/ambulance/send_sms/", {
     method: "POST",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",

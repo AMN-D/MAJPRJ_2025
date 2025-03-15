@@ -8,14 +8,16 @@ import os
 
 ACCOUNT_SID = "AC2560b7110edec0ee3eb720a2afbcbfa8"
 AUTH_TOKEN = "3ab87c3c777b69ddd12ac002cffe5b78"  
-TWILIO_PHONE_NUMBER = "+18777804236"  
-MESSAGING_SERVICE_SID = "MG4f0425ab8f3525b2e451c0b172a23838"  
+TWILIO_PHONE_NUMBER = "+14178553539"  
+MESSAGING_SERVICE_SID = "MG9235c617c48955617f204989ca2ae61a"  
 
 @csrf_exempt
 def send_sms(request):
     if request.method == "POST":
         latitude = request.POST.get("latitude")
         longitude = request.POST.get("longitude")
+
+        print(latitude, longitude)
 
         maps_link = f"https://www.google.com/maps?q={latitude},{longitude}"
         sms_body = f"🚨 Emergency! Location: {maps_link} 📍 Please send an ambulance! 🚑"
@@ -30,6 +32,7 @@ def send_sms(request):
             return JsonResponse({"status": "success", "message_sid": message.sid})
 
         except Exception as e:
-            return JsonResponse({"status": "error", "message": str(e)})
+                print(f"Twilio Error: {str(e)}")  
+                return JsonResponse({"status": "error", "message": str(e)})
 
     return JsonResponse({"status": "failed", "error": "Invalid request method."})
