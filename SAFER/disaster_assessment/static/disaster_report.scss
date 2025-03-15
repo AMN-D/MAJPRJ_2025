@@ -243,10 +243,6 @@ svg {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @media (max-width: 1024px) {
-      margin-top: 5vh;
-      padding: 2vh;
-    }
   }
   .flood-title {
     border-bottom: 1px solid #262523;
@@ -416,11 +412,6 @@ svg {
     .lower-flood {
       height: 50%;
       width: 100%;
-      @media (max-width: 1024px) {
-        // background-color: #0736fe;
-        height: 100%;
-        position: relative;
-      }
       h1 {
         margin: 0;
         padding: 0;
@@ -429,20 +420,10 @@ svg {
         margin-top: 2vh;
         margin-bottom: 3vh;
         // background-color: #0736fe;
-        @media (max-width: 1024px) {
-          // background-color: #0736fe;
-          margin-left: 4.5vw;
-        }
       }
       .card-div {
         display: flex;
         justify-content: space-between;
-        @media (max-width: 1024px) {
-          flex-direction: column;
-          // background-color: #0736fe;
-          justify-content: center;
-          align-items: center;
-        }
         .card {
           height: 25vh;
           width: 17vw;
@@ -456,11 +437,6 @@ svg {
           transition: box-shadow 0.3s ease-in-out;
           &:hover {
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.7);
-          }
-          @media (max-width: 1024px) {
-            // background-color: #0736fe;
-            width: 90%;
-            margin-top: 2vh;
           }
           .icon-div {
             height: 60%;
@@ -547,22 +523,13 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
-  }
+
   /* Ensuring equal width for inner divs */
   .left-div-landslide,
   .center-div-landslide,
   .right-div-landslide {
     @include landslide-div-distribution();
     flex: 1; /* Makes them take equal space */
-    @media (max-width: 1024px) {
-      justify-content: center;
-      align-items: center;
-      background-color: #f3f3f1;
-    }
   }
 
   .left-div-landslide {
@@ -594,9 +561,6 @@ svg {
       // padding-top: 5vh;
       height: 42%;
       // background-color: rebeccapurple;
-      @media (max-width: 1024px) {
-        width: 90%;
-      }
       .card {
         height: 30vh;
         width: 27vw;
@@ -608,10 +572,6 @@ svg {
         align-items: center;
         transition: box-shadow 0.3s ease-in-out;
         // background-color: khaki;
-        @media (max-width: 1024px) {
-          width: 100%;
-          margin-block: 2vh;
-        }
         &:hover {
           box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
         }
@@ -700,29 +660,17 @@ svg {
   align-items: center;
   height: 100%;
   width: 100%;
-  @media (max-width: 1024px) {
-    background-color: #f3f3f1;
-  }
   .center-inforamtion-landslide {
     // background-color: #2f42c3;
     height: 25%;
     width: 90%;
     border-bottom: 1px solid #211f20;
-    padding-bottom: 5%; 
-    @media (max-width: 1024px) {
-      // background-color: #0736fe;
-     padding-bottom: 15%;
-    }
+    padding-bottom: 5%;
     .header-div {
       // background-color: rebeccapurple;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @media (max-width: 1024px) {
-        padding: 0;
-        margin-top: 5vh;
-          // background-color: rebeccapurple;
-        }
     }
     h1 {
       margin: 0;
@@ -731,7 +679,6 @@ svg {
       padding: 0;
       font-size: 6vb;
       color: #262523;
-
     }
     p {
       font-size: 3.5vb;
@@ -746,11 +693,6 @@ svg {
     height: 65%;
     width: 90%;
     padding-top: 5%;
-    @media (max-width: 1024px) {
-      // background-color: #0736fe;
-      margin-top: 2vh;
-      margin-bottom: 5vh;
-    }
     .header-div {
       // background-color: rebeccapurple;
       display: flex;
@@ -786,9 +728,6 @@ svg {
         align-items: center;
         border-radius: 5vb;
         background-color: whitesmoke;
-        @media (max-width: 1024px) {
-          height: 30vh;
-        }
       }
       h1 {
         padding: 5%;
@@ -839,23 +778,12 @@ svg {
 .right-landslide-div {
   display: flex;
   align-items: center;
-  @media (max-width: 1024px) {
-    background-color: #f3f3f1;
-    height: 200vh !important;
-    // background-color: rebeccapurple;
-  }
 }
 
 .header-landslide-right-div {
   align-self: flex-start;
   margin-top: 2vh;
   margin-bottom: 0;
-  @media (max-width: 1024px) {
-    // background-color: #f3f3f1;
-    margin-top: 2vh;
-    align-self: center;
-    // background-color: rebeccapurple;
-  }
 }
 
 .card-div-right-small {
@@ -865,31 +793,8 @@ svg {
   width: 90%;
   // background-color: #0736fe;
   padding-bottom: 1vh;
-  @media (max-width: 1024px) {
-    padding: 0;
-    border-bottom: none !important;
-    margin: 0;
-    overflow: hidden;
-    position: relative;
-    // padding-bottom: 2vh;
-    // background-color: rebeccapurple;
-  }
 }
 
 .card-div-small-special {
   border-bottom: none !important;
-  @media (max-width: 1024px) {
-    background-color: #f3f3f1;
-    margin-bottom: 4vh;
-  }
-}
-
-.report-landslide-div {
-  @media (max-width: 1024px) {
-    margin-top: 50vh !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 }
