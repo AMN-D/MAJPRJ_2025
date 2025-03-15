@@ -62,8 +62,8 @@
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition((position) => {
                     
-                    //const userLocation = [position.coords.latitude, position.coords.longitude];
-                    const userLocation = [19.10598,73.0077729];
+                    const userLocation = [position.coords.latitude, position.coords.longitude];
+                    // const userLocation = [19.10598,73.0077729];
                     map.setView(userLocation, 14);
 
                     // Create a red marker icon
@@ -186,7 +186,7 @@
         function showNearestHospital() {
             if (navigator.geolocation) {
                 navigator.geolocation.getCurrentPosition((position) => {
-                    const userLocation = [19.10598,73.0077729];
+                    const userLocation = [position.coords.latitude, position.coords.longitude];;
                     findNearbyHospitals(userLocation);
                 }, () => {
                     document.getElementById('status').innerText = "Geolocation failed. Unable to find nearby hospitals.";
