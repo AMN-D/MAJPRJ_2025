@@ -190,8 +190,8 @@ report-generator {% endblock %} {% block content %} {% load static %}
     </div>
   </div>
   <div class="report-flood-div">
-    <div class="flood-title landslide-title" >
-      <div class="flood-logo-title" >
+    <div class="flood-title landslide-title">
+      <div class="flood-logo-title">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 576 512"
@@ -244,26 +244,45 @@ report-generator {% endblock %} {% block content %} {% load static %}
             <path d="M8 10l4 4 4-4" />
           </svg>
         </div>
-        <div class="card-div">
+
+        <div class="card-div card-div-small">
           <div class="card">
             <div class="capsule-div">
+              <div class="vertical-capsule-inside">
                 <p>BySAFER</p>
                 <i class="fa-solid fa-triangle-exclamation"></i>
+              </div>
+            </div>
+            <div class="people-affected">
+              <p class="people-affected-title">People Affected</p>
+              <p class="people-affected-description">
+                1024 People Affected in your region.
+              </p>
             </div>
             <div class="bottom-div">
               <p>13/12/2003</p>
             </div>
           </div>
+        </div>
 
-          <div class="card ">
-            <div class="icon-div">
-              <i class="fa-solid fa-cloud-showers-heavy"></i>
+        <div class="card-div card-div-small">
+          <div class="card">
+            <div class="capsule-div">
+              <div class="vertical-capsule-inside">
+                <p>BySAFER</p>
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+            </div>
+            <div class="people-affected">
+              <p class="people-affected-title">Current Weather</p>
+              <p class="people-affected-description">
+                Your weather currently is Sunny. 
+              </p>
             </div>
             <div class="bottom-div">
-              <p>20% chance of flood occuring today</p>
+              <p>13/12/2003</p>
             </div>
           </div>
-
         </div>
       </div>
       <div class="center-div-landslide"></div>

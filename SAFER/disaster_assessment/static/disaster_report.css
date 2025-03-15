@@ -563,10 +563,10 @@ svg {
 }
 .landslide-main-content .left-div-landslide .card-div {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-direction: column;
   padding-left: 2vw;
-  height: 85%;
+  height: 42%;
 }
 .landslide-main-content .left-div-landslide .card-div .card {
   height: 30vh;
@@ -581,12 +581,41 @@ svg {
 .landslide-main-content .left-div-landslide .card-div .card:hover {
   box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.4);
 }
+.landslide-main-content .left-div-landslide .card-div .card .people-affected {
+  width: 90%;
+  height: 60%;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  flex-direction: column;
+}
+.landslide-main-content .left-div-landslide .card-div .card .people-affected .people-affected-title {
+  font-size: 2.3vb;
+  font-weight: 300;
+  padding: 0;
+  margin: 0;
+  letter-spacing: -0.1vb;
+}
+.landslide-main-content .left-div-landslide .card-div .card .people-affected .people-affected-description {
+  font-size: 3.5vb;
+  padding: 0;
+  margin: 0;
+  letter-spacing: -0.1vb;
+  margin-top: 1vh;
+  font-weight: 400;
+}
 .landslide-main-content .left-div-landslide .card-div .card .capsule-div {
-  height: 20%;
+  height: 25%;
   width: 90%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: start;
+}
+.landslide-main-content .left-div-landslide .card-div .card .capsule-div .vertical-capsule-inside {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 .landslide-main-content .left-div-landslide .card-div .card .capsule-div p {
   font-size: 2vb;
@@ -603,7 +632,7 @@ svg {
 }
 .landslide-main-content .left-div-landslide .card-div .card .bottom-div {
   width: 85%;
-  height: 5vh;
+  height: 15%;
   border-top: 1px solid #b5b3b4;
   color: #b5b3b4;
   display: flex;
