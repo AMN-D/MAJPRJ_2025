@@ -38,7 +38,6 @@ window.addEventListener("scroll", () => {
   isScrolling = setTimeout(handleScroll, 10); // Adjust time for smoother response
 });
 
-
 document.addEventListener("DOMContentLoaded", function () {
   var cardSwiper = new Swiper(".myUniqueCardSwiper", {
     // Number of cards visible at once for larger screens
@@ -214,22 +213,46 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+function getLocationName(lat, lon) {
+  fetch(
+    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data); // Debugging: Check the response structure in the console
 
+      let district =
+        data.address.county ||
+        data.address.city ||
+        data.address.state_district ||
+        "Unknown Area";
 
+      document.getElementById("location-name").innerText = district;
+    })
+    .catch((error) => {
+      console.error("Error fetching location name:", error);
+      document.getElementById("location-name").innerText =
+        "Location unavailable";
+    });
+}
 
+function fetchLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        getLocationName(lat, lon);
+      },
+      () => {
+        document.getElementById("location-name").innerText =
+          "Location access denied";
+      }
+    );
+  } else {
+    document.getElementById("location-name").innerText =
+      "Geolocation not supported";
+  }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+window.onload = fetchLocation;

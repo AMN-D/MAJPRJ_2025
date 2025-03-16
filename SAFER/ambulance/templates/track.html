@@ -1,60 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Location Tracker</title>
-    <script>
-      const SERVER_URL = "http://127.0.0.1:8000/ambulance/receive-location/";
+{% extends 'home.html' %} 
+{% load static %}
+{% block title %}
+ambulance-main
+{% endblock %}
+{% block content %}
+<div class="tracking-text-div">
+  <h1>Your location is currently being tracked for assistance</h1>
+  <p>To stop tracking, disable your GPS. If you want the requester to continue seeing your location, please keep this page open.</p>
+</div>
+<script>
+  const SERVER_URL = "http://127.0.0.1:8000/ambulance/receive-location/";
 
-      // ✅ Function to send user location
-      function sendLocation(position) {
-        const lat = position.coords.latitude;
-        const lon = position.coords.longitude;
+  function sendLocation(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
 
-        fetch(SERVER_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ latitude: lat, longitude: lon }),
-        })
-          .then((response) => response.json())
-          .then((data) => console.log("📍 Location sent:", data))
-          .catch((error) => console.error("❌ Error sending location:", error));
-      }
+    fetch(SERVER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ latitude: lat, longitude: lon }),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log("📍 Location sent:", data))
+      .catch((error) => console.error("❌ Error sending location:", error));
+  }
 
-      // ✅ Function to fetch stored locations
-      function getLocations() {
-        fetch(SERVER_URL, {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log("📍 Received locations:", data.locations);
-          })
-          .catch((error) => console.error("❌ Error fetching locations:", error));
-      }
+  function getLocations() {
+    fetch(SERVER_URL, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("📍 Received locations:", data.locations);
+      })
+      .catch((error) => console.error("❌ Error fetching locations:", error));
+  }
 
-      // ✅ Start tracking location
-      function trackLocation() {
-        if (navigator.geolocation) {
-          navigator.geolocation.watchPosition(sendLocation, console.error, {
-            enableHighAccuracy: true,
-            maximumAge: 0,
-          });
-        } else {
-          alert("Geolocation is not supported by this browser.");
-        }
-      }
+  function trackLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(sendLocation, console.error, {
+        enableHighAccuracy: true,
+        maximumAge: 0,
+      });
+    } else {
+      alert("Geolocation is not supported by this browser.");
+    }
+  }
 
-      // ✅ Automatically start tracking
-      trackLocation();
+  trackLocation();
 
-      // ✅ Fetch stored locations every 10 seconds
-      setInterval(getLocations, 10000);
-    </script>
-  </head>
-  <body>
-    <h1>Tracking your location...</h1>
-  </body>
-</html>
+  setInterval(getLocations, 10000);
+</script>
+{% csrf_token %}
+{% endblock %}
+
