@@ -16,6 +16,7 @@ user_locations = {}
 
 
 @csrf_exempt
+@csrf_exempt
 def send_sms(request):
     if request.method == "POST":
         latitude = request.POST.get("latitude")
@@ -23,15 +24,8 @@ def send_sms(request):
 
         print(latitude, longitude)
 
-        maps_link = f"https://www.google.com/maps?q={latitude},{longitude}"
-        track_me = "http://127.0.0.1:8000/ambulance/track/"
-        sms_body = (
-            f"🚨 Emergency Alert! 🚑\n\n"
-            f"📍 Location: {maps_link}\n"
-            f"🔗 Live Tracking: {track_me}\n\n"
-            f"⚠️ Please send an ambulance immediately!"
-        )
-
+        maps_link = f"127.0.0.1:8000/ambulance/track/"
+        sms_body = f"🚨 Emergency! Location: {maps_link} 📍 Please send an ambulance! 🚑"
 
         try:
             client = Client(ACCOUNT_SID, AUTH_TOKEN)
@@ -41,9 +35,11 @@ def send_sms(request):
                 to="+919359195852",  
             )
             return JsonResponse({"status": "success", "message_sid": message.sid})
+
         except Exception as e:
                 print(f"Twilio Error: {str(e)}")  
                 return JsonResponse({"status": "error", "message": str(e)})
+
     return JsonResponse({"status": "failed", "error": "Invalid request method."})
     
 def track(request):

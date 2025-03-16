@@ -941,8 +941,13 @@ footer {
   }
 }
 
-.icon:hover + .notification-panel,
+.profile:hover .bell-icon:hover ~ .notification-panel,
 .notification-panel:hover {
-  display: block; /* Show when hovered */
+  display: block;
+}
+
+.icon.mic-active {
+  background-color: #a54127;
+  color: #fefefe;
 }
 

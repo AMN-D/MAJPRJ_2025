@@ -99,3 +99,36 @@ setInterval(fetchTrackedLocations, 10000);
 
 // Initialize map and location tracking
 window.addEventListener("load", userLocation);
+
+function getCSRFToken() {
+  return document.querySelector("[name=csrfmiddlewaretoken]").value; // Get CSRF token
+}
+
+function callAmbulance() {
+  let latitude = document.getElementById("latitude").value;
+  let longitude = document.getElementById("longitude").value;
+  let csrfToken = getCSRFToken();
+
+  fetch("/ambulance/send_sms/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "X-CSRFToken": csrfToken, // CSRF token for security
+    },
+    body: `latitude=${latitude}&longitude=${longitude}`,
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === "success") {
+        alert(
+          "SMS sent successfully! Help is on the way. Stay safe, and use our Quick Aid feature in case of an emergency."
+        );
+      } else {
+        alert("Error sending SMS. Please try again.");
+      }
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      alert("Something went wrong! Please try again.");
+    });
+}

@@ -256,3 +256,10 @@ function fetchLocation() {
 }
 
 window.onload = fetchLocation;
+
+let micInUse = false;
+
+document.getElementById("mic-icon").addEventListener("click", function () {
+  micInUse = !micInUse;
+  this.classList.toggle("mic-active", micInUse);
+});

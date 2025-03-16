@@ -1047,9 +1047,14 @@ footer .cover .extra-info h6 {
   align-items: start;
 }
 
-.icon:hover + .notification-panel,
+.profile:hover .bell-icon:hover ~ .notification-panel,
 .notification-panel:hover {
-  display: block; /* Show when hovered */
+  display: block;
+}
+
+.icon.mic-active {
+  background-color: #a54127;
+  color: #fefefe;
 }
 
 /*# sourceMappingURL=home.css.map */
