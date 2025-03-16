@@ -24,7 +24,14 @@ def send_sms(request):
         print(latitude, longitude)
 
         maps_link = f"https://www.google.com/maps?q={latitude},{longitude}"
-        sms_body = f"🚨 Emergency! Location: {maps_link} 📍 Please send an ambulance! 🚑"
+        track_me = "http://127.0.0.1:8000/ambulance/track/"
+        sms_body = (
+            f"🚨 Emergency Alert! 🚑\n\n"
+            f"📍 Location: {maps_link}\n"
+            f"🔗 Live Tracking: {track_me}\n\n"
+            f"⚠️ Please send an ambulance immediately!"
+        )
+
 
         try:
             client = Client(ACCOUNT_SID, AUTH_TOKEN)
