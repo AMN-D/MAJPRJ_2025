@@ -15,7 +15,7 @@
       <a href="#" class="icon">
         <i class="fa-solid fa-bell"></i>
       </a>
-      <a href="#" class="icon">
+      <a href="#" class="icon" onclick="startSpeechRecognition()">
         <i class="fa-solid fa-microphone"></i>
       </a>
     </div>
@@ -188,4 +188,57 @@
     </div>
   </div>
 </div>
+
+<script>
+  function startSpeechRecognition() {
+    if (!("webkitSpeechRecognition" in window)) {
+      alert("Speech recognition is not supported in this browser.");
+      return;
+    }
+
+    let recognition = new webkitSpeechRecognition();
+    recognition.continuous = false;
+    recognition.interimResults = false;
+    recognition.lang = "en-US";
+
+    recognition.start();
+
+    recognition.onresult = function (event) {
+      let transcript = event.results[0][0].transcript.toLowerCase().trim();
+
+      // Remove punctuation from transcript
+      transcript = transcript.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
+
+      console.log("Cleaned Speech: ", transcript);
+
+      let checkboxes = document.querySelectorAll('input[name="symptom"]');
+      let matched = false;
+
+      checkboxes.forEach((checkbox) => {
+        let symptomLabel = checkbox.parentNode.innerText.toLowerCase().trim();
+        if (transcript.includes(symptomLabel)) {
+          checkbox.checked = true;
+          matched = true;
+        }
+      });
+
+      if (matched) {
+        setTimeout(() => {
+          document.getElementById("mainFormSymptom").submit();
+        }, 1000); // Submit after 1 second for UI update
+      } else {
+        alert("No matching symptoms found. Try speaking clearly.");
+      }
+    };
+
+    recognition.onerror = function (event) {
+      console.error("Speech recognition error:", event.error);
+    };
+
+    recognition.onend = function () {
+      console.log("Speech recognition ended.");
+    };
+  }
+</script>
+
 {% endblock %}
