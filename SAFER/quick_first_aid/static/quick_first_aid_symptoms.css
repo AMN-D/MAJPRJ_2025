@@ -216,8 +216,10 @@
   font-size: 4.8vb;
   margin-top: 4vh;
   padding-left: 1.5vw;
+  padding-right: 1.5vw;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  overflow: auto;
   white-space: normal;
   max-width: 14vw;
   font-weight: 500;
@@ -225,6 +227,12 @@
   letter-spacing: -0.1vb;
   max-height: 12vh;
   margin-bottom: 1.5vh;
+  /* Hide scrollbar but allow scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+#diseaseResults ul li .diagnosisCard h1::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 @media only screen and (max-width: 700px) {
   #diseaseResults ul li .diagnosisCard h1 {
@@ -238,10 +246,18 @@
   font-weight: 300;
   width: 13.5vw;
   letter-spacing: -0.1vb;
+  overflow: scroll;
   word-spacing: 0.5vb;
   margin-left: 1.5vw;
+  margin-right: 1.5vw;
   height: 14vh;
   margin-bottom: 0;
+  /* Hide scrollbar but allow scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer and Edge */
+}
+#diseaseResults ul li .diagnosisCard p::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 @media only screen and (max-width: 700px) {
   #diseaseResults ul li .diagnosisCard p {

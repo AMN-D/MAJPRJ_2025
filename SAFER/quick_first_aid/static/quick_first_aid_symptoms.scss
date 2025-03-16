@@ -215,17 +215,25 @@
           font-size: 4.8vb;
           margin-top: 4vh;
           padding-left: 1.5vw;
-          word-wrap: break-word; 
+          padding-right: 1.5vw;
+          word-wrap: break-word;
           overflow-wrap: break-word;
-          white-space: normal; 
-          // background-color: red;
+          overflow: auto;
+          white-space: normal;
           max-width: 14vw;
           font-weight: 500;
           line-height: 1;
           letter-spacing: -0.1vb;
-          // background-color: yellow;
           max-height: 12vh;
           margin-bottom: 1.5vh;
+        
+          /* Hide scrollbar but allow scrolling */
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* Internet Explorer and Edge */
+        
+          &::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
+          }
           @media only screen and (max-width: 700px) {
             max-width: 100vw;
             padding-left: 6vw;
@@ -238,10 +246,20 @@
           width: 13.5vw;
           // background-color: red;
           letter-spacing: -0.1vb;
+          overflow: scroll;
           word-spacing: 0.5vb;
           margin-left: 1.5vw;
+          margin-right: 1.5vw;
           height: 14vh;
           margin-bottom: 0;
+                  
+          /* Hide scrollbar but allow scrolling */
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* Internet Explorer and Edge */
+        
+          &::-webkit-scrollbar {
+            display: none; /* Chrome, Safari */
+          }
           @media only screen and (max-width: 700px) {
             max-width: 100vw;
             padding-left: 6vw;
