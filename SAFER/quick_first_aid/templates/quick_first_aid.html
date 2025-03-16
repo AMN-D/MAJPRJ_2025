@@ -190,6 +190,16 @@
 </div>
 
 <script>
+  // Simple stemmer function
+  function stemWord(word) {
+    // Remove common suffixes
+    if (word.endsWith('ing')) return word.slice(0, -3);
+    if (word.endsWith('ed')) return word.slice(0, -2);
+    if (word.endsWith('s')) return word.slice(0, -1);
+    if (word.endsWith('es')) return word.slice(0, -2);
+    return word;
+  }
+
   function startSpeechRecognition() {
     if (!("webkitSpeechRecognition" in window)) {
       alert("Speech recognition is not supported in this browser.");
@@ -208,17 +218,49 @@
 
       // Remove punctuation from transcript
       transcript = transcript.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g, "");
-
-      console.log("Cleaned Speech: ", transcript);
+      
+      console.log("Original Speech: ", transcript);
+      
+      // Split transcript into words and stem each word
+      let words = transcript.split(' ');
+      let stemmedWords = words.map(word => stemWord(word));
+      let stemmedTranscript = stemmedWords.join(' ');
+      
+      console.log("Stemmed Speech: ", stemmedTranscript);
 
       let checkboxes = document.querySelectorAll('input[name="symptom"]');
       let matched = false;
 
       checkboxes.forEach((checkbox) => {
         let symptomLabel = checkbox.parentNode.innerText.toLowerCase().trim();
-        if (transcript.includes(symptomLabel)) {
+        
+        // Stem the symptom label words
+        let symptomWords = symptomLabel.split(' ');
+        let stemmedSymptomWords = symptomWords.map(word => stemWord(word));
+        let stemmedSymptom = stemmedSymptomWords.join(' ');
+        
+        // Check if any stemmed word from the transcript matches the stemmed symptom
+        const stemmedTranscriptWords = stemmedTranscript.split(' ');
+        
+        // Check for partial matches using stemmed words
+        let isMatch = false;
+        for (let i = 0; i < stemmedTranscriptWords.length; i++) {
+          if (stemmedSymptom.includes(stemmedTranscriptWords[i]) || 
+              stemmedTranscriptWords[i].includes(stemmedSymptom)) {
+            isMatch = true;
+            break;
+          }
+        }
+        
+        // Also check if full stemmed symptom is in the transcript
+        if (stemmedTranscript.includes(stemmedSymptom)) {
+          isMatch = true;
+        }
+        
+        if (isMatch) {
           checkbox.checked = true;
           matched = true;
+          console.log("Matched symptom:", symptomLabel);
         }
       });
 
@@ -240,5 +282,8 @@
     };
   }
 </script>
+
+
+
 
 {% endblock %}
