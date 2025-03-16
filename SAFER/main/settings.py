@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     
     'home',
     'ambulance',
+    'corsheaders',
     'quick_first_aid',
     'voice_controlled_map',
     'disaster_assessment',
@@ -54,9 +55,21 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
+CORS_ALLOW_ALL_ORIGINS = True  
+
 ROOT_URLCONF = 'main.urls'
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",  
+    "http://192.168.0.103:8080"  
+]
+
+CORS_ALLOW_CREDENTIALS = True
+
 
 TEMPLATES = [
     {

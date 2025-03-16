@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Tracker</title>
+    <script>
+      const SERVER_URL = "http://127.0.0.1:8000/ambulance/receive-location/";
+
+      // ✅ Function to send user location
+      function sendLocation(position) {
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+
+        fetch(SERVER_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ latitude: lat, longitude: lon }),
+        })
+          .then((response) => response.json())
+          .then((data) => console.log("📍 Location sent:", data))
+          .catch((error) => console.error("❌ Error sending location:", error));
+      }
+
+      // ✅ Function to fetch stored locations
+      function getLocations() {
+        fetch(SERVER_URL, {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            console.log("📍 Received locations:", data.locations);
+          })
+          .catch((error) => console.error("❌ Error fetching locations:", error));
+      }
+
+      // ✅ Start tracking location
+      function trackLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.watchPosition(sendLocation, console.error, {
+            enableHighAccuracy: true,
+            maximumAge: 0,
+          });
+        } else {
+          alert("Geolocation is not supported by this browser.");
+        }
+      }
+
+      // ✅ Automatically start tracking
+      trackLocation();
+
+      // ✅ Fetch stored locations every 10 seconds
+      setInterval(getLocations, 10000);
+    </script>
+  </head>
+  <body>
+    <h1>Tracking your location...</h1>
+  </body>
+</html>
