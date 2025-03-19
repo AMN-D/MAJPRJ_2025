@@ -1,5 +1,6 @@
 let latitude, longitude, userLocationMarker, map;
 let trackedUserMarkers = {}; // Store markers for tracked users
+let routeControl;
 
 function userLocation() {
   function success(position) {
@@ -21,7 +22,9 @@ function userLocation() {
       fillOpacity: 0.2,
       radius: 500,
     }).addTo(map);
-    circle.bindPopup("<b>Please allow location</b><br>for improved accuracy").openPopup();
+    circle
+      .bindPopup("<b>Please allow location</b><br>for improved accuracy")
+      .openPopup();
     fetchTrackedLocations(); // Fetch tracked locations even if location isn't allowed
   }
 
@@ -57,7 +60,9 @@ function fetchTrackedLocations() {
         updateTrackedUserMarkers(data.locations);
       }
     })
-    .catch((error) => console.error("❌ Error fetching tracked locations:", error));
+    .catch((error) =>
+      console.error("❌ Error fetching tracked locations:", error)
+    );
 }
 
 // Function to update tracked users' markers on the map
@@ -79,7 +84,9 @@ function updateTrackedUserMarkers(locations) {
       trackedUserMarkers[ip].setLatLng([latitude, longitude]);
     } else {
       // Create a new marker
-      let marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(map);
+      let marker = L.marker([latitude, longitude], { icon: userIcon }).addTo(
+        map
+      );
       marker.bindPopup(`<b>Tracked User</b><br>IP: ${ip}`).openPopup();
       trackedUserMarkers[ip] = marker;
     }
@@ -132,3 +139,109 @@ function callAmbulance() {
       alert("Something went wrong! Please try again.");
     });
 }
+
+// Initialize Speech Recognition
+window.SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+const recognition = new SpeechRecognition();
+recognition.continuous = false;
+recognition.lang = "en-US";
+
+// Modify voice recognition to handle both commands
+function startVoiceRecognition() {
+  recognition.start();
+  recognition.onresult = function (event) {
+    let voiceCommand = event.results[0][0].transcript.toLowerCase();
+    console.log("Voice Command: ", voiceCommand);
+
+    if (voiceCommand.includes("show nearby hospital")) {
+      fetchNearbyLocations("hospital");
+    } else if (voiceCommand.includes("show nearby police station")) {
+      fetchNearbyLocations("police");
+    }
+  };
+}
+
+function fetchNearbyLocations(type) {
+  if (!latitude || !longitude) {
+    alert("Location not available. Please enable GPS.");
+    return;
+  }
+
+  let amenityType = type === "hospital" ? "hospital" : "police";
+  const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node["amenity"="${amenityType}"](around:5000,${latitude},${longitude});out;`;
+
+  fetch(overpassUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.elements.length > 0) {
+        let locations = data.elements.slice(0, 5); // Limit to 5 locations
+        addLocationMarkers(locations, type);
+      } else {
+        alert(`No nearby ${type}s found!`);
+      }
+    })
+    .catch((error) => console.error(`Error fetching ${type}s:`, error));
+}
+
+// Function to add markers and allow route on click
+function addLocationMarkers(locations, type) {
+  let iconUrl =
+    type === "hospital"
+      ? "https://cdn-icons-png.flaticon.com/512/684/684908.png" // Red for hospitals
+      : "https://cdn-icons-png.flaticon.com/512/2991/2991105.png"; // Blue for police
+
+  let customIcon = L.icon({
+    iconUrl: iconUrl,
+    iconSize: [35, 35],
+    iconAnchor: [17, 35],
+    popupAnchor: [0, -35],
+  });
+
+  locations.forEach((place) => {
+    let lat = place.lat;
+    let lon = place.lon;
+    let name = place.tags.name || `Unknown ${type}`;
+
+    let marker = L.marker([lat, lon], { icon: customIcon }).addTo(map);
+    marker.bindPopup(
+      `<b>${name}</b><br><button onclick="showRoute(${lat}, ${lon})">Show Route</button>`
+    );
+
+    marker.on("click", () => {
+      showRoute(lat, lon);
+    });
+  });
+}
+
+// Function to show route to a clicked hospital/police station
+function showRoute(destLat, destLon) {
+  if (!latitude || !longitude) {
+      alert("User location not available!");
+      return;
+  }
+
+  // Remove old route if exists
+  if (routeControl) {
+      map.removeControl(routeControl);
+  }
+
+  // Add new route without the white box
+  routeControl = L.Routing.control({
+      waypoints: [
+          L.latLng(latitude, longitude), // User's location
+          L.latLng(destLat, destLon) // Selected hospital/police station
+      ],
+      routeWhileDragging: true,
+      createMarker: () => null, // Hides default start & end markers
+      routeLine: (route) => L.polyline(route.coordinates, { color: "red", weight: 5 }) // Custom route style
+  }).addTo(map);
+
+  // Remove the default route instructions panel
+  document.querySelector(".leaflet-routing-container")?.remove();
+}
+
+
+window.addEventListener("load", () => {
+  startVoiceRecognition();
+});
