@@ -48,4 +48,3 @@ function closeFormResult() {
   document.getElementById("symptomFormResult").style.display = "none";
   document.getElementById("overlay").style.display = "none";
 }
-
