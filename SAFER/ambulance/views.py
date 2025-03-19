@@ -63,3 +63,5 @@ def receive_location(request):
     elif request.method == "GET":
         return JsonResponse({"status": "success", "locations": user_locations})
     return JsonResponse({"status": "error", "message": "Only POST & GET allowed!"}, status=405)
+
+    
