@@ -16,7 +16,6 @@ user_locations = {}
 
 
 @csrf_exempt
-@csrf_exempt
 def send_sms(request):
     if request.method == "POST":
         latitude = request.POST.get("latitude")
