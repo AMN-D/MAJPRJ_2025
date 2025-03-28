@@ -5,7 +5,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import datetime
-from datetime import datetime
+from datetime import datetime, timedelta
 from django.conf import settings
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -60,6 +60,10 @@ def report_generator(request):
     if location_data.empty:
         return render(request, 'home.html', {"first_prediction": "No data available"})
 
+
+    is_flood_occurring = location_data.iloc[-1]["flood_probability"] >= 0.95
+    current_flood_status = "Warning: A flood is currently occurring in your region!" if is_flood_occurring else "No floods are currently occurring in your region."
+
     features = ["temperature_2m_mean", "rain_sum", "snowfall_sum", "wind_speed_10m_max", 
                 "precipitation_sum", "temperature_2m_min", "temperature_2m_max", 
                 "river_discharge", "latitude", "longitude"]
@@ -78,10 +82,21 @@ def report_generator(request):
     predictions = predict_next_7_days(model, recent_data, features)
 
     # Extract the first prediction
-    first_prediction = round(predictions[0] * 100, 2)  # Convert probability to percentage
+    first_prediction = round(predictions[0] * 100, 2)  
+    scaled_predictions = [round(pred * 100, 2) for pred in predictions]
+
+    max_probability = max(scaled_predictions)  # Highest prediction
+    max_index = scaled_predictions.index(max_probability)  # Find its position
+    
+    # Calculate the date for the highest probability
+    future_date = (datetime.now() + timedelta(days=max_index)).strftime('%Y-%m-%d')
     
     context = {
-        "first_prediction": first_prediction,
+        "predictions": scaled_predictions,  
+        "first_prediction": scaled_predictions[0],  
+        "highest_probability": max_probability,
+        "highest_probability_date": future_date,
+        "current_flood_status": current_flood_status,
         "current_date": current_date
     }
 

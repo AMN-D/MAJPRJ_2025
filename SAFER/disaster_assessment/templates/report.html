@@ -163,7 +163,7 @@ report-generator {% endblock %} {% block content %} {% load static %}
                 <i class="fa-solid fa-droplet-slash"></i>
               </div>
               <div class="bottom-div">
-                <p>Flood not currently occurring</p>
+                <p>{{ current_flood_status }}</p>
               </div>
             </div>
 
@@ -172,7 +172,7 @@ report-generator {% endblock %} {% block content %} {% load static %}
                 <i class="fa-solid fa-cloud-showers-heavy"></i>
               </div>
               <div class="bottom-div">
-                <p>20% chance of flood occuring today</p>
+                <p>{{ first_prediction }}% chance of flood occuring today</p>
               </div>
             </div>
 
@@ -181,7 +181,7 @@ report-generator {% endblock %} {% block content %} {% load static %}
                 <i class="fa-solid fa-hourglass-half"></i>
               </div>
               <div class="bottom-div">
-                <p>Estimated date of flood is 12/12/12</p>
+                <p>The highest flood probability is {{ highest_probability }}% on {{ highest_probability_date }}.</p>
               </div>
             </div>
           </div>
