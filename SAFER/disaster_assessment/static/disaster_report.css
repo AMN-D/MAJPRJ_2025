@@ -332,6 +332,7 @@ svg {
 @media (max-width: 1024px) {
   .flood-main-content .flood-left-div {
     width: 100%;
+    margin-bottom: 22vh;
   }
 }
 .flood-main-content .flood-left-div .flood-main-graph {
@@ -391,6 +392,7 @@ svg {
 @media (max-width: 1024px) {
   .flood-main-content .flood-right-div .upper-flood .description-div {
     width: 85%;
+    overflow: hidden;
   }
 }
 .flood-main-content .flood-right-div .upper-flood .description-div h1 {

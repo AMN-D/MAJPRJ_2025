@@ -1,6 +1,21 @@
 function downloadPDF() {
-  window.print();
+  const element = document.body; // Or use a specific element like document.getElementById('your-element-id')
+
+  const opt = {
+    margin:       0,
+    filename:     'downloaded-page.pdf',
+    image:        { type: 'jpeg', quality: 0.98 },
+    html2canvas:  { 
+      scale: 3, // Increase scale for better quality (higher value = better quality)
+      useCORS: true, // Ensures cross-origin images are rendered properly
+      logging: true, // Logs progress in the console
+    },
+    jsPDF:        { unit: 'px', format: [element.scrollWidth, element.scrollHeight], orientation: 'portrait' }
+  };
+
+  html2pdf().from(element).set(opt).save();
 }
+
 
 document.addEventListener("DOMContentLoaded", function () {
   const ctx = document.getElementById("floodPredictionChart").getContext("2d");
