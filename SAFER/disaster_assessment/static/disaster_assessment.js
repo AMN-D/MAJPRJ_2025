@@ -265,3 +265,105 @@ const config = {
 // Render the chart
 const ctx = document.getElementById("LandslideFloodChart").getContext("2d");
 new Chart(ctx, config);
+
+function updateLandslideStatus() {
+    const rawDates = document.getElementById("landslideDates").value;
+    const rawPredictions = document.getElementById("landslidePredictions").value;
+
+    const landslideDates = rawDates
+        .replace(/[\[\]']/g, "") // Remove brackets and single quotes
+        .split(',').map(d => d.trim());
+
+    const landslidePredictions = rawPredictions
+        .replace(/[\[\]']/g, "") // Remove brackets and single quotes
+        .split(',').map(p => parseFloat(p.trim()));
+
+    const currentDate = new Date().toISOString().split('T')[0];
+    const currentHour = new Date().getHours(); // Current hour (0-23)
+
+    console.log("🌟 Current Date:", currentDate);
+    console.log("🕒 Current Hour:", currentHour);
+    console.log("📅 Cleaned Landslide Dates:", landslideDates);
+    console.log("📈 Cleaned Landslide Predictions:", landslidePredictions);
+
+    if (landslideDates.length !== landslidePredictions.length) {
+        console.error("❌ Mismatch between number of dates and predictions.");
+        return;
+    }
+
+    let predictionForCurrentHour = null;
+    let predictionForNextHour = null;
+    let predictionForNextToNextHour = null;
+
+    for (let i = 0; i < landslideDates.length; i++) {
+        const dateToCompare = landslideDates[i];
+        const prediction = landslidePredictions[i];
+
+        if (dateToCompare === currentDate) {
+            // Assuming predictions are hourly based and ordered
+            if (i === currentHour) { 
+                predictionForCurrentHour = prediction * 100; // Convert to percentage
+                console.log(`✅ Prediction for Current Hour (${currentHour}): ${predictionForCurrentHour}%`);
+            }
+            if (i === currentHour + 1) { 
+                predictionForNextHour = prediction * 100; // Convert to percentage
+                console.log(`✅ Prediction for Next Hour (${currentHour + 1}): ${predictionForNextHour}%`);
+            }
+            if (i === currentHour + 2) { 
+                predictionForNextToNextHour = prediction * 100; // Convert to percentage
+                console.log(`✅ Prediction for Next to Next Hour (${currentHour + 2}): ${predictionForNextToNextHour}%`);
+            }
+        }
+    }
+
+    const landslideStatus = document.getElementById("LandslideStatus");
+    const peopleAffectedDescription1 = document.getElementById("people-affected-description-1");
+    const peopleAffectedTime1 = document.getElementById("people-affected-time-1");
+
+    const peopleAffectedDescription2 = document.getElementById("people-affected-description-2");
+    const peopleAffectedTime2 = document.getElementById("people-affected-time-2");
+
+    const peopleAffectedDescription3 = document.getElementById("people-affected-description-3");
+    const peopleAffectedTime3 = document.getElementById("people-affected-time-3");
+
+    if (predictionForCurrentHour !== null && predictionForCurrentHour > 95) {
+        landslideStatus.textContent = "Landslide is currently occurring in your region.";
+        peopleAffectedDescription1.textContent = `${predictionForCurrentHour.toFixed(2)}% Landslide Chance`;
+    } else {
+        landslideStatus.textContent = "No Landslides are currently occurring in your region.";
+        peopleAffectedDescription1.textContent = `0% Landslide Chance`;
+    }
+
+    // Update the time for current hour
+    const formattedTime1 = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    peopleAffectedTime1.textContent = formattedTime1;
+
+    // Update the description and time for next hour
+    const formattedTime2 = new Date();
+    formattedTime2.setHours(currentHour + 1);
+    const nextHourTime = formattedTime2.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    if (predictionForNextHour !== null) {
+        peopleAffectedDescription2.textContent = `${predictionForNextHour.toFixed(2)}% Landslide Chance`;
+    } else {
+        peopleAffectedDescription2.textContent = `0% Landslide Chance`;
+    }
+
+    peopleAffectedTime2.textContent = nextHourTime;
+
+    // Update the description and time for next to next hour
+    const formattedTime3 = new Date();
+    formattedTime3.setHours(currentHour + 2);
+    const nextToNextHourTime = formattedTime3.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+    if (predictionForNextToNextHour !== null) {
+        peopleAffectedDescription3.textContent = `${predictionForNextToNextHour.toFixed(2)}% Landslide Chance`;
+    } else {
+        peopleAffectedDescription3.textContent = `0% Landslide Chance`;
+    }
+
+    peopleAffectedTime3.textContent = nextToNextHourTime;
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', updateLandslideStatus);

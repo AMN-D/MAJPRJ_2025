@@ -847,6 +847,8 @@ svg {
 .right-landslide-div {
   display: flex;
   align-items: center;
+  overflow: hidden !important;
+  width: 20vw !important;
 }
 @media (max-width: 1024px) {
   .right-landslide-div {
