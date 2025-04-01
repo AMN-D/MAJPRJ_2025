@@ -52,7 +52,7 @@
               <i class="fa-solid fa-microphone"></i>
             </a>
             <div class="notification-panel">
-              <div class="notification">This is a test notification</div>
+              <div class="notification">No notification at the moment.</div>
             </div>
           </div>
         </nav>
@@ -104,10 +104,10 @@
                 <div class="landslide">
                   <p class="location">
                     <i class="fa-solid fa-location-dot"></i
-                    ><span id="location-name">Fetching location...</span>
+                    ><span id="location-name-landslide">Fetching location...</span>
                   </p>
                   <h3>
-                    10% <span>Landslide <br />Probability</span>
+                    {{ first_landslide_prediction }}% <span>Landslide <br />Probability</span>
                   </h3>
                   <p class="description-flood">
                     <i class="fa-solid fa-circle-info"></i> Be Aware of

@@ -61,7 +61,7 @@ report-generator {% endblock %} {% block content %} {% load static %}
           <h1>#Flood_Risk: {{ first_prediction }}%</h1>
         </div>
         <div>
-          <h1>#Landslide_Risk: 20%</h1>
+          <h1>#Landslide_Risk: {{ landslide_risk }}</h1>
         </div>
         <div>
           <h1 class="first-hashtag">#{{ current_date }}</h1>

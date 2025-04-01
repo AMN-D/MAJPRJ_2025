@@ -228,6 +228,7 @@ function getLocationName(lat, lon) {
         "Unknown Area";
 
       document.getElementById("location-name").innerText = district;
+      document.getElementById("location-name-landslide").innerText = district;
     })
     .catch((error) => {
       console.error("Error fetching location name:", error);

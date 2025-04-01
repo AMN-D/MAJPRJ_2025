@@ -15,6 +15,7 @@ from tensorflow.keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 from django.views.decorators.csrf import csrf_exempt
 from io import BytesIO
+from home.models import LandslidePrediction
 import base64
 
 MODEL_PATH = os.path.join(settings.BASE_DIR, 'models', 'flood_lstm_model.pkl')
@@ -90,6 +91,12 @@ def report_generator(request):
     
     # Calculate the date for the highest probability
     future_date = (datetime.now() + timedelta(days=max_index)).strftime('%Y-%m-%d')
+
+    latest_prediction = LandslidePrediction.objects.order_by('-datetime').first()
+    landslide_risk = "No Data"
+
+    if latest_prediction:
+        landslide_risk = f"{round(latest_prediction.probability * 100, 2)}%"  # Convert to percentage
     
     context = {
         "predictions": scaled_predictions,  
@@ -97,7 +104,8 @@ def report_generator(request):
         "highest_probability": max_probability,
         "highest_probability_date": future_date,
         "current_flood_status": current_flood_status,
-        "current_date": current_date
+        "current_date": current_date,
+        "landslide_risk": landslide_risk
     }
 
     return render(request, 'report.html', context)
