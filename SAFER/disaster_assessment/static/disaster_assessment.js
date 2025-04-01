@@ -295,22 +295,23 @@ function updateLandslideStatus() {
     let predictionForNextHour = null;
     let predictionForNextToNextHour = null;
 
+    // Iterate through the dates and predictions
     for (let i = 0; i < landslideDates.length; i++) {
         const dateToCompare = landslideDates[i];
         const prediction = landslidePredictions[i];
 
         if (dateToCompare === currentDate) {
-            // Assuming predictions are hourly based and ordered
+            // Check current, next, and next-to-next hour
             if (i === currentHour) { 
                 predictionForCurrentHour = prediction * 100; // Convert to percentage
                 console.log(`✅ Prediction for Current Hour (${currentHour}): ${predictionForCurrentHour}%`);
             }
-            if (i === currentHour + 1) { 
-                predictionForNextHour = prediction * 100; // Convert to percentage
+            if (i === currentHour + 1 && currentHour + 1 < 24) { // Ensure we don't go past 23 hours
+                predictionForNextHour = prediction * 100;
                 console.log(`✅ Prediction for Next Hour (${currentHour + 1}): ${predictionForNextHour}%`);
             }
-            if (i === currentHour + 2) { 
-                predictionForNextToNextHour = prediction * 100; // Convert to percentage
+            if (i === currentHour + 2 && currentHour + 2 < 24) { // Ensure we don't go past 23 hours
+                predictionForNextToNextHour = prediction * 100;
                 console.log(`✅ Prediction for Next to Next Hour (${currentHour + 2}): ${predictionForNextToNextHour}%`);
             }
         }
@@ -326,19 +327,24 @@ function updateLandslideStatus() {
     const peopleAffectedDescription3 = document.getElementById("people-affected-description-3");
     const peopleAffectedTime3 = document.getElementById("people-affected-time-3");
 
-    if (predictionForCurrentHour !== null && predictionForCurrentHour > 95) {
+    const peopleAffectedDescription4 = document.getElementById("people-affected-description-4");
+
+    // Handle the current hour prediction
+    if (predictionForCurrentHour !== null && predictionForCurrentHour > 0) {
         landslideStatus.textContent = "Landslide is currently occurring in your region.";
         peopleAffectedDescription1.textContent = `${predictionForCurrentHour.toFixed(2)}% Landslide Chance`;
+        peopleAffectedDescription4.textContent = "People or infrastructure are affected in your region.";
     } else {
         landslideStatus.textContent = "No Landslides are currently occurring in your region.";
         peopleAffectedDescription1.textContent = `0% Landslide Chance`;
+        peopleAffectedDescription4.textContent = "No people or infrastructure are affected in your region.";
     }
 
     // Update the time for current hour
     const formattedTime1 = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
     peopleAffectedTime1.textContent = formattedTime1;
 
-    // Update the description and time for next hour
+    // Handle next hour prediction
     const formattedTime2 = new Date();
     formattedTime2.setHours(currentHour + 1);
     const nextHourTime = formattedTime2.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -351,7 +357,7 @@ function updateLandslideStatus() {
 
     peopleAffectedTime2.textContent = nextHourTime;
 
-    // Update the description and time for next to next hour
+    // Handle next-to-next hour prediction
     const formattedTime3 = new Date();
     formattedTime3.setHours(currentHour + 2);
     const nextToNextHourTime = formattedTime3.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -367,3 +373,46 @@ function updateLandslideStatus() {
 
 // Call the function when the page loads
 document.addEventListener('DOMContentLoaded', updateLandslideStatus);
+
+
+
+// Function to get the user's weather information
+function updateWeather() {
+    // Get the user's current location using the Geolocation API
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(fetchWeatherData, handleError);
+    } else {
+        console.error("Geolocation is not supported by this browser.");
+    }
+}
+
+// Function to fetch weather data using `wttr.in`
+function fetchWeatherData(position) {
+    const lat = position.coords.latitude;
+    const lon = position.coords.longitude;
+
+    // Fetch weather info from wttr.in using the user's coordinates
+    const apiUrl = `https://wttr.in/${lat},${lon}?format=%C`; // %C gives a brief weather description
+
+    fetch(apiUrl)
+        .then(response => response.text())
+        .then(weatherDescription => {
+            const weatherElement = document.getElementById("weather-description");
+
+            // Modify the paragraph content with the weather description
+            weatherElement.textContent = `Your weather currently is ${weatherDescription}.`;
+        })
+        .catch(error => {
+            console.error("Error fetching weather data:", error);
+        });
+}
+
+// Function to handle geolocation errors
+function handleError(error) {
+    console.error("Error getting geolocation:", error);
+    const weatherElement = document.getElementById("weather-description");
+    weatherElement.textContent = "Unable to determine your location for weather data.";
+}
+
+// Call the function to get and update the weather
+updateWeather();
