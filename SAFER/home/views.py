@@ -6,6 +6,7 @@ import os
 import pickle
 import numpy as np
 import pandas as pd
+from django.utils.timezone import make_aware
 import datetime
 from datetime import datetime, timedelta
 from django.conf import settings
@@ -17,6 +18,7 @@ from tensorflow.keras.models import load_model
 from sklearn.preprocessing import MinMaxScaler
 from django.views.decorators.csrf import csrf_exempt
 from io import BytesIO
+from .models import LandslidePrediction
 import base64
 
 MODEL_PATH = os.path.join(settings.BASE_DIR, 'models', 'flood_lstm_model.pkl')
@@ -26,8 +28,6 @@ with open(MODEL_PATH, "rb") as f:
 CSV_FILE = os.path.join(settings.BASE_DIR, 'datasets', 'Flood_final.csv')
 df = pd.read_csv(CSV_FILE)
 
-print("Model path:", MODEL_PATH)
-print("CSV path:", CSV_FILE)
 
 if "flood_probability" not in df.columns:
     threshold_discharge = df["river_discharge"].quantile(0.75)
@@ -121,6 +121,20 @@ def home(request):
         data = predict_landslide(latitude, longitude)
         first_landslide_prediction = data['predictions'][0]['probability']
         landslide_prediction_percentage = round(first_landslide_prediction * 100, 2)
+
+        LandslidePrediction.objects.all().delete()
+
+        # Save predictions
+        for prediction in data['predictions']:
+            naive_datetime = datetime.strptime(prediction['datetime'], "%Y-%m-%d %H:%M")
+            aware_datetime = make_aware(naive_datetime)  # Convert to timezone-aware
+
+            LandslidePrediction.objects.create(
+                datetime=aware_datetime,
+                probability=float(prediction['probability']),
+                latitude=data['latitude'],
+                longitude=data['longitude']
+            )
 
         cache.set("last_landslide_run_time", datetime.now(), timeout=86400)  
         cache.set("last_landslide_prediction", landslide_prediction_percentage, timeout=86400)
