@@ -155,10 +155,11 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #0736fe;
+  background-color: transparent;
   width: 70vw;
   height: 118vh;
   border-radius: 4vb;
+  border: 1px solid #211f20;
 }
 @media (max-width: 1024px) {
   .report-main-div .right-report .flood-landslide-graph {

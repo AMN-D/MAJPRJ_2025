@@ -70,7 +70,9 @@ report-generator {% endblock %} {% block content %} {% load static %}
       </div>
     </div>
     <div class="right-report">
-      <div class="flood-landslide-graph">INSERT GRAPH HERE</div>
+      <div class="flood-landslide-graph">
+        <canvas id="LandslideFloodChart"></canvas>
+      </div>
     </div>
   </div>
   <div class="report-flood-div">
@@ -327,8 +329,10 @@ report-generator {% endblock %} {% block content %} {% load static %}
           </svg>
           </div>
           <div class="main-graph-landslide">
-            <div>GRAPH</div>
-            <h1>GRAPH LABEL HERE</h1>
+            <div>
+              <canvas id="LandslideChart"></canvas>
+            </div>
+            <h1>HOURLY LANDSLIDE GRAPH</h1>
           </div>
         </div>
       </div>
@@ -411,5 +415,9 @@ report-generator {% endblock %} {% block content %} {% load static %}
   </button> -->
 </div>
 <input type="hidden" id="floodPredictions" value="{{ predictions }}">
+<input type="hidden" id="landslidePredictions" value="{{ landslide_predictions }}">
+<input type="hidden" id="floodDates" value="{{ flood_dates }}">
+<input type="hidden" id="landslideDates" value="{{ landslide_dates }}">
+
 
 {% csrf_token %} {% endblock %} {% block footer %} {% endblock %}

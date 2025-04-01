@@ -92,6 +92,11 @@ def report_generator(request):
     # Calculate the date for the highest probability
     future_date = (datetime.now() + timedelta(days=max_index)).strftime('%Y-%m-%d')
 
+    landslide_data = LandslidePrediction.objects.order_by('datetime')
+
+    landslide_predictions = [round(lp.probability * 100, 2) for lp in landslide_data]  # Convert to percentage
+    landslide_dates = [lp.datetime.strftime('%Y-%m-%d') for lp in landslide_data]  # Format timestamps
+
     latest_prediction = LandslidePrediction.objects.order_by('-datetime').first()
     landslide_risk = "No Data"
 
@@ -105,7 +110,9 @@ def report_generator(request):
         "highest_probability_date": future_date,
         "current_flood_status": current_flood_status,
         "current_date": current_date,
-        "landslide_risk": landslide_risk
+        "landslide_risk": landslide_risk,
+        "landslide_predictions": landslide_predictions,
+        "landslide_dates": landslide_dates,
     }
 
     return render(request, 'report.html', context)
