@@ -26,13 +26,15 @@ header {
   left: 0;
   width: 100vw;
   height: 5vh;
+  // overflow: hidden;
   padding: 4vh 0;
-  border-bottom: 1px solid rgba(33, 33, 33, 1); /* Semi-transparent border */
-  background: rgba(1, 1, 1, 0.6); /* Semi-transparent black background */
-  backdrop-filter: blur(10px); /* Adds the frosted glass effect */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Optional shadow for depth */
+  border-bottom: 1px solid rgba(33, 33, 33, 1);
+  background: rgba(1, 1, 1, 0.6);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   transition: top 0.3s ease;
-  z-index: 1024; /* Keeps header above content */
+  z-index: 1024;
   nav {
     height: 100%;
     width: 80vw;
@@ -103,6 +105,35 @@ header {
       }
     }
   }
+}
+
+/* Styling the scrolling bar */
+.scrolling-bar {
+  white-space: nowrap;
+  width: 100vw;
+  margin: 0 auto;
+  position: fixed; /* Change from absolute to fixed */
+  top: 100%; /* Adjusted to sit right below the header */
+  left: 0;
+  background: rgba(1, 1, 1, 0.6);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: top 0.3s ease;
+  z-index: 1023; /* Slightly lower than the header */
+}
+
+/* Emergency Contacts Styling */
+.emergency-contacts p {
+  display: flex;
+  gap: 3vw;
+  animation: scrollText 15s linear infinite;
+  color: #fefefe;
+  font-size: 2.5vb;
+}
+
+/* Scroll Animation */
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
 
 .banner-flood,
