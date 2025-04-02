@@ -1,7 +1,7 @@
 @echo off
 
 cd /d O:\Users\AMANDHUMAL\Documents\GitHub\MAJPRJ_2025
-call venv\Scripts\activate.bat
+call env\Scripts\activate.bat
 
 start cmd /k python SAFER\manage.py runserver
 start cmd /k sass --watch SAFER\ambulance\static\ambulance.scss SAFER\ambulance\static\ambulance.css

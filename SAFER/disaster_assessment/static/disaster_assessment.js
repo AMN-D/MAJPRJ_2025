@@ -330,7 +330,7 @@ function updateLandslideStatus() {
     const peopleAffectedDescription4 = document.getElementById("people-affected-description-4");
 
     // Handle the current hour prediction
-    if (predictionForCurrentHour !== null && predictionForCurrentHour > 0) {
+    if (predictionForCurrentHour !== null && predictionForCurrentHour > 95) {
         landslideStatus.textContent = "Landslide is currently occurring in your region.";
         peopleAffectedDescription1.textContent = `${predictionForCurrentHour.toFixed(2)}% Landslide Chance`;
         peopleAffectedDescription4.textContent = "People or infrastructure are affected in your region.";
