@@ -104,8 +104,9 @@ header nav .profile i {
   position: fixed; /* Change from absolute to fixed */
   top: 100%; /* Adjusted to sit right below the header */
   left: 0;
-  background: rgba(1, 1, 1, 0.6);
+  background: rgba(1, 1, 1, 0.65);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-block: 1px solid #484848;
   transition: top 0.3s ease;
   z-index: 1023; /* Slightly lower than the header */
 }
