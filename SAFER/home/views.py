@@ -162,7 +162,7 @@ def home(request):
     if pd.isna(last_occurrence_index):
         return render(request, 'home.html', {
             "first_prediction": "No previous flood occurrences",
-            "first_landslide_prediction": landslide_prediction_percentage
+            "first_landslide_prediction": round(landslide_prediction_percentage * 100, 2)
         })
 
     recent_data = location_data.loc[last_occurrence_index-6:last_occurrence_index]

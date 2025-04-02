@@ -81,6 +81,7 @@ def report_generator(request):
     # Get predictions for next 7 days
     current_date = datetime.now().strftime('%Y/%m/%d #%H:%M')
     predictions = predict_next_7_days(model, recent_data, features)
+    print(f"Predictions: {predictions}")
 
     # Extract the first prediction
     first_prediction = round(predictions[0] * 100, 2)  
@@ -94,7 +95,8 @@ def report_generator(request):
 
     landslide_data = LandslidePrediction.objects.order_by('datetime')
 
-    landslide_predictions = [round(lp.probability * 100, 2) for lp in landslide_data]  # Convert to percentage
+    landslide_predictions = [lp.probability for lp in landslide_data]  # Convert to percentage
+    # landslide_predictions = [round(lp.probability * 100, 2) for lp in landslide_data]  # Convert to percentage
     landslide_dates = [lp.datetime.strftime('%Y-%m-%d') for lp in landslide_data]  # Format timestamps
 
     latest_prediction = LandslidePrediction.objects.order_by('-datetime').first()
@@ -102,6 +104,7 @@ def report_generator(request):
 
     if latest_prediction:
         landslide_risk = f"{round(latest_prediction.probability * 100, 2)}%"  # Convert to percentage
+        # landslide_risk = f"{round(latest_prediction.probability * 100, 2)}%"  # Convert to percentage
     
     context = {
         "predictions": scaled_predictions,  
