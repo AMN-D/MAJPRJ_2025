@@ -416,3 +416,90 @@ function handleError(error) {
 
 // Call the function to get and update the weather
 updateWeather();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const rainfallGraphDiv = document.querySelector('.rainfall-graph');
+
+  if (!rainfallGraphDiv) return;
+
+  if (!navigator.geolocation) {
+      rainfallGraphDiv.innerText = 'Geolocation is not supported by your browser.';
+      return;
+  }
+
+  navigator.geolocation.getCurrentPosition(async (position) => {
+      const { latitude, longitude } = position.coords;
+      try {
+          const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&daily=precipitation_sum&timezone=auto`);
+          const weatherData = await response.json();
+
+          const rainfallData = weatherData.daily.time.map((time, index) => ({
+              date: new Date(time).toLocaleDateString('en-GB', { day: 'numeric', month: 'short' }),
+              rainfall: weatherData.daily.precipitation_sum[index]
+          }));
+
+          renderGraph(rainfallData);
+      } catch (error) {
+          rainfallGraphDiv.innerText = 'Failed to fetch rainfall data.';
+      }
+  });
+
+  function renderGraph(data) {
+      const labels = data.map(item => item.date);
+      const rainfallValues = data.map(item => item.rainfall);
+
+      const canvas = document.createElement('canvas');
+      rainfallGraphDiv.innerHTML = '';
+      rainfallGraphDiv.appendChild(canvas);
+
+      canvas.style.width = '100%';
+      canvas.style.height = '100%';
+
+      new Chart(canvas, {
+          type: 'bar',
+          data: {
+              labels,
+              datasets: [{
+                  label: 'Rainfall (mm)',
+                  data: rainfallValues,
+                  backgroundColor: '#211f20',
+                  borderColor: '#211f20',
+                  borderWidth: 1
+              }]
+          },
+          options: {
+              responsive: true,
+              maintainAspectRatio: false,
+              plugins: {
+                  legend: {
+                      display: true,
+                      labels: {
+                          color: '#211f20'
+                      }
+                  }
+              },
+              scales: {
+                  x: {
+                      ticks: {
+                          color: '#211f20',
+                          font: {
+                              size: 12
+                          },
+                          autoSkip: false,
+                          maxRotation: 90,
+                          minRotation: 90
+                      }
+                  },
+                  y: {
+                      ticks: {
+                          color: '#211f20',
+                          font: {
+                              size: 12
+                          }
+                      }
+                  }
+              }
+          }
+      });
+  }
+});

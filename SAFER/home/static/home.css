@@ -163,7 +163,7 @@ header nav .profile i {
     /* Adjust the max-width as needed for your mobile breakpoint */
     width: 85%; /* Set width to 100% on mobile */
     padding-left: 8vw; /* Optional: Adjust padding for mobile */
-    padding-top: 20vh;
+    padding-top: 25vh;
   }
 }
 .banner-flood .flood h3,
@@ -449,7 +449,7 @@ header nav .profile i {
     /* Adjust the max-width as needed for your mobile breakpoint */
     width: 85%; /* Set width to 100% on mobile */
     padding-left: 8vw; /* Optional: Adjust padding for mobile */
-    padding-top: 20vh;
+    padding-top: 25vh;
   }
 }
 .banner-landslide .landslide h3,

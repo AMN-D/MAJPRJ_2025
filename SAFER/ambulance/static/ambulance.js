@@ -158,9 +158,16 @@ function startVoiceRecognition() {
       fetchNearbyLocations("hospital");
     } else if (voiceCommand.includes("show nearby police station")) {
       fetchNearbyLocations("police");
+    } else if (voiceCommand.includes("show nearby shelter")) {
+      fetchNearbyLocations("shelter");
+    } else if (voiceCommand.includes("zoom in")) {
+      map.zoomIn();
+    } else if (voiceCommand.includes("zoom out")) {
+      map.zoomOut();
     }
   };
 }
+
 
 function fetchNearbyLocations(type) {
   if (!latitude || !longitude) {
@@ -168,14 +175,22 @@ function fetchNearbyLocations(type) {
     return;
   }
 
-  let amenityType = type === "hospital" ? "hospital" : "police";
+  let amenityType;
+  if (type === "hospital") {
+    amenityType = "hospital";
+  } else if (type === "police") {
+    amenityType = "police";
+  } else if (type === "shelter") {
+    amenityType = "shelter"; // Add shelter
+  }
+
   const overpassUrl = `https://overpass-api.de/api/interpreter?data=[out:json];node["amenity"="${amenityType}"](around:5000,${latitude},${longitude});out;`;
 
   fetch(overpassUrl)
     .then((response) => response.json())
     .then((data) => {
       if (data.elements.length > 0) {
-        let locations = data.elements.slice(0, 5); // Limit to 5 locations
+        let locations = data.elements.slice(0, 5); // Show only top 5
         addLocationMarkers(locations, type);
       } else {
         alert(`No nearby ${type}s found!`);
@@ -184,12 +199,18 @@ function fetchNearbyLocations(type) {
     .catch((error) => console.error(`Error fetching ${type}s:`, error));
 }
 
+
 // Function to add markers and allow route on click
 function addLocationMarkers(locations, type) {
-  let iconUrl =
-    type === "hospital"
-      ? "https://cdn-icons-png.flaticon.com/512/684/684908.png" // Red for hospitals
-      : "https://cdn-icons-png.flaticon.com/512/2991/2991105.png"; // Blue for police
+  let iconUrl;
+
+  if (type === "hospital") {
+    iconUrl = "https://cdn-icons-png.flaticon.com/512/684/684908.png";
+  } else if (type === "police") {
+    iconUrl = "https://cdn-icons-png.flaticon.com/512/2991/2991105.png";
+  } else if (type === "shelter") {
+    iconUrl = "https://cdn-icons-png.flaticon.com/512/190/190411.png"; // Shelter icon
+  }
 
   let customIcon = L.icon({
     iconUrl: iconUrl,
@@ -213,6 +234,7 @@ function addLocationMarkers(locations, type) {
     });
   });
 }
+
 
 // Function to show route to a clicked hospital/police station
 function showRoute(destLat, destLon) {

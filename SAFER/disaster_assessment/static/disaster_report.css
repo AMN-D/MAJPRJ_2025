@@ -166,6 +166,13 @@ svg {
     width: 100%;
   }
 }
+.report-main-div .rainfall-graph {
+  height: 35%;
+  width: 83%;
+  border: 1px solid #211f20;
+  border-radius: 4vb;
+  padding: 2vb;
+}
 .report-main-div .arrow svg {
   border-radius: 0;
   display: flex;

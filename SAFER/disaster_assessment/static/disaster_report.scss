@@ -163,6 +163,14 @@ svg {
       }
     }
   }
+  .rainfall-graph {
+    height: 35%;
+    width: 83%;
+    // background-color: #0736fe;
+    border: 1px solid #211f20;
+    border-radius: 4vb;
+    padding: 2vb;
+  }
   .arrow svg {
     border-radius: 0;
     display: flex;
